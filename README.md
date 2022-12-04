@@ -24,7 +24,7 @@ Emprendedora, comerciante y estudiante, incursionando en este maravilloso mundo 
 
 - MIGUEL SANCHEZ (DB)
 Mi nombre es Miguel, tengo 45 años y actualmente me desempeño como empleado de mantenimiento eléctrico para una empresa.
-Empecé a incursionar en el diseño y programación de páginas Webs como un desafío personal, intentando aprender algo nuevo para mí. Luego, a medida que fui profundizando en el tema cambié mi perspectiva y lo comencé a ver como una posibilidad de emprender algo nuevo dedo el punto de vista profesional. Si bien falta mucho camino por andar, vamos un paso a la vez.
+Empecé a incursionar en el diseño y programación de páginas Webs como un desafío personal, intentando aprender algo nuevo para mí. Luego, a medida que fui profundizando en el tema cambié mi perspectiva y lo comencé a ver como una posibilidad de emprender algo nuevo desde el punto de vista profesional. Si bien falta mucho camino por andar, vamos un paso a la vez.
  
 
 - MAXIMILIANO CARAVAJAL (FE)

@@ -40,3 +40,5 @@ http://www.sporting.com.ar
 Fue un sitio elegido por que es simple, completo y funcional  a la vez,  tiene ayuda disponible para el usuario, es fácil de usar y es estéticamente agradable.
 
 
+https://ropadeportiva.com.ar/
+Si bien no encaja con nuestro proyecto, ya que faltan algunas funcionalidades que necesitamos, resulta interesante la forma en la que se muestran los productos. Se deja una imagen fija y otras relacionadas con esta se pueden desplazar hasta pasar a otro producto con sus fotos correspondientes.

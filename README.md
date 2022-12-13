@@ -27,7 +27,7 @@ Mi nombre es Miguel, tengo 45 años y actualmente me desempeño como empleado de
 Empecé a incursionar en el diseño y programación de páginas Webs como un desafío personal, intentando aprender algo nuevo para mí. Luego, a medida que fui profundizando en el tema cambié mi perspectiva y lo comencé a ver como una posibilidad de emprender algo nuevo desde el punto de vista profesional. Si bien falta mucho camino por andar, vamos un paso a la vez.
  
 
-- MAXIMILIANO CARAVAJAL (FE)
+- MAXIMILIANO CARVJAL (FE)
 
 
 
@@ -39,6 +39,13 @@ De inspiración para los productos a ofrecer y por los clientes a los que apunta
 http://www.sporting.com.ar 
 Fue un sitio elegido por que es simple, completo y funcional  a la vez,  tiene ayuda disponible para el usuario, es fácil de usar y es estéticamente agradable.
 
-
-https://ropadeportiva.com.ar/
+https://ropadeportiva.com.ar
 Si bien no encaja con nuestro proyecto, ya que faltan algunas funcionalidades que necesitamos, resulta interesante la forma en la que se muestran los productos. Se deja una imagen fija y otras relacionadas con esta se pueden desplazar hasta pasar a otro producto con sus fotos correspondientes.
+
+https://www.stockcenter.com.ar
+Es de inspiración tanto esteticamente como por los productos que ofrece.
+
+https://www.tiendadash.com.ar
+Igual que las anteriores , nos inspira mucho en lo estético.
+
+

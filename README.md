@@ -12,6 +12,7 @@ Nuestro objetivo será el de satisfacer las necesidades de los compradores, depe
 |Estategias de marketing, queremos tener variedad de opciones para todas las edades(talles, modelos), que sea para toda clase de público, por lo que también lanzaremos promociones y descuentos, con el fin de que se ajusten a las necesidades y al bolsillo de cada comprador.
 
 
+
 INTEGRANTES DEL EQUIPO:
 
 - BELÉN ALEGRETTE (PA) 
@@ -26,7 +27,6 @@ Emprendedora, comerciante y estudiante, incursionando en este maravilloso mundo 
 Mi nombre es Miguel, tengo 45 años y actualmente me desempeño como empleado de mantenimiento eléctrico para una empresa.
 Empecé a incursionar en el diseño y programación de páginas Webs como un desafío personal, intentando aprender algo nuevo para mí. Luego, a medida que fui profundizando en el tema cambié mi perspectiva y lo comencé a ver como una posibilidad de emprender algo nuevo desde el punto de vista profesional. Si bien falta mucho camino por andar, vamos un paso a la vez.
  
-
 - MAXIMILIANO CARVJAL (FE)
 
 
@@ -49,3 +49,6 @@ https://www.tiendadash.com.ar
 Igual que las anteriores , nos inspira mucho en lo estético.
 
 
+
+TABLERO DE TRABAJO:
+https://trello.com/b/hZ6BDvAH/html

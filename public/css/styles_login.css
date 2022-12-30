@@ -1,0 +1,158 @@
+.main_login {
+  position: relative;
+  width: 100vw;
+  height: 130vh;
+  min-width: 199px;
+  text-align: center;
+}
+
+.cajas {
+  height: 120vh;
+  width: 80%;
+  padding: 5% 25%;
+  margin: 5% 10%;
+  border: solid 1px #8C52FF;
+  border-radius: 5px;
+}
+
+.caja {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  top: 0px;
+  text-align: center;
+
+}
+
+.caja1 {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  top: -662px;
+  text-align: center;
+  visibility: hidden;
+}
+
+#expand-toggle,
+#expand-toggle1 {
+  display: none;
+}
+
+/* Hide expandable content by default */
+
+
+/* Style the button */
+#expand-btn,
+#expand-btn1 {
+  display: inline-block;
+  padding: 17px 0%;
+  width: 49%;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Show hidden content when the checkbox is checked */
+#expand-toggle:checked~.caja1 {
+  visibility: visible;
+}
+
+#expand-toggle:checked~.caja {
+  visibility: collapse;
+}
+
+/* Style the button when the checkbox is checked */
+#expand-toggle:checked~#expand-btn {
+  background-color: #8C52FF;
+}
+
+
+#expand-toggle1:checked~.caja1 {
+  visibility: collapse;
+}
+
+#expand-toggle1:checked~.caja {
+  visibility: visible;
+}
+
+
+#expand-toggle1:checked~#expand-btn1 {
+  background-color: #8C52FF;
+}
+
+
+.reg-login {
+  text-align: center;
+  padding: 15px;
+  background-color: #8C52FF;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.formulario {
+  
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: auto;
+
+}
+
+.border-box {
+
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.perfil-de-usuario {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-around;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-95 {
+  width: 95%;
+}
+
+.intereses {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-around;
+
+
+}
+
+.botones button {
+  border: solid 1px black;
+  border-radius: 2px;
+  width: 40%;
+
+  height: 5vh;
+}
+
+@media (max-width: 768px) {
+  .cajas {
+
+    width: 80%;
+    border: none;
+    padding: 0%;
+  }
+
+
+}
+
+@media (max-width: 381px) {
+  .cajas {
+    width: 100%;
+    margin: 10% 0%;
+    padding: 0%;
+  }
+}

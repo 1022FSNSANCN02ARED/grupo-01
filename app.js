@@ -22,6 +22,12 @@ app.get("/login", (req, res) =>{
   app.get("/productCart", (req, res) =>{
     res.sendFile(path.join(__dirname,"views/productCart.html"));
   });
+  app.get("/admproductos", (req, res) =>{
+    res.sendFile(path.join(__dirname,"views/admproductos.html"));
+  });
+  app.get("/administrador", (req, res) =>{
+    res.sendFile(path.join(__dirname,"views/administrador.html"));
+  });
 
   app.get("/productDetail", (req, res) =>{
     res.sendFile(path.join(__dirname,"views/productDetail.html"));

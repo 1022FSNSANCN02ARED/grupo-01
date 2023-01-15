@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles_login.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body class="dashboard">
+
+    <div class="a-panel-menu">
+            <!-- Logo -->
+			<a href="/" >
+				<img width="100%" src="/images/logo.png">
+			</a>
+
+            <!-- Menu Admin -->
+            <nav class="menu-admin">
+                <li><a href="/dashboard"> <i class="fas fa-home"></i>  <span>Dashboard</span></a></li>
+                <li><a href="/product"> <i class="fas fa-store"></i>  <span>Productos</span></a></li>
+                <li><a href="#"> <i class="fas fa-shopping-cart"></i>  <span>Pedidos</span></a></li>
+                <li><a href="#"> <i class="fas fa-users"></i>  <span>Clientes</span></a></li>
+                <li><a href="#"> <i class="fas fa-store"></i> <span>Paginas</span> </a></li>
+                <li><a target="_blank" href="/"> <i class="fas fa-sign-out-alt"></i>  <span>Ver Tienda</span></a></li>
+                <li><a href="#"> <i class="fas fa-sign-out-alt"></i>  <span>Cerrar Sesión</span></a></li>
+			</nav>
+
+    </div>
+
+
+    <div class="a-panel-dashboard">
+
+        <!-- row section -->
+		<div class=" u-section-row padding-tb">
+
+            <h2 class="das-titulo">Dashboard</h2>
+
+            <div class="das-body">
+                
+                <div class="tabset">
+                    <!-- Tab 1 Productos -->
+                    <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+                    <label for="tab1">Productos</label>
+
+                    <!-- Tab 2 Añadir Nuevo-->
+                    <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier" >
+                    <label for="tab2">Añadir Nuevo</label>
+
+                    <!-- Tab 3 Añadir Nuevo-->
+                    <input type="radio" name="tabset" id="tab3" aria-controls="papelera" >
+                    <label for="tab3">Papelera</label>
+                    
+                    <div class="tab-panels">
+
+                         <!-- Panel 1 Lista de Productos-->
+                        <section id="marzen" class="tab-panel">
+                            
+                            Lista de Productos
+                            
+                        </section>
+
+                        <!-- Panel 2  Añadir Nuevo Producto-->
+                        <section id="rauchbier" class="tab-panel">
+                            
+                            Formulario alta de producto
+                            
+                        </section>
+
+                        <!-- Panel 1 Papelera -->
+                        <section id="papelera" class="tab-panel">
+                            
+                          Lista de produductos en la Papelera
+                            
+                        </section>
+
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+		</div>
+		<!-- Fin row section -->
+       
+
+        <!-- Copyright -->
+        <div class="das-footer padding-tb u-section-row">
+            <div>
+                Copyright 2022 - Todos los derechos reservados <a>Grupo 1 Digital House</a>
+            </div>
+
+            <div>
+                Version 1.0.0</a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

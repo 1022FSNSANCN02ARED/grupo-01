@@ -130,4 +130,10 @@
     margin: auto;
     width: 100%;
   }
+
+  .tabset > label {
+   
+    width: 100%;
+   
+  }
 }

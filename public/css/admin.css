@@ -2,13 +2,12 @@
  CSS PANEL DE ADMINISTRACION
 */
 
-.dashboard{
-
+.dashboard {
   gap: 0px;
   box-sizing: border-box;
 }
 
-.a-panel-menu{
+.a-panel-menu {
   width: 15%;
   height: 100vh;
   position: fixed;
@@ -16,72 +15,88 @@
   align-items: center;
 }
 
-.a-panel-dashboard{
+.a-panel-dashboard {
   margin-left: calc(15%);
   width: 85%;
 }
 
-.menu-admin{
+.menu-admin {
   width: 100%;
   margin-top: 20px;
   border-bottom: 1px solid rgb(151, 151, 151);
 }
 
-.menu-admin li{
+.menu-admin li {
   border-top: 1px solid rgb(151, 151, 151);
   padding: 20px;
   text-transform: uppercase;
 }
 
-.menu-admin li i{
+.menu-admin li i {
   margin-right: 10px;
 }
 
-.menu-admin li:hover{
-  background-color: #8C52FF;
+.menu-admin li:hover {
+  background-color: #8c52ff;
 }
 
-.menu-admin li a{
+.menu-admin li a {
   color: #fff;
 }
 
-.menu-admin li a:hover{
+.menu-admin li a:hover {
   color: #333;
 }
 
-.das-titulo{
+.das-titulo {
   text-align: left;
   font-size: 30px;
   color: #333;
 }
 
-.das-body{
+.das-body {
   background-color: #8c52ff18;
   padding: 20px;
   margin: 20px 0px;
   border-radius: 5px;
 }
+form {
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+form input {
+  padding: 10px;
+  margin-bottom: 6px;
+  border: none;
+  border-radius: 6px;
+}
+.w-100 {
+  width: 100%;
+}
+.z-100 {
+  width: 50%;
+}
 
-.das-footer{
+.das-footer {
   bottom: 0 !important;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
-  .menu-admin li a span{
+  .menu-admin li a span {
     display: none;
   }
-  .menu-admin li{
+  .menu-admin li {
     text-align: center;
   }
-
 }
 
-
 @media (max-width: 381px) {
-  .menu-admin li a span{
+  .menu-admin li a span {
     display: none;
   }
 }

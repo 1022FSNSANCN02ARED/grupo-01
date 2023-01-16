@@ -409,12 +409,12 @@
   }
   
   .submit a, .rest a{
-	color: #fff !important;
+	color: rgb(63, 31, 31) !important;
   }
   
   .submit:hover{
 	transition : 1000ms;
-	padding: 10px 50px;
+	padding: 10px 40px;
 	transform : translateY(-0px);
 	background-color: #5500ff;
 	color: #c7b0f4 !important;

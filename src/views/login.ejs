@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("partials/head") %>
+</head>
+
+<body>
+<!-- Encabezado -->
+    <%- include("partials/header") %>
+<!-- Fin Encabezado -->
+
+        <main class="u-section-row padding-tb">
+            <section class="main_login">
+
+
+                <div class="tabset">
+                    <!-- Tab 1 Inicio de Sesion-->
+                    <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+                    <label for="tab1">Iniciar Sesion</label>
+                    <!-- Tab 2 Registro-->
+                    <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+                    <label for="tab2">Registrarse</label>
+                    
+                    <div class="tab-panels">
+                        <section id="marzen" class="tab-panel">
+                            <h2 class="reg-login">Iniciar Sesion</h2>
+
+                            <form action="#" method="post" class="formulario">
+
+                                <label for="ususario">Usuario</label>
+                                <input type="text" name="usuario" id="usuario" class="border-box">
+        
+                                <label for="contraseña">Ingrese su contraseña</label>
+                                <input type="password" name="contraseña" id="contraseña" class="border-box">
+        
+                                <div class="botones">
+                                    <button class="submit" type="submit"><a href="/">Iniciar Sesión</a></button>
+                                </div>
+                            </form>
+                            
+                        </section>
+
+                        
+                        <section id="rauchbier" class="tab-panel">
+                            <h2 class="reg-login">Registrarse</h2>
+                            <form action="#" method="post" class="formulario bg-gris-claro">
+
+                                <label for="nombre">Nombre y Apellido</label>
+                                <input type="text" name="nombre" id="nombre" class="border-box">
+                                <label for="dni">DNI</label>
+                                <input type="text" name="dni" id="dni" class="border-box">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" name="email" id="email" class="border-box">
+                                <label for="ususario">Usuario</label>
+                                <input type="text" name="usuario" id="usuario" class="border-box">
+                                <label for="fecha-de-nacimiento">Fecha de nacimiento</label>
+                                <input type="date" name="fecha-de-nacimiento" id="fecha-de-nacimiento" class="border-box">
+                                <label for="domicilio">Domicilio</label>
+                                <input type="text" name="domicilio" id="domicilio" class="border-box">
+        
+        
+                            
+        
+                                <label for="contraseña">Ingrese su contraseña</label>
+                                <input type="password" name="contraseña" id="contraseña" class="border-box">
+                                <label for="confirmar-contraseña">Confirme contraseña</label>
+                                <input type="password" name="confirmar-contraseña" id="confirmar-contraseña" class="border-box">
+                                <div class="botones">
+                                    <button class="submit" type="submit"><a href="/">Registrarme</a></button>
+                                    <button class="rest" type="reset">Borrar</button>
+                                </div>
+                            </form>
+                        </section>
+
+
+                    </div>
+                    
+                </div>
+            <!-- </div> -->
+            </section>
+        </main>
+
+
+   	<!-- footer m -->
+	<footer>
+		<%- include("partials/footer") %>
+	</footer>
+	<!-- /Fin footer m -->
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="u-section-row padding-tb">
+            Copyright 2022 - Todos los derechos reservados <a>Grupo 1 Digital House</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

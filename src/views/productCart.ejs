@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <%- include("partials/head") %>
+</head>
+
+<body>
+	<!-- Encabezado -->
+    <%- include("partials/header") %>
+	<!-- Fin Encabezado -->
+
+	<section class="u-section-row padding-tb detalle">
+    
+    <form class="cart-form" action="#" method="post">
+	
+      <table class="shop_table">
+        <thead>
+          <tr>
+            <th class="product-remove"><span class="screen-reader-text"></span></th>
+            <th class="product-thumbnail"><span class="screen-reader-text"></span></th>
+            <th class="product-name">Producto</th>
+            <th class="product-price">Precio</th>
+            <th class="product-quantity">Cantidad</th>
+            <th class="product-subtotal">Subtotal</th>
+          </tr>
+        </thead>
+
+        <tbody>  
+        <tr class="cart_item">
+    
+          <td class="product-remove">
+            <a href="" class="remove">×</a>
+          </td>
+
+          <td class="product-cart">
+            <a href="/productDetail" class="no-lightbox">
+              <img src="/images/Under Armour speed stride OS.jpg" class="cart-img" alt="" >
+            </a>						
+          </td>
+
+          <td class="product-name">
+          <a href="/productDetail">
+            Remera Adidas Training
+          </a>						
+          </td>
+
+          <td class="product-price">
+            <span class="">$</span>&nbsp;11.900,00</span>						
+          </td>
+
+          <td class="product-quantity">
+            <div class="quantity ">
+              <a href="#" class="negpos">-</a>
+                <input type="number"  class="nume"  value="1" size="4" placeholder="" inputmode="numeric" >
+              <a href="#" class="negpos">+</a>
+            </div>
+          </td>
+
+          <td class="product-subtotal" data-title="Subtotal">
+            <span class="amount">
+              <span class="">$</span>
+              &nbsp;11.900,00
+            </span>	
+          </td>
+        </tr>
+              
+          
+        <tr class="actions">
+          <td colspan="5" >
+            <div class="coupon">
+              <label for="coupon_code">Cupón:</label> 
+              <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Código de cupón"> 
+              <button type="submit" class="submit" name="apply_coupon" value="Aplicar cupón">Aplicar cupón</button>
+            </div>
+          </td>
+          <td class="actualizar-carrito">
+              <button type="submit" class="submit" name="update_cart" value="Actualizar carrito" disabled="" aria-disabled="true">Actualizar carrito</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </form>
+
+      <section class="total-cart">
+        <div class="total">
+          <h2>Total del carrito</h2>
+          <table cellspacing="0" class="shop_table shop_table_responsive">
+
+            <tbody>
+              
+              <tr class="cart-subtotal">
+                <th>Subtotal</th>
+                <td data-title="Subtotal">
+                  <span class="woocommerce-Price-amount amount">
+                    <span class="woocommerce-Price-currencySymbol">$</span>
+                    &nbsp;11.900,00
+                  </span>
+                </td>
+              </tr>
+        
+            
+              <tr class="shipping-totals shipping">
+                <th>Envío</th>
+                <td data-title="Envío">
+                  <ul id="shipping_method" class="shipping-methods">
+                    <li>
+                      <input type="radio" name="shipping_method" id="shipping_method_0_local_pickup15" value="local_pickup:15" class="shipping_method" checked="checked">
+                      <label for="shipping_method_0_local_pickup15">Retira por sucursal</label>					
+                    </li>
+                    <li>
+                      <input type="radio" name="shipping_method" id="shipping_method_0_local_pickup15" value="local_pickup:15" class="shipping_method" checked="checked">
+                      <label for="shipping_method_0_local_pickup15">Envio por correo Argentino sucursal</label>					
+                    </li>
+                    <li>
+                      <input type="radio" name="shipping_method" id="shipping_method_0_local_pickup15" value="local_pickup:15" class="shipping_method" checked="checked">
+                      <label for="shipping_method_0_local_pickup15">Envio por correo Argentino Domicilio</label>					
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              
+          
+            
+            <tr class="order-total">
+              <th>Total</th>
+              <td data-title="Total"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>&nbsp;11.900,00</bdi></span></strong> </td>
+            </tr>
+        
+            
+          </tbody></table>
+        </div>
+      </section>
+
+  </section>
+
+                          
+  
+<!-- footer m -->
+<footer>
+  <%- include("partials/footer") %>
+</footer>
+
+<!-- Copyright -->
+<div class="copyright">
+  <div class="u-section-row padding-tb">
+    Copyright 2022 - Todos los derechos reservados <a>Grupo 1 Digital House</a>
+  </div>
+</div>
+
+</body>
+</html>

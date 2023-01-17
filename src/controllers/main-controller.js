@@ -26,19 +26,19 @@ module.exports = {
       },
 
     dashboard: (req, res) => {
-        res.render("dashboard", {
+        res.render("./dashboard/dashboard", {
           //escritorio,
         });
       },
     
     editarproducto: (req, res) => {
-        res.render("editProduct", {
+        res.render("./dashboard/editProduct", {
           product,
         });
       },
 
     productosadmin: (req, res) => {
-        res.render("product", {
+        res.render("./dashboard/product", {
           product,
         });
       },

@@ -17,6 +17,12 @@ module.exports = {
     res.render("dashboard/product", {
 
     });
+
+  },
+  productosadmindetail: (req, res) => {
+    res.render("dashboard/productDetail", {
+
+    });
   },
   newproduct: (req, res) => {
     res.render("dashboard/newProduct", {

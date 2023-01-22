@@ -1,114 +1,93 @@
 [
     {
-     "id": 1,
-     "name": "Remera Adidas Training",
-     "description":"UNA CAMISETA TRANSPIRABLE QUE ABSORBE LA HUMEDAD HECHA CON MATERIALES RECICLADOS."
-     "No hay límites — algo que usted y esta camiseta de entrenamiento adidas tienen en común. Fue diseñado específicamente para fomentar la libertad de movimiento con cero restricciones. AEROREADY, absorbe la humedad. Los paneles de malla aireados debajo de los brazos se duplican con comodidad y brindan una transpirabilidad y alivio adicionales."
-     
-     "DETALLES"
-
-
-     "Ajuste delgado."
-     "Jersey individual de poliéster 100% reciclado."
-     "AEROREADY absorbente de humedad."
-     "Panel de la axila de malla.",
-     "image": "img-Adidas Essentials OS.jpg",
-     "genero": "Hombre",
-     "marca":"Adidas",
-     "colors":"Negro",
-     "material":"Poliester",
-     "size": "S,M,L,XL",
-     "price":22.999,
-     "discount":"" ,
+        "id": 1,
+        "name": "Remera Adidas Training",
+        "description":"",
+        "image": "img-Adidas Essentials OS.jpg",
+        "genero": "Hombre",
+        "marca": "Adidas",
+        "colors": "Negro",
+        "material": "Poliester",
+        "size": "S,M,L,XL",
+        "price": 22.999,
+        "discount": ""
     },
     {
-     "id": 2,
-     "name": "",
-     "description": ,
-     "image": "img-Adidas Designed for training workout Product OS.jpg",
-     "género": "Hombre",
-     "marca":"Adidas",
-     "colors":"",
-     "material":"Materiales reciclados",
-     "size": "",
-     "price":22.999,
-     "discount": ,
-   
+        "id": 2,
+        "name": "",
+        "description": "",
+        "image": "img-Adidas Designed for training workout Product OS.jpg",
+        "género": "Hombre",
+        "marca": "Adidas",
+        "colors": "",
+        "material": "Materiales reciclados",
+        "size": "",
+        "price": 22.999,
+        "discount":""
     },
     {
         "id": 3,
         "name": "Remera adidas Own The Run",
-        "description":"Corre fresca y sin molestias con la Remera adidas Own The Run. Esta prenda cuenta con tecnología Aeroready, que permite una fácil absorción de la humedad para que puedas sumar más y más kilómetros sintiéndote cómoda. Además, está elaborado en 100% poliéster reciclado para contribuir al cuidado del medio ambiente y cuenta con detalles reflectivos para tu seguridad." ,
+        "description": "Corre fresca y sin molestias con la Remera adidas Own The Run. Esta prenda cuenta con tecnología Aeroready, que permite una fácil absorción de la humedad para que puedas sumar más y más kilómetros sintiéndote cómoda. Además, está elaborado en 100% poliéster reciclado para contribuir al cuidado del medio ambiente y cuenta con detalles reflectivos para tu seguridad.",
         "image": "img-adidas SC.jpeg",
         "genero": "Mujer",
-        "marca":"Adidas",
-        "colors":"",
+        "marca": "Adidas",
+        "colors": "",
         "material": "Poliéster reciclado",
         "size": "",
-        "price":8.999,
-        "discount": ,
-        
-       },
-       {
+        "price": 8.999,
+        "discount": ""
+    },
+    {
         "id": 4,
         "name": "Remera Nike Futura Kids",
-        "description": ,
+        "description": "",
         "image": "img-nikeKids.jpg",
         "genero": "Niños",
-        "marca":"Nike",
-        "colors":"Blanco",
-        "material":"Algodón",
+        "marca": "Nike",
+        "colors": "Blanco",
+        "material": "Algodón",
         "size": "",
-        "price":7.125,
-        "discount": ,
-        
-       },
-
-
-       {
-           "id": 5,
-           "name": "Mochila Everlast Urbana",
-           "description":"La Mochila Everlast Urbana Con Llavero Ideal para la vida urbana, para ir a trabajar, a estudiar y salir de paseo. Está confeccionada en materiales de primera calidad, con costuras y cierres reforzados. El amplio compartimiento principal para que puedas guardar todo lo necesario para tus planes. El bolsillo al frente para que guardes tus accesorios y los tengas a mano." ,
-           "image": "img-mochila.jpeg",
-           "genero": "Unisex",
-           "marca":"Everlast",
-           "colors":"",
-           "material":"Nylon",
-           "size": "Único",
-           "price":6.449,
-           "discount": ,
-          
-          },
-          {
-           "id": 6,
-           "name": "Zapatillas Nike Revolution 6 Next Nature",
-           "description":"Suma más y más kilómetros con tus Zapatillas Nike Revolution 6 Next Nature, que aportan amortiguación y confort a cada paso que des. Su capellada transpirable y suela diseñada por computadora para una mejor tracción son ideales hasta para los corredores más exigentes." ,
-           "image": "img-zapatillasNikeSC.jpeg",
-           "genero":"Hombre",
-           "marca":"Nike",
-           "colors":"",
-           "material":"Malla",
-           "size": "37,38,hasta 48.5",
-           "price":26.199,
-           "discount": ,
-          
-          },
-
-
-          {
-           "id": 7,
-           "name": "
-           Zapatillas Puma Smash V2 L V Infantil",
-           "description":"
-           Las Zapatillas Puma Smash V2 L V Infantil son una opción cómoda y moderna para los pies de tu bebé. Su capellada en materiales sintéticos es resistente y el ajuste de velcro brinda estabilidad a sus pisadas, para que puedan dar sus primeros pasos con la mayor seguridad y estilo posibles." ,
-           "image": "img-zapatillasPumaInfantil.jpeg",
-           "genero": "Unisex",
-           "marca":"Puma",
-           "colors":"",
-           "material":" Sintético",
-           "size": "21 al 26",
-           "price":13799,
-           "discount":10.999 ,
-          
-          }
+        "price": 7.125,
+        "discount":"" 
+    },
+    {
+        "id": 5,
+        "name": "Mochila Everlast Urbana",
+        "description": "La Mochila Everlast Urbana Con Llavero Ideal para la vida urbana, para ir a trabajar, a estudiar y salir de paseo. Está confeccionada en materiales de primera calidad, con costuras y cierres reforzados. El amplio compartimiento principal para que puedas guardar todo lo necesario para tus planes. El bolsillo al frente para que guardes tus accesorios y los tengas a mano.",
+        "image": "img-mochila.jpeg",
+        "genero": "Unisex",
+        "marca": "Everlast",
+        "colors": "",
+        "material": "Nylon",
+        "size": "Único",
+        "price": 6.449,
+        "discount":"" 
+    },
+    {
+        "id": 6,
+        "name": "Zapatillas Nike Revolution 6 Next Nature",
+        "description": "Suma más y más kilómetros con tus Zapatillas Nike Revolution 6 Next Nature, que aportan amortiguación y confort a cada paso que des. Su capellada transpirable y suela diseñada por computadora para una mejor tracción son ideales hasta para los corredores más exigentes.",
+        "image": "img-zapatillasNikeSC.jpeg",
+        "genero": "Hombre",
+        "marca": "Nike",
+        "colors": "",
+        "material": "Malla",
+        "size": "37,38,hasta 48.5",
+        "price": 26.199,
+        "discount": ""
+    },
+    {
+        "id": 7,
+        "name": "Zapatillas Puma Smash V2 L V Infantil",
+        "description":" Las Zapatillas Puma Smash V2 L V Infantil son una opción cómoda y moderna para los pies de tu bebé. Su capellada en materiales sintéticos es resistente y el ajuste de velcro brinda estabilidad a sus pisadas, para que puedan dar sus primeros pasos con la mayor seguridad y estilo posibles." ,
+        "image": "img-zapatillasPumaInfantil.jpeg",
+        "genero": "Unisex",
+        "marca": "Puma",
+        "colors": "",
+        "material": " Sintético",
+        "size": "21 al 26",
+        "price": 13799,
+        "discount": 10.999
+    }
 ]

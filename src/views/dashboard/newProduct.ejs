@@ -3,102 +3,86 @@
 
 <%- include('partialsDashboard/header') %>
 
+    <!-- row section -->
+    <div class=" u-section-row padding-tb">
 
-
-    <div class="a-panel-dashboard">
-
-        <!-- row section -->
-        <div class=" u-section-row padding-tb">
-
-            <h2 class="das-titulo">Productos</h2>
-
+            <h2 class="das-titulo">Agregar Productos</h2>
+            <!-- Body Dashboard -->
             <div class="das-body">
 
-                <h2 class="reg-login">Agregar productos</h2>
-                            <form action="#" method="post" class="formulario bg-gris-claro">
+                <form action="#" method="post" class="formulario bg-gris-claro">
 
-                                <label for="nombre">Nombre producto</label>
-                                <input type="text" name="nombre" id="nombre" class="border-box">
-                                <label for="desc">Descripción</label>
-                                <input type="text" name="desc" id="desc" class="border-box">
-                                <label for="cantidad">Cantidad</label>
-                                <input type="text" name="cantidad" id="cantidad" class="border-box">
-                                <label for="preciolista">Precio de lista</label>
-                                <input type="number" name="preciolista" id="preciolista" class="border-box">
+                    <label for="nombre">Nombre producto</label>
+                    <input type="text" name="nombre" id="nombre" class="border-box">
+                    <label for="desc">Descripción</label>
+                    <input type="text" name="desc" id="desc" class="border-box">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="text" name="cantidad" id="cantidad" class="border-box">
+                    <label for="preciolista">Precio de lista</label>
+                    <input type="number" name="preciolista" id="preciolista" class="border-box">
 
-                                <label for="preciopromo">Precio promoción</label>
-                                <input type="number" name="preciopromo" id="preciopromo" class="border-box">
-                                <label for="imagenDestacada">Imagen destacada</label>
-                                <input type="file" name="imagendestacada" accept=".jpg, .jpeg" class="border-box">
-                                <label>Galería</label>
-                                <input type="file" name="imagen1" accept=".jpg, .jpeg" class="border-box">
-                                <input type="file" name="imagen2" accept=".jpg, .jpeg" class="border-box">
-                                <input type="file" name="imagen3" accept=".jpg, .jpeg" class="border-box">
-                                <input type="file" name="imagen4" accept=".jpg, .jpeg" class="border-box">
-                                <label for="talles">Talles</label>
-
-
-                                <ul class="caja-talles">
-                                    <li class="div-talles">S
-                                        <input type="checkbox" name="S" id="s">
-                                    </li>
-                                    <li class="div-talles">M
-                                        <input type="checkbox" name="m" id="m">
-
-                                    </li>
-                                    <li class="div-talles">L
-                                        <input type="checkbox" name="l" id="l">
-
-                                    </li>
-                                    <li class="div-talles">XL
-                                        <input type="checkbox" name="xl" id="xl">
-
-                                    </li>
-                                </ul>
-                                </ul>
-
-                                <label for="colores">Colores</label>
-                                <ul class="caja-colores">
-
-                                    <li class="bg-rojo div-colores">
-                                        <input type="checkbox" name="rojo" id="rojo">
-                                    </li>
-                                    <li class="bg-amarillo div-colores">
-                                        <input type="checkbox" name="amarillo" id="amarillo">
-
-                                    </li>
-                                    <li class="bg-negro div-colores">
-                                        <input type="checkbox" name="negro" id="negro">
-
-                                    </li>
-                                    <li class="bg-blanco div-colores">
-                                        <input type="checkbox" name="blanco" id="blanco">
-
-                                    </li>
-                                </ul>
-                                
+                    <label for="preciopromo">Precio promoción</label>
+                    <input type="number" name="preciopromo" id="preciopromo" class="border-box">
+                    <label for="imagenDestacada">Imagen destacada</label>
+                    <input type="file" name="imagendestacada" accept=".jpg, .jpeg" class="border-box">
+                    <label>Galería</label>
+                    <input type="file" name="imagen1" accept=".jpg, .jpeg" class="border-box">
+                    <input type="file" name="imagen2" accept=".jpg, .jpeg" class="border-box">
+                    <input type="file" name="imagen3" accept=".jpg, .jpeg" class="border-box">
+                    <input type="file" name="imagen4" accept=".jpg, .jpeg" class="border-box">
+                    <label for="talles">Talles</label>
 
 
+                    <ul class="caja-talles">
+                        <li class="div-talles">S
+                            <input type="checkbox" name="S" id="s">
+                        </li>
+                        <li class="div-talles">M
+                            <input type="checkbox" name="m" id="m">
 
+                        </li>
+                        <li class="div-talles">L
+                            <input type="checkbox" name="l" id="l">
 
-                                <div class="botones">
-                                    <button class="submit" type="submit"><a href="/">Guardar</a></button>
-                                    <button class="rest" type="reset">Borrar</button>
-                                </div>
-                            </form>
+                        </li>
+                        <li class="div-talles">XL
+                            <input type="checkbox" name="xl" id="xl">
+
+                        </li>
+                    </ul>
+                    </ul>
+
+                    <label for="colores">Colores</label>
+                    <ul class="caja-colores">
+
+                        <li class="bg-rojo div-colores">
+                            <input type="checkbox" name="rojo" id="rojo">
+                        </li>
+                        <li class="bg-amarillo div-colores">
+                            <input type="checkbox" name="amarillo" id="amarillo">
+
+                        </li>
+                        <li class="bg-negro div-colores">
+                            <input type="checkbox" name="negro" id="negro">
+
+                        </li>
+                        <li class="bg-blanco div-colores">
+                            <input type="checkbox" name="blanco" id="blanco">
+
+                        </li>
+                    </ul>
+
+                    <div class="botones">
+                        <button class="submit" type="submit"><a href="/">Guardar</a></button>
+                        <button class="rest" type="reset">Borrar</button>
+                    </div>
+                </form>
 
             </div>
-
-        </div>
-        <!-- Fin row section -->
-
-
-        <!-- Copyright -->
-        <%- include('partialsDashboard/footer') %>
-
+            <!-- Fin Body Dashboard -->
 
     </div>
+    <!-- Fin row section -->
 
-</body>
-
-</html>
+<!-- Copyright -->
+<%- include('partialsDashboard/footer') %>

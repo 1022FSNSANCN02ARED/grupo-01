@@ -1,35 +1,24 @@
 const product = [];
 
 module.exports = {
+    // Pagina de Inicio
     home: (req, res) => {
         res.render("index", {
           product,
         });
       },
-    
-    productos: (req, res) => {
-        res.render("productDetail", {
-          product,
-        });
-      },
 
+    // Pagina del Carrito
     carrito: (req, res) => {
         res.render("productCart", {
           product,
         });
       },
     
+    // Pagina del Login
     login: (req, res) => {
         res.render("login", {
           //paginalogin,
         });
-      },
-
-    /* dashboard: (req, res) => {
-        res.render("./dashboard/dashboard", {
-          //escritorio,
-        });
-      }, */
-    
-    
+    },  
 }

@@ -13,7 +13,7 @@ router.get("/newproduct", productController.newproduct);
 // router.get("/editProduct", productController.editarproducto);
 router.get("/:id/editProduct", productController.editarproducto);
 
-// Ver Lista de Producto en Escritorio
-router.get("/productDetail/:id", productController.productos);
+// Ver Producto en detalles en la Web
+router.get("/:id", productController.detailproduct);
 
 module.exports = router;  

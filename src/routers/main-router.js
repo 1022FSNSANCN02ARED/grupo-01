@@ -12,10 +12,8 @@ router.get("/productCart", mainController.carrito);
 router.get("/login", mainController.login);
 
 
-
-
-
 const productsRouter = require("./Product-router");
+
 router.use("/dashboard", productsRouter);
 
 

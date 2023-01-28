@@ -6,77 +6,101 @@
   <!-- row section -->
   <div class=" u-section-row padding-tb">
 
-        <h2 class="das-titulo">Editar Producto: <%= product.name %></h2>
+          <h2 class="das-titulo">Editar Producto: <%= product.name %></h2>
+
           <!-- Body Dashboard -->
           <div class="das-body">
+
+            <form class="formulario" action="/dashboard/<%= product.id %>?_method=put" method="POST">
+
+              <div class="r-40">
+                <img class="img-destacada" src="/images/Under Armour speed stride OS.jpg" />
+                <div class="galeria">
+                  <img class="img-small" src="/images/under armour speed.jpg" />
+                  <img class="img-small" src="/images/under armour speed st.jpg" />
+                  <img class="img-small" src="/images/under armour speed stride OS (2).jpg" />
+                  <img class="img-small" src="/images/Under Armour Run.jpg" />
+                </div>
+              </div>
+
+              <div class="r-60 padding-pr">
+
+                <div class="w-100">
+                  <label for="name" class="form-label">Nombre del producto:</label>
+                  <input type="text" id="name" name="name" placeholder="<%= product.name %>" class="w-100" value="<%= product.name %>" />
+                </div>
+
+                <div class="w-100">
+                  <label for="description" class="form-label">Descripcion producto:</label>
+                  <textarea name="description" id="description" class="w-100" rows="8" cols="50" ><%= product.description %></textarea>
+                </div>
+
+                <div class="w-100">
+                  <label for="category" class="form-label">Categoría:</label>
+
+                    <select name="genero" id="genero" class="form-input" >
+                        <option value="">Elegí</option>
+                        <option value="Niños" <%= product.genero=="Niños" ? "selected" : "" %>>Niños</option>
+                        <option value="Mujer" <%= product.genero=="Mujer" ? "selected" : "" %>>Mujer</option>
+                        <option value="Hombre" <%= product.genero=="Hombre" ? "selected" : "" %>>Hombre</option>
+                        <option value="Unisex" <%= product.genero=="Unisex" ? "selected" : "" %>>Unisex</option>
+                    </select>
+                  </div>
+
+                <div class="r-50">
+                  <label for="price" class="form-label">Precio:</label>
+                  <input type="text" id="name" name="name" placeholder="<%= product.price %>" class="w-100" value="<%= product.price %>" />
+                </div>
+
+                <div class="r-50">
+                  <label for="discount" class="form-label">Precio Rebajado:</label>
+                  <input type="text" id="name" name="name" placeholder="<%= product.discount %>" class="w-100" value="<%= product.discount %>" />
+                </div>
+  
+
+                <div class="w-100 ">
                 
-            <section class="detalle">
-                    <div class="r-40">
-                      <img
-                        class="img-destacada"
-                        src="/images/Under Armour speed stride OS.jpg"
-                      />
-                      <div class="galeria">
-                        <img class="img-small" src="/images/under armour speed.jpg" />
-                        <img class="img-small" src="/images/under armour speed st.jpg" />
-                        <img
-                          class="img-small"
-                          src="/images/under armour speed stride OS (2).jpg"
-                        />
-                        <img class="img-small" src="/images/Under Armour Run.jpg" />
-                      </div>
-                    </div>
+                  <label for="talle" class="form-label">Seleccione el Talle:</label>
 
-                    <div class="r-60 center padding-pr">
-                                                <form action="">
-                      <input
-                        class="w-100 font-m"
-                        type="text"
-                        placeholder="NOMBRE DEL PRODUCTO"
-                        id="nombreDelproducto"
-                      />
-                        <input
-                        class="w-100 font-m"
-                        type="text"
-                        placeholder="DESCRIPCIÓN DEL PRODUCTO"
-                        id="descripciónDelproducto"
-                      />
-                      <select name="Categoria" id="CATEGORIA">
-                        <option>HOMBRE</option>
-                        <option>MUJER</option>
-                        <option>NIÑO</option>
-                      </select> 
-                      <input
-                        class="z-100 font-m"
-                        type="text"
-                        placeholder="PRECIO REBAJADO"
-                        id="precioRebajado"
-                        />
-                      <input
-                        class="z-100 font-m"
-                        type="text"
-                        placeholder="PRECIO"
-                        id="precio"/>
-                                                </form>
+                    <ul class="caja-talles">
+                      <li class="div-talles">S
+                          <input type="checkbox" name="S" id="s">
+                      </li>
+                      <li class="div-talles">M
+                          <input type="checkbox" name="m" id="m">
 
-                                        
-                      <h5 class="talle">Seleccione el talle</h5>
+                      </li>
+                      <li class="div-talles">L
+                          <input type="checkbox" name="l" id="l">
 
-                      <ul class="caja-talles">
-                        <li class="div-talles">S</li>
-                        <li class="div-talles">M</li>
-                        <li class="div-talles">L</li>
-                        <li class="div-talles">XL</li>
-                      </ul>
-                        <a href="#" class="submit" 
-                          >EDITAR PRODUCTO / GUARDAR </i
-                        ></a>
-                      </div>
+                      </li>
+                      <li class="div-talles">XL
+                          <input type="checkbox" name="xl" id="xl">
+
+                      </li>
+                    </ul>
+
+                </div>
+
+                <div class="w-100 botones padding-tb">
+                  <button href="#" type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
+                  <button type="" href="#" class="rest"><span class="far fa-trash-alt"></span></button> 
+                </div>
+                
+
+              </div>
+
+
+            </form>
+
+
+            
+                   
           </div>
-        <!-- Fin Body Dashboard -->
+          <!-- Fin Body Dashboard -->
 
-    </div>
-    <!-- Fin row section -->
+  </div>
+  <!-- Fin row section -->
 
 <!-- Copyright -->
 <%- include('partialsDashboard/footer') %>

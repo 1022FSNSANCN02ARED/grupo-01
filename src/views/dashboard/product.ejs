@@ -26,17 +26,15 @@
 
                                 <p class="descuento"><s><%= product.discount %></s> <strong>$<%= product.price %></strong></p>
 
-                                <div class="product-edit">
+                                <form class="botones" action="" method="">
+                                    <a target="_blank" href="/dashboard/productDetail/<%= product.id %>" class="submit"><span class="fas fa-eye"></span></a>
 
-                                    <a href="/productdetail" class="submit w-100"><i class="fas fa-eye"> </i><p class="verProducto"> Ver Producto</p></a>
+                                    <a href="<%= product.id %>/editProduct" class="submit"><span class="fas fa-pencil-alt"></span> </a>
                                     
-                                    <a href="<%= product.id %>/editProduct" class="submit"><span class="fas fa-pencil-alt"></span> </i></a>
+                                    <button type="" href="#" class="rest"><span class="far fa-trash-alt"></span></button> 
+                                </form>
+                                    
 
-                                    <form action="" method="">
-                                        <a href="#" class="submit"><span class="far fa-trash-alt"></span> </i></a> 
-                                    </form>
-                                    
-                                </div>
                             </div>     
                     </article>
                     <% }) %>

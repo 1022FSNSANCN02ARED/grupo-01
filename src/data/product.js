@@ -22,7 +22,5 @@ module.exports = {
 
     findById(id) {
         return this.findAll().find((p) => p.id == id);
-    },
-
-    
+    },    
 };

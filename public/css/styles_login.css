@@ -1,5 +1,5 @@
 /*
- CSS for the main interaction
+ CSS para los tabs
 */
 .tabset > input[type="radio"] {
   position: absolute;
@@ -62,14 +62,6 @@
   margin: 2px;
 }
 
-.formulario { 
-  padding: 10px 0PX;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  margin: auto;
-  width: 50%;
-}
 
 .border-box {
   border-radius: 5px;
@@ -105,15 +97,59 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-
 }
+
+
+/*
+ CSS para los Formularios
+*/
+
+.formulario { 
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+  margin: auto;
+}
+
+.formulario .r-60{
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+}
+
+.form-label{
+  margin-bottom: 20px !important;
+  font-size: 14px;
+}
+
+.formulario input, .formulario textarea, .formulario select{
+  padding: 15px;
+  margin: 5px 0px;
+  border: 1px solid #8c52ff25;
+  border-radius: 0px;
+  width: 100%;
+}
+
+.form-control {
+  font-size: 25px;
+  line-height: 1.1;
+  display: grid;
+  margin-right: 20px;
+  justify-content: flex-start; 
+  gap: 0em;
+}
+
 
 
 @media (max-width: 768px) {
   .formulario { 
     padding: 10px 0PX;
     display: flex;
-    flex-direction: column;
     border-radius: 5px;
     margin: auto;
     width: 90%;

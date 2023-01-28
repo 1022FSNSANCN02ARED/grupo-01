@@ -60,6 +60,9 @@
 	.padding-tb {
 		padding: 30px 0px;
 	}
+	.padding-pr {
+		padding: 0px 0px 10px 40px;
+	}
 
 	.u-logo-image {
 		width: 70%;
@@ -180,7 +183,7 @@
 	}
 
 	.r-50 {
-		width: 50%;
+		width: 48%;
 	}
 
 	.r-60 {
@@ -197,7 +200,7 @@
 	}
 
 	.w-100 {
-		width: 100%;
+		width: 100% !important;
 	}
 
 	/*seccion slider*/
@@ -427,12 +430,9 @@
 	.rest {
 		text-transform: uppercase;
 		text-align: center;
-		font-weight: 0;
-		font-size: 14px;
+		font-size: 10px;
 		color: #fff !important;
-		background-color: #8C52FF;
-		padding: 10px 30px;
-		border: 2px solid #8C52FF;
+		padding: 10px 20px;
 		box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
 		border-radius: 5px;
 		transition: 1000ms;
@@ -442,27 +442,38 @@
 		cursor: pointer;
 	}
 
+	.submit {
+		background-color: #8C52FF;
+		border: 2px solid #8C52FF;
+	}
+
+	.rest {
+		background-color: #ff5252;
+		border: 2px solid #ff5252;
+	}
+
+
 	.submit a,
 	.rest a {
 		color: rgb(63, 31, 31) !important;
 	}
 
-	.submit:hover {
-		transition: 1000ms;
-		padding: 10px 40px;
+	.submit:hover, .rest:hover{
+		transition: 500ms;
+		padding: 10px 20px;
 		transform: translateY(-0px);
+	}
+
+	.submit:hover {
 		background-color: #5500ff;
-		color: #c7b0f4 !important;
+		color: #ffffff !important;
 		border: solid 2px #8C52FF;
 	}
 
 	.rest:hover {
-		transition: 1000ms;
-		padding: 10px 50px;
-		transform: translateY(-0px);
-		background-color: #5500ff;
-		color: #8C52FF !important;
-		border: solid 2px #8C52FF;
+		background-color: #ff0000;
+		color: #ffffff !important;
+		border: solid 2px #ff5252;
 	}
 
 	.detalle {
@@ -479,10 +490,6 @@
 	.galeria img:hover {
 		box-shadow: 0px 0px 4px 4px #e8e8e8;
 		border-radius: 5px;
-	}
-
-	.padding-pr {
-		padding: 0px 0px 10px 40px;
 	}
 
 	.img-destacada {

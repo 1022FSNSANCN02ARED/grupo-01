@@ -15,25 +15,32 @@
                 <div class="productDetail">
 
 
-
                     <!-- HACER EL FOREACH -->
-                    <article class="productos">
-                            <img class="img-product" src="/images/Adidas Designed for training workout Product OS.jpg"
+                    <% products.forEach(product => { %>
+                        <article class="productos">
+                            <img class="img-product" src="/images/product/<%= product.image %>"
                                 alt="Imagen remera">
                             <div class="div-productos">
-                                <h4 class="nombre"></h4>
-                                <p class="descuento"><s>$15999</s> <strong>$11999</strong></p>
+
+                                <h4 class="nombre"><%= product.name %></h4>
+
+                                <p class="descuento"><s><%= product.discount %></s> <strong>$<%= product.price %></strong></p>
+
                                 <div class="product-edit">
+
                                     <a href="/productdetail" class="submit w-100"><i class="fas fa-eye"> </i><p class="verProducto"> Ver Producto</p></a>
-                                    <a href="/dashboard/editProduct" class="submit"><span
-                                            class="fas fa-pencil-alt"></span> </i></a>
-                                    <a href="#" class="submit"><span class="far fa-trash-alt"></span> </i></a>
+                                    
+                                    <a href="<%= product.id %>/editProduct" class="submit"><span class="fas fa-pencil-alt"></span> </i></a>
+
+                                    <form action="" method="">
+                                        <a href="#" class="submit"><span class="far fa-trash-alt"></span> </i></a> 
+                                    </form>
+                                    
                                 </div>
                             </div>     
                     </article>
+                    <% }) %>
                     <!-- HACER EL FOREACH -->
-
-
 
                 </div>
             </div>

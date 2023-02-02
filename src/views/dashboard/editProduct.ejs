@@ -1,106 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('partialsDashboard/header') %>
+<head>
+    <%- include('partialsDashboard/head') %>
+</head>
 
-  <!-- row section -->
-  <div class=" u-section-row padding-tb">
+    <body class="dashboard">
 
-          <h2 class="das-titulo">Editar Producto: <%= product.name %></h2>
+    <%- include('partialsDashboard/header') %>
 
-          <!-- Body Dashboard -->
-          <div class="das-body">
+      <!-- row section -->
+      <div class=" u-section-row padding-tb">
 
-            <form class="formulario" action="/dashboard/<%= product.id %>?_method=put" method="POST">
+              <h2 class="das-titulo">Editar Producto: <%= product.name %></h2>
 
-              <div class="r-40">
-                <img class="img-destacada" src="/images/Under Armour speed stride OS.jpg" />
-                <div class="galeria">
-                  <img class="img-small" src="/images/under armour speed.jpg" />
-                  <img class="img-small" src="/images/under armour speed st.jpg" />
-                  <img class="img-small" src="/images/under armour speed stride OS (2).jpg" />
-                  <img class="img-small" src="/images/Under Armour Run.jpg" />
-                </div>
-              </div>
+              <!-- Body Dashboard -->
+              <div class="das-body">
 
-              <div class="r-60 padding-pr">
+                <!-- Formulario Editar Producto -->
+                <form class="formulario" action="/dashboard/<%= product.id %>?_method=put" method="POST" enctype="multipart/form-data">
 
-                <div class="w-100">
-                  <label for="name" class="form-label">Nombre del producto:</label>
-                  <input type="text" id="name" name="name" placeholder="<%= product.name %>" class="w-100" value="<%= product.name %>" />
-                </div>
-
-                <div class="w-100">
-                  <label for="description" class="form-label">Descripcion producto:</label>
-                  <textarea name="description" id="description" class="w-100" rows="8" cols="50" ><%= product.description %></textarea>
-                </div>
-
-                <div class="w-100">
-                  <label for="category" class="form-label">Categoría:</label>
-
-                    <select name="genero" id="genero" class="form-input" >
-                        <option value="">Elegí</option>
-                        <option value="Niños" <%= product.genero=="Niños" ? "selected" : "" %>>Niños</option>
-                        <option value="Mujer" <%= product.genero=="Mujer" ? "selected" : "" %>>Mujer</option>
-                        <option value="Hombre" <%= product.genero=="Hombre" ? "selected" : "" %>>Hombre</option>
-                        <option value="Unisex" <%= product.genero=="Unisex" ? "selected" : "" %>>Unisex</option>
-                    </select>
+                  <!-- Columna Izquierda -->
+                  <div class="r-40">
+                    <img class="img-destacada" src="/images/Under Armour speed stride OS.jpg" />
+                    <div class="galeria">
+                      <img class="img-small" src="/images/under armour speed.jpg" />
+                      <img class="img-small" src="/images/under armour speed st.jpg" />
+                      <img class="img-small" src="/images/under armour speed stride OS (2).jpg" />
+                      <img class="img-small" src="/images/Under Armour Run.jpg" />
+                    </div>
                   </div>
+                  <!-- Fin Columna Izquierda -->
 
-                <div class="r-50">
-                  <label for="price" class="form-label">Precio:</label>
-                  <input type="text" id="name" name="name" placeholder="<%= product.price %>" class="w-100" value="<%= product.price %>" />
-                </div>
+                  <!-- Columna Derecha -->
+                  <div class="r-60 padding-pr">
 
-                <div class="r-50">
-                  <label for="discount" class="form-label">Precio Rebajado:</label>
-                  <input type="text" id="name" name="name" placeholder="<%= product.discount %>" class="w-100" value="<%= product.discount %>" />
-                </div>
-  
+                    <div class="w-100">
+                      <label for="name" class="form-label">Nombre del producto:</label>
+                      <input type="text" id="name" name="name" placeholder="<%= product.name %>" class="w-100" value="<%= product.name %>" />
+                    </div>
 
-                <div class="w-100 ">
+                    <div class="w-100">
+                      <label for="description" class="form-label">Descripcion producto:</label>
+                      <textarea name="description" id="description" class="w-100" rows="8" cols="50" ><%= product.description %></textarea>
+                    </div>
+
+                    <div class="w-100">
+                      <label for="category" class="form-label">Categoría:</label>
+                      <select name="category" id="category" class="form-input" >
+                        <option value="">Elegí</option>
+                        <option value="Oferta" <%= product.category=="Oferta" ? "selected" : "" %>>OFERTA</option>
+                        <option value="Destacado" <%= product.category=="Destacado" ? "selected" : "" %>>DESTACADO</option>
+                      </select>
+                    </div>
+
+                    <div class="w-100 flex">
+                      <div class="r-33">
+                        <label for="genero" class="form-label">Genero:</label>
+                        <select name="genero" id="genero" class="form-input" >
+                          <option value="">Elegí</option>
+                          <option value="Niños" <%= product.genero=="Niños" ? "selected" : "" %>>Niños</option>
+                          <option value="Mujer" <%= product.genero=="Mujer" ? "selected" : "" %>>Mujer</option>
+                          <option value="Hombre" <%= product.genero=="Hombre" ? "selected" : "" %>>Hombre</option>
+                          <option value="Unisex" <%= product.genero=="Unisex" ? "selected" : "" %>>Unisex</option>
+                      </select>
+                      </div>
+
+                      <div class="r-33">
+                        <label for="marca" class="form-label">Marca:</label>
+                        <input type="text" id="marca" name="marca" placeholder="<%= product.marca %>" class="w-100" value="<%= product.marca %>" />
+                      </div>
+
+                      <div class="r-33">
+                        <label for="material" class="form-label">Material:</label>
+                        <input type="text" id="material" name="material" placeholder="<%= product.material %>" class="w-100" value="<%= product.material %>" />
+                      </div>
+                    </div>
+
+                    <div class="r-50">
+                      <label for="price" class="form-label">Precio:</label>
+                      <input type="text" id="price" name="price" placeholder="<%= product.price %>" class="w-100" value="<%= product.price %>" />
+                    </div>
+
+                    <div class="r-50">
+                      <label for="discount" class="form-label">Precio Rebajado:</label>
+                      <input type="text" id="discount" name="discount" placeholder="<%= product.discount %>" class="w-100" value="<%= product.discount %>" />
+                    </div>
+      
+                    <div class="w-100 ">
+                    
+                      <label for="talle" class="form-label">Seleccione el Talle:</label>
+
+                        <ul class="caja-talles">
+                          <li class="div-talles">S
+                              <input type="checkbox" name="S" id="s">
+                          </li>
+                          <li class="div-talles">M
+                              <input type="checkbox" name="m" id="m">
+                          </li>
+                          <li class="div-talles">L
+                              <input type="checkbox" name="l" id="l">
+                          </li>
+                          <li class="div-talles">XL
+                              <input type="checkbox" name="xl" id="xl">
+                          </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="w-100 botones padding-tb">
+                      
+                      <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
+                    
+                    </form>
+                    <!-- Fin Formulario Editar Producto -->
+
+                      <!-- Formulario Boton Eliminar Producto -->
+                      <form action="/dashboard/<%= product.id %>?_method=delete" method="POST">
+                        <button type="submit" class="rest"><span class="far fa-trash-alt"></span> Eliminar</button> 
+                      </form>
+                      <!-- Fin Formulario Boton Eliminar Producto -->
+
+                    </div>
+
+                  </div>
+                  <!-- Fin Columna Derecha -->
+
                 
-                  <label for="talle" class="form-label">Seleccione el Talle:</label>
-
-                    <ul class="caja-talles">
-                      <li class="div-talles">S
-                          <input type="checkbox" name="S" id="s">
-                      </li>
-                      <li class="div-talles">M
-                          <input type="checkbox" name="m" id="m">
-
-                      </li>
-                      <li class="div-talles">L
-                          <input type="checkbox" name="l" id="l">
-
-                      </li>
-                      <li class="div-talles">XL
-                          <input type="checkbox" name="xl" id="xl">
-
-                      </li>
-                    </ul>
-
-                </div>
-
-                <div class="w-100 botones padding-tb">
-                  <button href="#" type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
-                  <button type="" href="#" class="rest"><span class="far fa-trash-alt"></span></button> 
-                </div>
                 
 
               </div>
+              <!-- Fin Body Dashboard -->
 
+      </div>
+      <!-- Fin row section -->
 
-            </form>
+    <!-- Copyright -->
+    <%- include('partialsDashboard/footer') %>
+        
+    </body>
 
-
-            
-                   
-          </div>
-          <!-- Fin Body Dashboard -->
-
-  </div>
-  <!-- Fin row section -->
-
-<!-- Copyright -->
-<%- include('partialsDashboard/footer') %>
+</html>

@@ -1,12 +1,10 @@
-const product = [];
+const products = require("../data/product");
 
 module.exports = {
     // Pagina de Inicio
     home: (req, res) => {
-        res.render("index", {
-          product,
-        });
-      },
+      res.render("index", { products: products.findAll() });
+    },
 
     // Pagina del Carrito
     carrito: (req, res) => {
@@ -20,5 +18,11 @@ module.exports = {
         res.render("login", {
           //paginalogin,
         });
-    },  
+    },
+    // Detalle de un producto en la pagina Frontal
+    detailproduct: (req, res) => {
+      const product = products.findById(req.params.id);
+      res.render("productDetail", { product });
+    },
+    
 }

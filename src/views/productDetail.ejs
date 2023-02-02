@@ -12,70 +12,91 @@
 
     <section class="u-section-row padding-tb detalle">
       <div class="r-40">
-        <img
-          class="img-destacada"
-          src="/images/Under Armour speed stride OS.jpg"
-        />
+        <img class="img-destacada" src="/images/product/<%= product.image %>" />
         <div class="galeria">
           <img class="img-small" src="/images/under armour speed.jpg" />
           <img class="img-small" src="/images/under armour speed st.jpg" />
-          <img
-            class="img-small"
-            src="/images/under armour speed stride OS (2).jpg"
-          />
+          <img class="img-small" src="/images/under armour speed stride OS (2).jpg" />
           <img class="img-small" src="/images/Under Armour Run.jpg" />
         </div>
       </div>
 
       <div class="r-60 center padding-pr">
-        <h2 class="nombre"><%= product.name %></h2>
-        <p class="descuento"><s>$15.999,00</s> <strong>11.900,00</strong></p>
-        <p class="padding-tb">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-          dolorum molestiae aliquid animi dolorem. Excepturi dolores, facere
-          aliquid assumenda laboriosam, quas nam quod fugiat aperiam nihil
-          similique tenetur ipsum commodi?
-        </p>
-        <h5 class="talle">Seleccione el talle</h5>
 
-        <ul class="caja-talles">
-          <li class="div-talles">S</li>
-          <li class="div-talles">M</li>
-          <li class="div-talles">L</li>
-          <li class="div-talles">XL</li>
-        </ul>
-        <div class="contador">
-          <div class="quantity caja-contador">
-            <a href="#" class="negpos">-</a>
-            <input
-              type="number"
-              class="nume"
-              value="1"
-              size="4"
-              placeholder=""
-              inputmode="numeric"
-            />
-            <a href="#" class="negpos">+</a>
+        <!-- Nombre del Producto -->
+        <h2 class="nombre"><%= product.name %></h2>
+        
+        <!-- Precios -->
+        <p class="descuento"><s><%= product.discount %></s> <strong>$<%= product.price %></strong></p>
+
+        <!-- Descripción -->
+        <p class=""> <%= product.description %></p>
+        <br >
+        <!-- Caracteristicas -->
+          <h5>Caracteristicas:</h5>
+          <div class="table" id="results">
+            <div class='theader'>
+              <div class='table_header'>Genero</div>
+              <div class='table_header'>Marca</div>
+              <div class='table_header'>Material</div>
+            </div>
+            <div class='table_row'>
+              <div class='table_small'>
+                <div class='table_cell'>Genero</div>
+                <div class='table_cell'><%= product.genero %>.</div>
+              </div>
+              <div class='table_small'>
+                <div class='table_cell'>Marca</div>
+                <div class='table_cell'><%= product.marca %></div>
+              </div>
+              <div class='table_small'>
+                <div class='table_cell'>Material</div>
+                <div class='table_cell'><%= product.material %></div>
+              </div>
+            </div>
           </div>
-          <a href="/productCart" class="submit"
-            >Agregar al carrito <i class="fas fa-shopping-bag fa-eye"> </i
-          ></a>
+
+        <!-- Seleccionar Talle -->
+        <div class="w-100 ">
+                    
+          <h5>Seleccione el Talle:</h5>
+
+            <ul class="caja-talles">
+              <li class="div-talles">S
+                  <input type="radio" name="talle" id="s">
+              </li>
+              <li class="div-talles">M
+                  <input type="radio" name="talle" id="m">
+              </li>
+              <li class="div-talles">L
+                  <input type="radio" name="talle" id="l">
+              </li>
+              <li class="div-talles">XL
+                  <input type="radio" name="talle" id="xl">
+              </li>
+            </ul>
+
         </div>
-      </div>
+
+        <div class="w-100 ">
+          <h5>Cantidad:</h5>
+          <div class="contador">
+            
+            <div class="quantity caja-contador">
+              <a href="#" class="negpos">-</a>
+              <input type="number"  class="nume" value="1" size="4" placeholder="" inputmode="numeric" />
+              <a href="#" class="negpos">+</a>
+            </div>
+            <a href="/productCart" class="submit" >Agregar al carrito <i class="fas fa-shopping-bag fa-eye"> </i></a>
+          </div>
+        </div>
+
+      
+
     </section>
     
-   <!-- footer m -->
-	<footer>
-		<%- include("partials/footer") %>
-	</footer>
-	<!-- /Fin footer m -->
+  <!-- footer -->
+  <%- include("partials/footer") %>
 
-    <!-- Copyright -->
-    <div class="copyright">
-      <div class="u-section-row padding-tb">
-        Copyright 2022 - Todos los derechos reservados
-        <a>Grupo 1 Digital House</a>
-      </div>
-    </div>
   </body>
 </html>

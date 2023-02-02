@@ -64,69 +64,22 @@
 			</div>
 
 			<div class="productDetail">
-				<article class="productos">
-					<a href="/productDetail">
-						<img class="img-product" src="/images/Adidas Designed for training workout Product OS.jpg" alt="Imagen remera">
-						<div class="div-productos">
-							<h4 class="nombre">Remera Adidas Training</h4>
-							<p class="descuento"><s>$15999</s>  <strong>$11999</strong></p>
-							<a href="/productDetail" class="submit"><i class="fas fa-eye"> </i> Ver Producto</a>
-						</div>
-					</a>
-				</article>
-		
-				<article class="productos">
-					<a href="/productDetail">
-						<img class="img-product" src="/images/adidas SC.jpeg" alt="Imagen remera">
-						<div class="div-productos">
-							<h4 class="nombre">Remera Adidas</h4>
-							<p class="descuento"><s>$15999</s>  <strong>$11999</strong></p>
-							<a href="/productDetail" class="submit"><i class="fas fa-eye"> </i> Ver Producto</a>
-						</div>
-					</a>
-				</article>
-
-				<article class="productos">
-					<a href="/productDetail">
-						<img class="img-product" src="/images/Adidas Essentials OS.jpg" alt="Imagen remera">
-						<div class="div-productos">
-							<h4 class="nombre">Remera Adidas Essentials</h4>
-							<p class="descuento"><s>$15999</s>  <strong>$11999</strong></p>
-							<a href="/productDetail" class="submit"><i class="fas fa-eye"> </i> Ver Producto</a>
-						</div>
-					</a>
-				</article>
-
-				<article class="productos">
-					<a href="/productDetail">
-						<img class="img-product" src="/images/topper Mc Light SC.jpeg" alt="Imagen remera">
-						<div class="div-productos">
-							<h4 class="nombre">Remera Adidas Essentials</h4>
-							<p class="descuento"><s>$15999</s>  <strong>$11999</strong></p>
-							<a href="/productDetail" class="submit"><i class="fas fa-eye"> </i> Ver Producto</a>
-						</div>
-					</a>
-				</article>
+				<!-- HACER EL FOREACH -->
+				<% products.forEach(product =>  { %>
+					<%- include("partials/product-card",{ product })%> 
+				<% }) %>
+				
+			<!-- FIN DEL FOREACH -->
 			</div>
+
 		</section>
-	
-		
+
 	</main>	
 
 		
 
-	<!-- footer m -->
-	<footer>
-		<%- include("partials/footer") %>
-	</footer>
-	<!-- /Fin footer m -->
-
-	<!-- Copyright -->
-	<div class="copyright">
-		<div class="u-section-row padding-tb">
-			Copyright 2022 - Todos los derechos reservados <a>Grupo 1 Digital House</a>
-		</div>
-	</div>
+<!-- footer -->
+<%- include("partials/footer") %>
 
 </body>
 </html>

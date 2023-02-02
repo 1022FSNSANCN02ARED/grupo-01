@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('partialsDashboard/header') %>
+<head>
+    <%- include('partialsDashboard/head') %>
+</head>
+
+    <body class="dashboard">
+
+    <%- include('partialsDashboard/header') %>
 
     <!-- row section -->
     <div class=" u-section-row padding-tb">
@@ -10,73 +16,73 @@
             <!-- Body Dashboard -->
             <div class="das-body">
 
-                <form action="#" method="post" class="formulario bg-gris-claro">
+                <!-- Formulario Crear Producto -->
+                <form action="/dashboard" method="post" enctype="multipart/form-data" class="formulario bg-gris-claro">
 
-                    <label for="nombre">Nombre producto</label>
-                    <input type="text" name="nombre" id="nombre" class="border-box">
-                    <label for="desc">Descripción</label>
-                    <input type="textarea" name="desc" id="desc" class="border-box">
-                    <label for="cantidad">Cantidad</label>
-                    <input type="text" name="cantidad" id="cantidad" class="border-box">
-                    <label for="preciolista">Precio de lista</label>
-                    <input type="number" name="preciolista" id="preciolista" class="border-box">
+                  <div class="w-100">
+                    <label for="name" class="form-label">Nombre del producto:</label>
+                    <input type="text" id="name" name="name" placeholder="Nombre del Producto" class="w-100" />
+                  </div>
 
-                    <label for="preciopromo">Precio promoción</label>
-                    <input type="number" name="preciopromo" id="preciopromo" class="border-box">
-                    <label for="imagenDestacada">Imagen destacada</label>
-                    <input type="file" name="imagendestacada" accept=".jpg, .jpeg" class="border-box">
-                    <label>Galería</label>
-                    <input type="file" name="imagen1" accept=".jpg, .jpeg" class="border-box">
-                    <input type="file" name="imagen2" accept=".jpg, .jpeg" class="border-box">
-                    <input type="file" name="imagen3" accept=".jpg, .jpeg" class="border-box">
-                    <input type="file" name="imagen4" accept=".jpg, .jpeg" class="border-box">
-                    <label for="talles">Talles</label>
+                  <div class="w-100">
+                    <label for="description" class="form-label">Descripcion producto:</label>
+                    <textarea name="description" id="description" placeholder="Descripción" class="w-100" rows="8" cols="50" ></textarea>
+                  </div>
 
+                  <div class="w-100">
+                    <label for="category" class="form-label">Categoría:</label>
+                    <select name="category" id="category" class="form-input" >
+                      <option value="">Elegí</option>
+                      <option value="Oferta">OFERTA</option>
+                      <option value="Destacado">DESTACADO</option>
+                    </select>
+                  </div>
 
-                    <ul class="caja-talles">
-                        <li class="div-talles">S
-                            <input type="checkbox" name="S" id="s">
-                        </li>
-                        <li class="div-talles">M
-                            <input type="checkbox" name="m" id="m">
-
-                        </li>
-                        <li class="div-talles">L
-                            <input type="checkbox" name="l" id="l">
-
-                        </li>
-                        <li class="div-talles">XL
-                            <input type="checkbox" name="xl" id="xl">
-
-                        </li>
-                    </ul>
-                    </ul>
-
-                    <label for="colores">Colores</label>
-                    <ul class="caja-colores">
-
-                        <li class="bg-rojo div-colores">
-                            <input type="checkbox" name="rojo" id="rojo">
-                        </li>
-                        <li class="bg-amarillo div-colores">
-                            <input type="checkbox" name="amarillo" id="amarillo">
-
-                        </li>
-                        <li class="bg-negro div-colores">
-                            <input type="checkbox" name="negro" id="negro">
-
-                        </li>
-                        <li class="bg-blanco div-colores">
-                            <input type="checkbox" name="blanco" id="blanco">
-
-                        </li>
-                    </ul>
-
-                    <div class="botones">
-                        <button class="submit" type="submit"><a href="/">Guardar</a></button>
-                        <button class="rest" type="reset">Borrar</button>
+                  <div class="w-100 flex">
+                    <div class="r-33">
+                      <label for="genero" class="form-label">Genero:</label>
+                      <select name="genero" id="genero" class="form-input" >
+                        <option value="">Elegí</option>
+                        <option value="Niños">Niños</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Unisex">Unisex</option>
+                    </select>
                     </div>
+
+                    <div class="r-33">
+                      <label for="marca" class="form-label">Marca:</label>
+                      <input type="text" id="marca" name="marca" placeholder="Marca" class="w-100" />
+                    </div>
+
+                    <div class="r-33">
+                      <label for="material" class="form-label">Material:</label>
+                      <input type="text" id="material" name="material" placeholder="Material" class="w-100" />
+                    </div>
+                  </div>
+
+                  <div class="r-50">
+                    <label for="price" class="form-label">Precio:</label>
+                    <input type="text" id="price" name="price" placeholder="Precio" class="w-100" />
+                  </div>
+
+                  <div class="r-50">
+                    <label for="discount" class="form-label">Precio Rebajado:</label>
+                    <input type="text" id="discount" name="discount" placeholder="Descuento" class="w-100" />
+                  </div>
+    
+
+                  <label for="image">Imagen destacada</label>
+                  <input type="file" name="image" accept="image/png,image/jpeg" class="border-box">
+
+
+                  <div class="w-100 botones padding-tb">
+                    <button type="submit" class="submit">GUARDAR </i></button>
+                    <button type="reset" class="rest"><span class="far fa-trash-alt"> </span> Limpiar</button> 
+                  </div>
+
                 </form>
+                <!-- Fin Formulario Crear Producto -->
 
             </div>
             <!-- Fin Body Dashboard -->
@@ -84,5 +90,9 @@
     </div>
     <!-- Fin row section -->
 
-<!-- Copyright -->
-<%- include('partialsDashboard/footer') %>
+    <!-- Copyright -->
+    <%- include('partialsDashboard/footer') %>
+        
+    </body>
+
+</html>

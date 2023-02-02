@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('partialsDashboard/header') %>
+<head>
+    <%- include('partialsDashboard/head') %>
+</head>
 
+    <body class="dashboard">
+
+    <%- include('partialsDashboard/header') %>
 
     <!-- row section -->
     <div class="u-section-row padding-tb">
@@ -26,14 +31,17 @@
 
                                 <p class="descuento"><s><%= product.discount %></s> <strong>$<%= product.price %></strong></p>
 
-                                <form class="botones" action="" method="">
-                                    <a target="_blank" href="/dashboard/productDetail/<%= product.id %>" class="submit"><span class="fas fa-eye"></span></a>
+                                <div class="botones">
+                                    <a target="_blank" href="../<%= product.id %>/productDetail" class="submit"><span class="fas fa-eye"></span></a>
 
                                     <a href="<%= product.id %>/editProduct" class="submit"><span class="fas fa-pencil-alt"></span> </a>
+
+                                    <form class="botones" action="/dashboard/<%= product.id %>?_method=delete" method="POST">
+                                        <button type="submit" href="#" class="rest"><span class="far fa-trash-alt"></span></button> 
+                                    </form>
                                     
-                                    <button type="" href="#" class="rest"><span class="far fa-trash-alt"></span></button> 
-                                </form>
-                                    
+                                </div>
+
 
                             </div>     
                     </article>
@@ -49,3 +57,7 @@
 
     <!-- Copyright -->
     <%- include('partialsDashboard/footer') %>
+        
+    </body>
+
+</html>

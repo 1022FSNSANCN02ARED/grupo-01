@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include('partialsDashboard/header') %>
+<head>
+    <%- include('partialsDashboard/head') %>
+</head>
+
+    <body class="dashboard">
+
+    <%- include('partialsDashboard/header') %>
 
   <!-- row section -->
   <div class=" u-section-row padding-tb">
@@ -19,6 +25,9 @@
   </div>
   <!-- Fin row section -->
 
-<!-- Copyright -->
+    <!-- Copyright -->
+    <%- include('partialsDashboard/footer') %>
+        
+    </body>
 
-<%- include('partialsDashboard/footer') %>
+</html>

@@ -96,17 +96,5 @@
         "size": "21 al 26",
         "price": 13799,
         "discount": 10.999
-    },
-    {
-        "id": 1675368610993,
-        "name": "Zapatillas  Nike",
-        "description": "Cualquier cosa",
-        "category": "Oferta",
-        "genero": "Niños",
-        "marca": "Nike",
-        "material": "Lona",
-        "price": 1500,
-        "discount": 1400,
-        "image": "image-1675368610986.jpg"
     }
 ]

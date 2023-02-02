@@ -20,4 +20,28 @@ module.exports = {
     findById(id) {
         return this.findAll().find((p) => p.id == id);
     },
+    saveProductEdited(product) {
+
+        let products = this.findAll();
+        const productid = product.id;
+        for (let i = 0; i < products.length; i++) {
+            const element = products[i];
+
+
+            if (element.id == productid) {
+
+                products[i] = product;
+            }
+
+        }
+        const productsFileContent = JSON.stringify(products, null, 4);
+        fs.writeFileSync(productsFilePath, productsFileContent, "utf-8");
+    },
+    deleteProduct(id) {
+        let products = this.findAll();
+        products = products.filter((p) => p.id != id);
+        const productsFileContent = JSON.stringify(products, null, 4);
+        fs.writeFileSync(productsFilePath, productsFileContent, "utf-8");
+
+    },
 };

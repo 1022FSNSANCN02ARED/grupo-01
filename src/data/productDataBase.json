@@ -1,59 +1,27 @@
 [
     {
         "id": 1,
-        "name": "Remera Adidas Training",
-        "description": "",
-        "image": "product1.jpg",
-        "category": "Oferta",
-        "genero": "Hombre",
-        "marca": "Adidas",
-        "colors": "Negro",
-        "material": "Poliester",
-        "size": "S,M,L,XL",
-        "price": 22.999,
-        "discount": ""
+        "price": null,
+        "discount": null,
+        "image": "product1.jpg"
     },
     {
         "id": 2,
-        "name": "Remera Depertiva",
-        "description": "",
-        "image": "product2.jpeg",
-        "category": "Destacado",
-        "género": "Hombre",
-        "marca": "Adidas",
-        "colors": "",
-        "material": "Materiales reciclados",
-        "size": "",
-        "price": 22.999,
-        "discount": ""
+        "price": null,
+        "discount": null,
+        "image": "product2.jpeg"
     },
     {
         "id": 3,
-        "name": "Remera adidas Own The Run",
-        "description": "Corre fresca y sin molestias con la Remera adidas Own The Run. Esta prenda cuenta con tecnología Aeroready, que permite una fácil absorción de la humedad para que puedas sumar más y más kilómetros sintiéndote cómoda. Además, está elaborado en 100% poliéster reciclado para contribuir al cuidado del medio ambiente y cuenta con detalles reflectivos para tu seguridad.",
-        "image": "product3.jpg",
-        "category": "Oferta",
-        "genero": "Mujer",
-        "marca": "Adidas",
-        "colors": "",
-        "material": "Poliéster reciclado",
-        "size": "",
-        "price": 8.999,
-        "discount": ""
+        "price": null,
+        "discount": null,
+        "image": "product3.jpg"
     },
     {
         "id": 4,
-        "name": "Remera Nike Futura Kids",
-        "description": "",
-        "image": "product4.jpeg",
-        "category": "Destacado",
-        "genero": "Niños",
-        "marca": "Nike",
-        "colors": "Blanco",
-        "material": "Algodón",
-        "size": "",
-        "price": 7.125,
-        "discount": ""
+        "price": null,
+        "discount": null,
+        "image": "product4.jpeg"
     },
     {
         "id": 5,
@@ -71,17 +39,9 @@
     },
     {
         "id": 6,
-        "name": "Zapatillas Nike Revolution 6 Next Nature",
-        "description": "Suma más y más kilómetros con tus Zapatillas Nike Revolution 6 Next Nature, que aportan amortiguación y confort a cada paso que des. Su capellada transpirable y suela diseñada por computadora para una mejor tracción son ideales hasta para los corredores más exigentes.",
-        "image": "product6.jpeg",
-        "category": "Destacado",
-        "genero": "Hombre",
-        "marca": "Nike",
-        "colors": "",
-        "material": "Malla",
-        "size": "37,38,hasta 48.5",
-        "price": 26.199,
-        "discount": ""
+        "price": null,
+        "discount": null,
+        "image": "product6.jpeg"
     },
     {
         "id": 7,

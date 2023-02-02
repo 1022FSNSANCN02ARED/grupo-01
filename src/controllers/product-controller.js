@@ -58,14 +58,28 @@ const controller = {
 
   // Actualizar - Método para actualizar
   actualizar: (req, res) => {
-    const product = req.body;
-    res.send(product);
+    console.log(req.body)
+    const product = {
+      
+        id: Number(req.params.id),            
+        name: req.body.name,   
+        genero: req.body.genero,
+        marca: req.body.marca,
+        material: req.body.material,       
+        price: Number(req.body.price),
+        discount: Number(req.body.discount),
+        category: req.body.category,
+        description: req.body.description,
+        image: products.findById(req.params.id).image,
+    };
+    products.saveProductEdited(product);
+    res.redirect("/dashboard/product");
   },
-  
   // Eliminar: elimina un producto de la base de datos
   eliminar: (req, res) => {
-    res.send(`deleting ${req.params.id}`);
-},
+    products.deleteProduct(req.params.id);
+    res.redirect("/products");
+  },
 
 
 };

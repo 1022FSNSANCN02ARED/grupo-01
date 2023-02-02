@@ -1,41 +1,27 @@
 [
     {
-        "id": 1,
-        "price": null,
-        "discount": null,
-        "image": "product1.jpg"
-    },
-    {
-        "id": 2,
-        "price": null,
-        "discount": null,
-        "image": "product2.jpeg"
-    },
-    {
-        "id": 3,
-        "price": null,
-        "discount": null,
-        "image": "product3.jpg"
-    },
-    {
         "id": 4,
-        "price": null,
-        "discount": null,
-        "image": "product4.jpeg"
+        "name": "Remera 9",
+        "genero": "",
+        "marca": "",
+        "material": "",
+        "price": 15000,
+        "discount": 14500,
+        "category": "",
+        "description": "hshs",
+        "image": "default-image.png"
     },
     {
         "id": 5,
         "name": "Mochila Everlast Urbana",
-        "description": "La Mochila Everlast Urbana Con Llavero Ideal para la vida urbana, para ir a trabajar, a estudiar y salir de paseo. Está confeccionada en materiales de primera calidad, con costuras y cierres reforzados. El amplio compartimiento principal para que puedas guardar todo lo necesario para tus planes. El bolsillo al frente para que guardes tus accesorios y los tengas a mano.",
-        "image": "product5.jpeg",
-        "category": "Oferta",
         "genero": "Unisex",
         "marca": "Everlast",
-        "colors": "",
         "material": "Nylon",
-        "size": "Único",
         "price": 6.449,
-        "discount": ""
+        "discount": 0,
+        "category": "Oferta",
+        "description": "La Mochila Everlast Urbana Con Llavero Ideal para la vida urbana, para ir a trabajar, a estudiar y salir de paseo. Está confeccionada en materiales de primera calidad, con costuras y cierres reforzados. El amplio compartimiento principal para que puedas guardar todo lo necesario para tus planes. El bolsillo al frente para que guardes tus accesorios y los tengas a mano.",
+        "image": "product5.jpeg"
     },
     {
         "id": 6,

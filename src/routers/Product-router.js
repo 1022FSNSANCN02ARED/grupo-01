@@ -1,9 +1,8 @@
 const path = require("path");
 
-const { Router } = require("express")
+const { Router , urlencoded} = require("express")
 
 const router = Router();
-
 const productController = require("../controllers/product-controller");
 
 /*** Se requiere Multer ***/
@@ -28,14 +27,11 @@ router.get("/product", productController.productosadmin);
 /*** Crear un PRODUCTO ***/
 router.get("/newproduct", productController.newproduct);
 router.post("/", upload.single("image"), productController.addProduct);
-function prueba (req,res,next){
-    console.log("Hola");
-    next()
-}
+
 /*** Editar un PRODUCTO ***/
-router.get("/:id/editProduct", prueba,productController.editarproducto);
+router.get("/:id/editProduct",urlencoded(),productController.editarproducto);
  
-router.put("/:id",productController.actualizar);
+router.put("/:id",urlencoded(),upload.single("image"),productController.actualizar);
 
 /*** Elimina un PRODUCTO***/
 router.delete("/:id", productController.eliminar);

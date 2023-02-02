@@ -70,7 +70,11 @@ const controller = {
         discount: Number(req.body.discount),
         category: req.body.category,
         description: req.body.description,
-        image: products.findById(req.params.id).image,
+       /*  image: products.findById(req.params.id).image, */
+
+        image: req.file ? req.file.filename : "default-image.png",
+
+
     };
     products.saveProductEdited(product);
     res.redirect("/dashboard/product");

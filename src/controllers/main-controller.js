@@ -2,14 +2,24 @@ const products = require("../data/product");
 
 module.exports = {
     // Pagina de Inicio
+    store: (req, res) => {
+      
+     
+      res.render("store", { products: products.findAll() });
+      
+    },
     home: (req, res) => {
-      res.render("index", { products: products.findAll() });
+      const productsList= products.findAll();
+      const productSale=productsList.filter((p) => p.category =="Oferta");
+      
+      const productFeatured=productsList.filter((p) => p.category =="Destacado");
+      res.render("index", { productSale, productFeatured });
     },
 
     // Pagina del Carrito
     carrito: (req, res) => {
         res.render("productCart", {
-          product,
+          
         });
       },
     

@@ -29,9 +29,9 @@ router.get("/newproduct", productController.newproduct);
 router.post("/", upload.single("image"), productController.addProduct);
 
 /*** Editar un PRODUCTO ***/
-router.get("/:id/editProduct",urlencoded(),productController.editarproducto);
+router.get("/:id/editProduct",productController.editarproducto);
  
-router.put("/:id",urlencoded(),upload.single("image"),productController.actualizar);
+router.put("/:id",upload.single("image"),productController.actualizar);
 
 /*** Elimina un PRODUCTO***/
 router.delete("/:id", productController.eliminar);

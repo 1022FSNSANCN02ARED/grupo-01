@@ -1,46 +1,50 @@
 [
     {
-        "id": 4,
-        "name": "Remera 9",
-        "genero": "",
-        "marca": "",
-        "material": "",
-        "price": 15000,
-        "discount": 14500,
-        "category": "",
-        "description": "hshs",
-        "image": "default-image.png"
-    },
-    {
-        "id": 5,
-        "name": "Mochila Everlast Urbana",
-        "genero": "Unisex",
-        "marca": "Everlast",
-        "material": "Nylon",
-        "price": 6.449,
-        "discount": 0,
-        "category": "Oferta",
-        "description": "La Mochila Everlast Urbana Con Llavero Ideal para la vida urbana, para ir a trabajar, a estudiar y salir de paseo. Está confeccionada en materiales de primera calidad, con costuras y cierres reforzados. El amplio compartimiento principal para que puedas guardar todo lo necesario para tus planes. El bolsillo al frente para que guardes tus accesorios y los tengas a mano.",
-        "image": "product5.jpeg"
-    },
-    {
-        "id": 6,
-        "price": null,
-        "discount": null,
-        "image": "product6.jpeg"
-    },
-    {
         "id": 7,
         "name": "Zapatillas Puma Smash V2 L V Infantil",
-        "description": " Las Zapatillas Puma Smash V2 L V Infantil son una opción cómoda y moderna para los pies de tu bebé. Su capellada en materiales sintéticos es resistente y el ajuste de velcro brinda estabilidad a sus pisadas, para que puedan dar sus primeros pasos con la mayor seguridad y estilo posibles.",
-        "image": "product7.jpg",
-        "category": "Oferta",
         "genero": "Unisex",
         "marca": "Puma",
-        "colors": "",
         "material": " Sintético",
-        "size": "21 al 26",
-        "price": 13799,
-        "discount": 10.999
+        "price": 20000,
+        "discount": 10.999,
+        "category": "Oferta",
+        "description": " Las Zapatillas Puma Smash V2 L V Infantil son una opción cómoda y moderna para los pies de tu bebé. Su capellada en materiales sintéticos es resistente y el ajuste de velcro brinda estabilidad a sus pisadas, para que puedan dar sus primeros pasos con la mayor seguridad y estilo posibles.",
+        "image": "image-1675460583396.jpg"
+    },
+    {
+        "id": 1675460154429,
+        "name": "Remera 10",
+        "description": "Remera blanca",
+        "category": "Oferta",
+        "genero": "Hombre",
+        "marca": "Adidas",
+        "material": "",
+        "price": 20000,
+        "discount": 15000,
+        "image": "image-1675460154423.jpg"
+    },
+    {
+        "id": 1675460544900,
+        "name": "Pantalón",
+        "description": "Pantalón",
+        "category": "Destacado",
+        "genero": "Mujer",
+        "marca": "Adidas",
+        "material": "Fibra",
+        "price": 17500,
+        "discount": 15000,
+        "image": "image-1675460544893.jpg"
+    },
+    {
+        "id": 1675461831554,
+        "name": "Remera",
+        "description": "Remera",
+        "category": "Destacado",
+        "genero": "Mujer",
+        "marca": "Humbro",
+        "material": "Poliéster",
+        "price": 18000,
+        "discount": 17000,
+        "image": "image-1675461831545.jpeg"
     }
 ]

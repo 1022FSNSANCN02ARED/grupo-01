@@ -58,7 +58,10 @@ const controller = {
 
   // Actualizar - Método para actualizar
   actualizar: (req, res) => {
-    console.log(req.body)
+    
+    
+    const productoriginal = products.findById(req.params.id);
+
     const product = {
       
         id: Number(req.params.id),            
@@ -72,7 +75,7 @@ const controller = {
         description: req.body.description,
        /*  image: products.findById(req.params.id).image, */
 
-        image: req.file ? req.file.filename : "default-image.png",
+        image: req.file ? req.file.filename : productoriginal.image,
 
 
     };
@@ -82,7 +85,7 @@ const controller = {
   // Eliminar: elimina un producto de la base de datos
   eliminar: (req, res) => {
     products.deleteProduct(req.params.id);
-    res.redirect("/products");
+    res.redirect("/dashboard/product");
   },
 
 

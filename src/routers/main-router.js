@@ -6,6 +6,7 @@ const mainController = require("../controllers/main-controller");
 const router = Router();
 
 router.get("/", mainController.home);
+router.get("/store", mainController.store);
 
 router.get("/productCart", mainController.carrito);
 

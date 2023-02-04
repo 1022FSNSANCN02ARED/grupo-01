@@ -26,12 +26,12 @@ router.get("/product", productController.productosadmin);
 
 /*** Crear un PRODUCTO ***/
 router.get("/newproduct", productController.newproduct);
-router.post("/", upload.single("image"), productController.addProduct);
+router.post("/", upload.array("images",5), productController.addProduct);
 
 /*** Editar un PRODUCTO ***/
 router.get("/:id/editProduct",productController.editarproducto);
  
-router.put("/:id",upload.single("image"),productController.actualizar);
+router.put("/:id",upload.array("images",5),productController.actualizar);
 
 /*** Elimina un PRODUCTO***/
 router.delete("/:id", productController.eliminar);

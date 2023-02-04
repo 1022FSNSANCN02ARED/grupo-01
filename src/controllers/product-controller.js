@@ -35,8 +35,13 @@ const controller = {
         material: req.body.material,
         price: Number(req.body.price),
         discount: Number(req.body.discount),
-        image: req.file ? req.file.filename : "default-image.png",
+        image: req.files[0] ? req.files[0].originalname : "default-image.png",
+        image1: req.files[1] ? req.files[1].originalname : "default-image.png",
+        image2: req.files[2] ? req.files[2].originalname : "default-image.png",
+        image3: req.files[3] ? req.files[3].originalname : "default-image.png",
+        image4: req.files[4] ? req.files[4].originalname : "default-image.png",
     };
+    
 
     // res.send(product);
     products.saveProduct(product);
@@ -73,9 +78,11 @@ const controller = {
         discount: Number(req.body.discount),
         category: req.body.category,
         description: req.body.description,
-       /*  image: products.findById(req.params.id).image, */
-
-        image: req.file ? req.file.filename : productoriginal.image,
+        image: req.files[0] ? req.files[0].originalname : productoriginal.image,
+        image1: req.files[1] ? req.files[1].originalname : productoriginal.image1,
+        image2: req.files[2] ? req.files[2].originalname : productoriginal.image2,
+        image3: req.files[3] ? req.files[3].originalname : productoriginal.image3,
+        image4: req.files[4] ? req.files[4].originalname : productoriginal.image4,
 
 
     };

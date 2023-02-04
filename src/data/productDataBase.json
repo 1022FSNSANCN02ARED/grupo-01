@@ -1,50 +1,50 @@
 [
     {
-        "id": 7,
-        "name": "Zapatillas Puma Smash V2 L V Infantil",
-        "genero": "Unisex",
-        "marca": "Puma",
-        "material": " Sintético",
-        "price": 20000,
-        "discount": 10.999,
-        "category": "Oferta",
-        "description": " Las Zapatillas Puma Smash V2 L V Infantil son una opción cómoda y moderna para los pies de tu bebé. Su capellada en materiales sintéticos es resistente y el ajuste de velcro brinda estabilidad a sus pisadas, para que puedan dar sus primeros pasos con la mayor seguridad y estilo posibles.",
-        "image": "image-1675460583396.jpg"
-    },
-    {
         "id": 1675460154429,
         "name": "Remera 10",
-        "description": "Remera blanca",
-        "category": "Oferta",
         "genero": "Hombre",
         "marca": "Adidas",
         "material": "",
         "price": 20000,
         "discount": 15000,
-        "image": "image-1675460154423.jpg"
+        "category": "Oferta",
+        "description": "Remera blanca",
+        "image": "image-1675381490002.jpg",
+        "image1": "image-1675458715777.jpg",
+        "image2": "image-1675459176425.jpg",
+        "image3": "image-1675459480890.jpg",
+        "image4": "image-1675459538390.jpg"
     },
     {
         "id": 1675460544900,
         "name": "Pantalón",
-        "description": "Pantalón",
-        "category": "Destacado",
         "genero": "Mujer",
         "marca": "Adidas",
         "material": "Fibra",
         "price": 17500,
         "discount": 15000,
-        "image": "image-1675460544893.jpg"
+        "category": "Destacado",
+        "description": "Pantalón",
+        "image": "image-1675459026365.jpg",
+        "image1": "image-1675459115172.jpg",
+        "image2": "image-1675459176425.jpg",
+        "image3": "image-1675459480890.jpg",
+        "image4": "image-1675459538390.jpg"
     },
     {
         "id": 1675461831554,
         "name": "Remera",
-        "description": "Remera",
-        "category": "Destacado",
         "genero": "Mujer",
         "marca": "Humbro",
         "material": "Poliéster",
         "price": 18000,
         "discount": 17000,
-        "image": "image-1675461831545.jpeg"
+        "category": "Destacado",
+        "description": "Remera",
+        "image": "image-1675458902811.jpeg",
+        "image1": "image-1675512328801.jpeg",
+        "image2": "image-1675512328810.jpeg",
+        "image3": "image-1675512328819.jpeg",
+        "image4": "product5.jpeg"
     }
 ]

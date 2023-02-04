@@ -23,8 +23,10 @@
                     <!-- HACER EL FOREACH -->
                     <% products.forEach(product => { %>
                         <article class="productos">
-                            <img class="img-product" src="/images/product/<%= product.image %>"
-                                alt="Imagen remera">
+                            <div class="efect">
+                                <img class="img-product efect-img1" src="/images/product/<%= product.image %>" alt="Imagen remera">
+                                <img class="img-product efect-img2" src="/images/product/<%= product.image1 %>" alt="Imagen remera">
+                                </div>
                             <div class="div-productos">
 
                                 <h4 class="nombre"><%= product.name %></h4>

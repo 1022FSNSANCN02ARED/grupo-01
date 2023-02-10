@@ -1,5 +1,7 @@
 const products = require("../data/product");
 
+
+
 const controller = {
 
   // Controladores para el DASHBOARD

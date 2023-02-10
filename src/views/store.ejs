@@ -56,36 +56,19 @@
 		<section class="ofertas">
 
 			<div class="container-ofertas">
-				<h2>OFERTAS</h2>
+				<h2>ENCONTRA LO QUE NECESITAS</h2>
 			</div>
 
 			<div class="productDetail">
 				<!-- HACER EL FOREACH -->
-				<% productSale.forEach(product =>  { %>
-					<%- include("partials/product-card",{ product:product })%> 
+				<% products.forEach(product =>  { %>
+					<%- include("partials/product-card",{ product })%> 
 				<% }) %>
 				
 			<!-- FIN DEL FOREACH -->
 			</div>
 
 		</section>
-		<section class="ofertas">
-
-			<div class="container-ofertas">
-				<h2>PRODUCTOS DESTACADOS</h2>
-			</div>
-
-			<div class="productDetail">
-				<!-- HACER EL FOREACH -->
-				<% productFeatured.forEach(product =>  { %>
-					<%- include("partials/product-card",{ product:product })%> 
-				<% }) %>
-				
-			<!-- FIN DEL FOREACH -->
-			</div>
-
-		</section>
-
 
 	</main>	
 

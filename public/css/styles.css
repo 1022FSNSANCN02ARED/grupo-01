@@ -364,6 +364,22 @@
 	.productos:hover {
 		box-shadow: 0px 0px 10px rgb(100, 100, 100);
 	}
+	.efect-img1 {
+		transition: all ;
+	}
+
+	.efect:hover .efect-img1 {
+		display: none;
+	}
+
+	.efect-img2 {
+		display: none;
+		transition: all ;
+	}
+
+	.efect:hover .efect-img2 {
+		display: block;
+	}
 
 	.img-product {
 		width: 100%;

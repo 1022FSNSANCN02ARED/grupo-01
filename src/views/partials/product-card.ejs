@@ -1,10 +1,13 @@
 <article class="productos">
-    <a href="/productDetail">
-        <img class="img-product" src="/images/product/<%= product.image %>" alt="Imagen remera">
+    <a href="/<%= product.id %> /productDetail">
+        <div class="efect">
+            <img class="img-product efect-img1" src="/images/product/<%= product.image %>" alt="Imagen remera">
+            <img class="img-product efect-img2" src="/images/product/<%= product.image1 %>" alt="Imagen remera">
+            </div>
         <div class="div-productos">
             <h4 class="nombre"><%= product.name %></h4>
-            <p class="descuento"><s><%= product.discount %></s>  <strong>$<%= product.price %></strong></p>
-            <a href="/productDetail" class="submit"><i class="fas fa-eye"> </i> Ver Producto</a>
+            <p class="descuento"><s><%= product.price %></s>  <strong>$<%= product.discount %></strong></p>
+            <a href="/<%= product.id %> /productDetail" class="submit"><i class="fas fa-eye"> </i> Ver Producto</a>
         </div>
     </a>
 </article>

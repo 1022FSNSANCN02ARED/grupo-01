@@ -4,11 +4,11 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const methodOverride = require("method-override");
 
-const mainRouter = require("./routers/main-router");
+
 
 const app = express();
 
-app.use(mainRouter);
+
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: false }));
@@ -20,7 +20,11 @@ app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 
-  
+
+const mainRouter = require("./routers/main-router");
+app.use(mainRouter); 
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Se prendió en el puerto ${PORT}`);

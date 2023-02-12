@@ -1,21 +1,34 @@
 const users = require("../data/users");
-const { validationResult }=require("express-validator");
+const bscryptjs=require("bcryptjs");
+
 
 const userControllers={
     proccesRegister:(req,res)=>{
-        const resultvalidations= validationResult(req);
-        const oldValues=req.body;
-        if (resultvalidations.errors.length>0) {
-            return  res.render("login",{
-                errors:resultvalidations.mapped(),
-                oldValues:oldValues,
-            });   
-        }else{
+
+        const user = {
+            id: Date.now(),
+            nombre:req.body.nombre,
+            apellido:req.body.apellido,
+            dni:Number(req.body.dni),
+            email:req.body.email,
+            usuario:req.body.usuario,
+            fechanacimiento: req.body.fechanacimiento,
+            domicilio:req.body.domicilio,
+            password:bscryptjs.hashSync(req.body.password,10),
+            
+            
+           /*  image: req.files[0] ? req.files[0].originalname : "default-image.png", */
+           
+        };
+        
+    
+        // res.send(product);
+        users.saveUser(user);
+        
+
             res.redirect("/")
         }
-   
-
-    }
+    
 };
  
 module.exports=userControllers;

@@ -17,8 +17,10 @@ router.get("/:id/productDetail", mainController.detailproduct);
 
 
 const productsRouter = require("./Product-router");
+const userRouter = require("./user-router");
 
 router.use("/dashboard", productsRouter);
+router.use("/user", userRouter);
 
 
 module.exports = router;  

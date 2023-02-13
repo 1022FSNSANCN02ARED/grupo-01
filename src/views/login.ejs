@@ -16,17 +16,24 @@
 
                 <div class="tabset">
                     <!-- Tab 1 Inicio de Sesion-->
-                    <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+                    <input type="radio" name="tabset" id="tab1" aria-controls="marzen" 
+                    <%= console.log(registro) %>
+                    <% if (registro==0) { %>
+                     checked
+                    <% } %> >
                     <label for="tab1">Iniciar Sesion</label>
                     <!-- Tab 2 Registro-->
-                    <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+                    <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier"
+                    <% if (registro==1) { %>
+                        checked
+                       <% } %>>
                     <label for="tab2">Registrarse</label>
 
                     <div class="tab-panels">
                         <section id="marzen" class="tab-panel">
                             <h2 class="reg-login">Iniciar Sesion</h2>
 
-                            <form action="#" method="post" class="formulario">
+                            <form action="/user/login" method="post" class="formulario">
 
                                 <label for="ususario">Usuario</label>
                                 <input type="text" name="usuario" id="usuario" class="border-box">
@@ -35,7 +42,7 @@
                                 <input type="password" name="password" id="password" class="border-box">
 
                                 <div class="botones">
-                                    <button class="submit" type="submit"><a href="/">Iniciar Sesión</a></button>
+                                    <button class="submit" type="submit">Iniciar Sesión</button>
                                 </div>
                             </form>
 

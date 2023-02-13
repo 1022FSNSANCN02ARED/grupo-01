@@ -276,5 +276,27 @@
         "fechanacimiento": "1977-11-10",
         "domicilio": "pellegrini 1348",
         "password": "$2a$10$OAkBB9bMe6njzQVS6wkDtuQ5uw.YX1T9ekHkDsNNfQSioF.PSKYTy"
+    },
+    {
+        "id": 1676251488490,
+        "nombre": "Miguel Ángel",
+        "apellido": "Sánchez",
+        "dni": 26161953,
+        "email": "mangelsany7@gmail.com",
+        "usuario": "miguel",
+        "fechanacimiento": "1977-11-10",
+        "domicilio": "pellegrini 1348",
+        "password": "$2a$10$Zk0NiGPRZGH10DrIzHKQnOUD5LrfvFn48GRInIy1GThfr6.Hof6.i"
+    },
+    {
+        "id": 1676251626636,
+        "nombre": "000",
+        "apellido": "000",
+        "dni": 0,
+        "email": "000@000.com",
+        "usuario": "000",
+        "fechanacimiento": "0001-01-01",
+        "domicilio": "0000",
+        "password": "$2a$10$EmiaBRMgQ6U.mzEFA4vo2uOXso67YNXwshv09bTzJcgiDfJOo0Txi"
     }
 ]

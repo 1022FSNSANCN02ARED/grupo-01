@@ -25,8 +25,10 @@ module.exports = {
     
     // Pagina del Login
     login: (req, res) => {
+      let registro=0;
         res.render("login", {
           //paginalogin,
+          registro:registro,
         });
     },
     // Detalle de un producto en la pagina Frontal

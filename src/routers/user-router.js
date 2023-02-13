@@ -23,5 +23,7 @@ const upload = multer({
 /*** procesamiento registro de usuario nuevo***/
 router.post("/registroUsuario", upload.single("avatar"),validaciones,resultadoValidaciones,userController.proccesRegister);
 
+/*** procesamiento login de usuario***/
+/* router.post("/login",validaciones,resultadoValidaciones,userController.proccesLogin); */
 
 module.exports = router;

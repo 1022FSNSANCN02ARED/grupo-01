@@ -220,18 +220,6 @@
         "confirnarpassword": "CcINX6"
     },
     {
-        "id": 1676212774524,
-        "nombre": "Miguel Ángel",
-        "apellido": "Sánchez",
-        "dni": 26161953,
-        "email": "mangelsany6@gmail.com",
-        "usuario": "miguel",
-        "fechanacimiento": "1977-11-10",
-        "domicilio": "pellegrini 1348",
-        "password": "12345",
-        "confirmarpassword": "12345"
-    },
-    {
         "id": 1676214697954,
         "nombre": "Miguel Ángel",
         "apellido": "Sánchez",
@@ -242,61 +230,7 @@
         "domicilio": "pellegrini 1348",
         "password": "$2a$10$mE3LYpKFkqdX9g4vnjjk/uPm.02mf7bZ6OQ7CUw6AJG3Yi3KW6FL6",
         "confirmarpassword": "123"
-    },
-    {
-        "id": 1676215517639,
-        "nombre": "Miguel Ángel",
-        "apellido": "Sánchez",
-        "dni": 26512792,
-        "email": "mangelsany6@gmail.com",
-        "usuario": "miguel",
-        "fechanacimiento": "1977-11-10",
-        "domicilio": "pellegrini 1348",
-        "password": "$2a$10$Ua1dFkarcSalp/54DLapWOANlMRsVguJvpaUNojeQpwATju4IpHjW",
-        "confirmarpassword": "123"
-    },
-    {
-        "id": 1676215964697,
-        "nombre": "Miguel Ángel",
-        "apellido": "Sánchez",
-        "dni": 26161953,
-        "email": "mangelsany6@gmail.com",
-        "usuario": "miguel",
-        "fechanacimiento": "1977-11-10",
-        "domicilio": "pellegrini 1348",
-        "password": "$2a$10$k9.no3gaijRXGJz4fmIrs.ZqufQhIux9PGvDABA6K0FpiNWbeCI4y"
-    },
-    {
-        "id": 1676216493734,
-        "nombre": "Miguel Ángel",
-        "apellido": "Sánchez",
-        "dni": 26161953,
-        "email": "mangelsany67@gmail.com",
-        "usuario": "miguel",
-        "fechanacimiento": "1977-11-10",
-        "domicilio": "pellegrini 1348",
-        "password": "$2a$10$OAkBB9bMe6njzQVS6wkDtuQ5uw.YX1T9ekHkDsNNfQSioF.PSKYTy"
-    },
-    {
-        "id": 1676251488490,
-        "nombre": "Miguel Ángel",
-        "apellido": "Sánchez",
-        "dni": 26161953,
-        "email": "mangelsany7@gmail.com",
-        "usuario": "miguel",
-        "fechanacimiento": "1977-11-10",
-        "domicilio": "pellegrini 1348",
-        "password": "$2a$10$Zk0NiGPRZGH10DrIzHKQnOUD5LrfvFn48GRInIy1GThfr6.Hof6.i"
-    },
-    {
-        "id": 1676251626636,
-        "nombre": "000",
-        "apellido": "000",
-        "dni": 0,
-        "email": "000@000.com",
-        "usuario": "000",
-        "fechanacimiento": "0001-01-01",
-        "domicilio": "0000",
-        "password": "$2a$10$EmiaBRMgQ6U.mzEFA4vo2uOXso67YNXwshv09bTzJcgiDfJOo0Txi"
     }
+    
+    
 ]

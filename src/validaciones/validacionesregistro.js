@@ -22,10 +22,8 @@ body("confirmarpassword").notEmpty().withMessage("Debes completar este campo")
 .custom((value,{ req})=>{
     if(req.body.password!==req.body.confirmarpassword){
         throw new Error("La confirmación del password debe ser igual que el password");
-    }
-    
-        return true;
-
+    }    
+    return true;
 })
 ]
 

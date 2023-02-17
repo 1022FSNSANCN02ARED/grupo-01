@@ -17,7 +17,7 @@
                 <div class="tabset">
                     <!-- Tab 1 Inicio de Sesion-->
                     <input type="radio" name="tabset" id="tab1" aria-controls="marzen" 
-                    <%= console.log(registro) %>
+    
                     <% if (registro==0) { %>
                      checked
                     <% } %> >
@@ -35,12 +35,22 @@
 
                             <form action="/user/login" method="post" class="formulario">
 
-                                <label for="ususario">Usuario</label>
-                                <input type="text" name="usuario" id="usuario" class="border-box">
+                                <label for="email">Usuario</label>
+                                <input type="text" name="email" id="email" class="border-box"
+                                value="<%= locals.oldValues? locals.oldValues.email:null %>">
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="errorMsg">
+                                    <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
 
                                 <label for="password">Ingrese su password</label>
                                 <input type="password" name="password" id="password" class="border-box">
-
+                                <% if (locals.errors && errors.password) { %>
+                                    <p class="errorMsg">
+                                    <%= errors.password.msg %>
+                                    </p>
+                                 <% } %>
                                 <div class="botones">
                                     <button class="submit" type="submit">Iniciar Sesión</button>
                                 </div>

@@ -4,8 +4,11 @@ const path=require("path");
 
 const router = Router();
 const userController = require("../controllers/user-controller");
-const validaciones=require("../validaciones/validacionesregistro");
+const validacionesRegistro=require("../validaciones/validacionesregistro");
+const validacionesLogin=require("../validaciones/validacionesLogin");
 const resultadoValidaciones=require("../middlewares/resultadoValidaciones");
+const resultadoValidacionesLogin=require("../middlewares/resultadoValidacionesLogin");
+
 /* multer */
 const multer = require("multer");
 const storage = multer.diskStorage({
@@ -21,9 +24,9 @@ const upload = multer({
 
 
 /*** procesamiento registro de usuario nuevo***/
-router.post("/registroUsuario", upload.single("avatar"),validaciones,resultadoValidaciones,userController.proccesRegister);
+router.post("/registroUsuario", upload.single("avatar"),validacionesRegistro,resultadoValidaciones,userController.proccesRegister);
 
 /*** procesamiento login de usuario***/
-/* router.post("/login",validaciones,resultadoValidaciones,userController.proccesLogin); */
+router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,userController.proccesLogin); 
 
 module.exports = router;

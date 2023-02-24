@@ -6,6 +6,7 @@ const userControllers={
     
     /** Registro de usuario nuevo **/
     proccesRegister:(req,res)=>{
+        console.log(req.file)
         const user = {
             id: Date.now(),
             nombre:req.body.nombre,
@@ -16,7 +17,7 @@ const userControllers={
             fechanacimiento: req.body.fechanacimiento,
             domicilio:req.body.domicilio,
             password:bscryptjs.hashSync(req.body.password,10),     
-           /*  image: req.files[0] ? req.files[0].originalname : "default-image.png", */   
+            imagen:req.file ? req.file.filename : "default-image.png",    
         };
         users.saveUser(user);
             res.redirect("/")
@@ -25,18 +26,22 @@ const userControllers={
     /** Login de usuario **/
     proccesLogin:(req,res)=>{
              let registro=0;
-            if(!users.findByemail(req.body.email)){
-                console.log("hola")
+             const usuarioLogeado=users.findByemail(req.body.email)
+             /* Se verifica que el email ingresado exista en nuestra vase de datos */
+            if(!usuarioLogeado){
                 res.render("login",{errors:{
-                    email:{msg:"Credenciales inválidas"}},registro: registro})
-                
+                    email:{msg:"Credenciales inválidas"}},registro: registro})               
             }else{
-            if(!bscryptjs.compareSync(req.body.password,users.findByemail(req.body.email).password)){
+             /* Si el email existe se verifica el password */
+
+            if(!bscryptjs.compareSync(req.body.password,usuarioLogeado.password)){
                res.render("login",{errors:{
                     email:{msg:"Credenciales inválidas"}},registro: registro})
                 }
             }
-res.redirect("/");
+            delete usuarioLogeado.password;
+            req.session.usuarioLogeado=usuarioLogeado;
+            res.redirect("/");
     }, 
 
     

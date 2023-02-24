@@ -22,12 +22,7 @@ const controller = {
   
   // Añadir Nuevo Producto en el Escritorio
   addProduct: (req, res) => {
-    // [x] resolver los valores numéricos del producto
-    // [x] resolver un id para el producto nuevo
-    // [x] resolver la imagen del producto nuevo
-    // [x] persistir los datos de este nuevo producto
-
-    const product = {
+       const product = {
         id: Date.now(),
         name: req.body.name,
         description: req.body.description,
@@ -37,17 +32,16 @@ const controller = {
         material: req.body.material,
         price: Number(req.body.price),
         discount: Number(req.body.discount),
-        image: req.files[0] ? req.files[0].originalname : "default-image.png",
-        image1: req.files[1] ? req.files[1].originalname : "default-image.png",
-        image2: req.files[2] ? req.files[2].originalname : "default-image.png",
-        image3: req.files[3] ? req.files[3].originalname : "default-image.png",
-        image4: req.files[4] ? req.files[4].originalname : "default-image.png",
+        image: req.files[0] ? req.files[0].filename : "default-image.png",
+        image1: req.files[1] ? req.files[1].filename : "default-image.png",
+        image2: req.files[2] ? req.files[2].filename : "default-image.png",
+        image3: req.files[3] ? req.files[3].filename : "default-image.png",
+        image4: req.files[4] ? req.files[4].filename : "default-image.png",
     };
     
 
     // res.send(product);
     products.saveProduct(product);
-
     res.redirect("/dashboard/product");
   },
   
@@ -80,11 +74,11 @@ const controller = {
         discount: Number(req.body.discount),
         category: req.body.category,
         description: req.body.description,
-        image: req.files[0] ? req.files[0].originalname : productoriginal.image,
-        image1: req.files[1] ? req.files[1].originalname : productoriginal.image1,
-        image2: req.files[2] ? req.files[2].originalname : productoriginal.image2,
-        image3: req.files[3] ? req.files[3].originalname : productoriginal.image3,
-        image4: req.files[4] ? req.files[4].originalname : productoriginal.image4,
+        image: req.files[0] ? req.files[0].filename : productoriginal.image,
+        image1: req.files[1] ? req.files[1].filename : productoriginal.image1,
+        image2: req.files[2] ? req.files[2].filename : productoriginal.image2,
+        image3: req.files[3] ? req.files[3].filename : productoriginal.image3,
+        image4: req.files[4] ? req.files[4].filename : productoriginal.image4,
 
 
     };

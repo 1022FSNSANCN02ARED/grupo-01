@@ -62,7 +62,7 @@
                         <section id="rauchbier" class="tab-panel">
                             <h2 class="reg-login">Registrarse</h2>
                             <form action="/user/registroUsuario" method="post" enctype="multipart/form-data"
-                                  class="formulario bg-gris-claro">
+                                  class="formulario bg-gris-claro" >
 
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre" class="border-box is-invalid"
@@ -138,6 +138,9 @@
                                          <%= errors.confirmarpassword.msg %>
                                         </p>
                                     <% } %>
+                                    <label for="imagen">Seleccione una imagen</label>
+                                    <input type="file" name="imagen" accept="image/png,image/jpeg" class="border-box">
+
                                     <div class="botones">
                                             <button class="submit" type="submit">Registrarme</button>
                                             <button class="rest" type="reset">Borrar</button>

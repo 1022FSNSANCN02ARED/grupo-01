@@ -21,7 +21,7 @@ module.exports = {
     carrito: (req, res) => {
       const usuario=req.session.usuarioLogeado;
     
-        res.render("productCart", {
+      return  res.render("productCart", {
           usuario:usuario
         });
       },
@@ -29,17 +29,17 @@ module.exports = {
     // Pagina del Login
     login: (req, res) => {
       let registro=0;
-        res.render("login", {
-          //paginalogin,
+      return  res.render("login", {
           registro:registro,
         });
     },
+    
     // Detalle de un producto en la pagina Frontal
     detailproduct: (req, res) => {
       const product = products.findById(req.params.id);
       const usuario=req.session.usuarioLogeado;
 
-      res.render("productDetail", { product,usuario:usuario });
+    return  res.render("productDetail", { product,usuario:usuario });
     },
     
 }

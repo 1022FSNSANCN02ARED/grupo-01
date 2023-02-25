@@ -8,8 +8,7 @@
         "usuario": "Loy161",
         "fechanacimiento": "1907-03-12",
         "password": "H7i73dhSK3Qx",
-        
-        "credencial":"cliente"
+        "credencial": "cliente"
     },
     {
         "id": 2,
@@ -20,9 +19,7 @@
         "usuario": "Nanine369",
         "fechanacimiento": "1933-10-28",
         "password": "8etJm6ZTamh7",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 3,
@@ -33,9 +30,7 @@
         "usuario": "Lynnett642",
         "fechanacimiento": "1960-07-20",
         "password": "zMznXqalr9mH",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 4,
@@ -46,9 +41,7 @@
         "usuario": "Elias212",
         "fechanacimiento": "1926-05-27",
         "password": "ikcBwGyQk4VN",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 5,
@@ -59,9 +52,7 @@
         "usuario": "Jackelyn161",
         "fechanacimiento": "1983-11-28",
         "password": "59T8IleclN7y",
-       
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 6,
@@ -72,9 +63,7 @@
         "usuario": "Austin540",
         "fechanacimiento": "2012-04-12",
         "password": "gnoO2RADtI",
-       
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 7,
@@ -85,9 +74,7 @@
         "usuario": "Mina20",
         "fechanacimiento": "1974-05-02",
         "password": "mAMS8tU",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 8,
@@ -98,9 +85,7 @@
         "usuario": "Chrissie931",
         "fechanacimiento": "1909-02-01",
         "password": "86OJy8c3iL0b",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 9,
@@ -111,9 +96,7 @@
         "usuario": "Vonni688",
         "fechanacimiento": "2009-05-12",
         "password": "z7MXdqEUjG",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 10,
@@ -124,9 +107,7 @@
         "usuario": "Eleanor110",
         "fechanacimiento": "1927-10-08",
         "password": "CJ9zZ6KY",
-      
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 11,
@@ -137,9 +118,7 @@
         "usuario": "Lucy920",
         "fechanacimiento": "1998-08-08",
         "password": "KPm5OtIgn4M",
-      
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 12,
@@ -150,9 +129,7 @@
         "usuario": "Marthe542",
         "fechanacimiento": "1930-02-26",
         "password": "mQxtU9oJOdK",
-       
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 13,
@@ -163,9 +140,7 @@
         "usuario": "Freida46",
         "fechanacimiento": "1919-09-13",
         "password": "OtV48o3E",
-      
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 14,
@@ -176,9 +151,7 @@
         "usuario": "Nelia16",
         "fechanacimiento": "2013-06-27",
         "password": "5DQKeQvt6x",
-       
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 15,
@@ -189,9 +162,7 @@
         "usuario": "Melisandra885",
         "fechanacimiento": "1989-10-31",
         "password": "UttYcoPPKX",
-       
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 16,
@@ -202,9 +173,7 @@
         "usuario": "Randy631",
         "fechanacimiento": "1930-05-04",
         "password": "clWr3BnJa81l",
-       
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 17,
@@ -215,9 +184,7 @@
         "usuario": "Guillaume110",
         "fechanacimiento": "1977-08-04",
         "password": "hG7k6D",
-      
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 18,
@@ -228,9 +195,7 @@
         "usuario": "Leah154",
         "fechanacimiento": "1909-07-23",
         "password": "OG66WGaJP",
-     
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 19,
@@ -241,9 +206,7 @@
         "usuario": "Jimmy416",
         "fechanacimiento": "1917-02-01",
         "password": "J9IJyy1E",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 20,
@@ -254,9 +217,7 @@
         "usuario": "Gibb287",
         "fechanacimiento": "1963-01-14",
         "password": "CcINX6",
-        
-        "credencial":"cliente"
-
+        "credencial": "cliente"
     },
     {
         "id": 1676214697954,
@@ -269,7 +230,18 @@
         "domicilio": "pellegrini",
         "password": "$2a$10$mE3LYpKFkqdX9g4vnjjk/uPm.02mf7bZ6OQ7CUw6AJG3Yi3KW6FL6",
         "confirmarpassword": "123",
-        "credencial":"administrador"
-
+        "credencial": "administrador"
+    },
+    {
+        "id": 1677282613699,
+        "nombre": "maria",
+        "apellido": "porota",
+        "dni": 123456,
+        "email": "mariaport@gmail.com",
+        "usuario": "porota",
+        "fechanacimiento": "1900-01-01",
+        "domicilio": "123456",
+        "password": "$2a$10$g5uryYj0mBdHC4Cv4b7DfuDbZkZIcUnLyuCKZlerPiNS3lF9u4fSS",
+        "imagen": "default-image.png"
     }
 ]

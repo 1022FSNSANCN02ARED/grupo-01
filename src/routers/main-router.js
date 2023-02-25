@@ -1,16 +1,19 @@
 const { Router, urlencoded } = require("express")
 const mainController = require("../controllers/main-controller");
+const middlewareAdminLogeado=require("../middlewares/middlewareAdminLogeado");
+const middlewareusuarioNoLogeado=require("../middlewares/middlewareusuarioNoLogeado");
 
 
 
 const router = Router();
+
 
 router.get("/", mainController.home);
 router.get("/store", mainController.store);
 
 router.get("/productCart", mainController.carrito);
 
-router.get("/login", mainController.login);
+router.get("/login", middlewareusuarioNoLogeado,mainController.login);
 
 // Ver Producto en detalles en la Web
 router.get("/:id/productDetail", mainController.detailproduct);
@@ -19,8 +22,8 @@ router.get("/:id/productDetail", mainController.detailproduct);
 const productsRouter = require("./Product-router");
 const userRouter = require("./user-router");
 
-router.use("/dashboard", productsRouter);
-router.use("/user", userRouter);
+router.use("/dashboard",middlewareAdminLogeado,productsRouter);
+router.use("/user",userRouter);
 
 
 module.exports = router;  

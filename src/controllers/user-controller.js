@@ -20,16 +20,16 @@ const userControllers={
             imagen:req.file ? req.file.filename : "default-image.png",    
         };
         users.saveUser(user);
-            res.redirect("/")
+        return    res.redirect("/")
         },
 
     /** Login de usuario **/
     proccesLogin:(req,res)=>{
              let registro=0;
              const usuarioLogeado=users.findByemail(req.body.email)
-             /* Se verifica que el email ingresado exista en nuestra vase de datos */
+             /* Se verifica que el email ingresado exista en nuestra base de datos */
             if(!usuarioLogeado){
-                res.render("login",{errors:{
+               return res.render("login",{errors:{
                     email:{msg:"Credenciales inválidas"}},registro: registro})               
             }else{
              /* Si el email existe se verifica el password */
@@ -41,8 +41,15 @@ const userControllers={
             }
             delete usuarioLogeado.password;
             req.session.usuarioLogeado=usuarioLogeado;
-            res.redirect("/");
+            return res.redirect("/");
     }, 
+
+    /** Logout de usuario **/
+
+    logout:(req,res)=>{
+        req.session.destroy()
+     return res.redirect("/")
+    }
 
     
 };

@@ -1,38 +1,45 @@
 const products = require("../data/product");
 
+
 module.exports = {
     // Pagina de Inicio
     store: (req, res) => {
-      
-     
-      res.render("store", { products: products.findAll() });
-      
+      const usuario=req.session.usuarioLogeado;
+
+      res.render("store", { products: products.findAll(), usuario:usuario });
     },
+
     home: (req, res) => {
       const productsList= products.findAll();
-      const productSale=productsList.filter((p) => p.category =="Oferta");
-      
+      const productSale=productsList.filter((p) => p.category =="Oferta");  
       const productFeatured=productsList.filter((p) => p.category =="Destacado");
-      res.render("index", { productSale, productFeatured });
+      const usuario=req.session.usuarioLogeado;
+      res.render("index", { productSale, productFeatured, usuario:usuario });
     },
 
     // Pagina del Carrito
     carrito: (req, res) => {
-        res.render("productCart", {
-          
+      const usuario=req.session.usuarioLogeado;
+    
+      return  res.render("productCart", {
+          usuario:usuario
         });
       },
     
     // Pagina del Login
     login: (req, res) => {
-        res.render("login", {
-          //paginalogin,
+      let registro=0;
+      return  res.render("login", {
+          registro:registro,
         });
     },
+    
     // Detalle de un producto en la pagina Frontal
     detailproduct: (req, res) => {
       const product = products.findById(req.params.id);
-      res.render("productDetail", { product });
+      const usuario=req.session.usuarioLogeado;
+
+    return  res.render("productDetail", { product,usuario:usuario });
     },
     
 }

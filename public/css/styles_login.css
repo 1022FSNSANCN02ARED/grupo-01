@@ -76,6 +76,12 @@
   justify-content: space-around;
 }
 
+.errorMsg {
+  color: red;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
 .w-40 {
   width: 40%;
 }

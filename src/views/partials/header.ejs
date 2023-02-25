@@ -7,8 +7,26 @@
             <img src="/images/logo.png" class="u-logo-image" data-image-width="80">
         </a>
         <div class="r r-70 botones-header">
-            <a href="/login"><span class="fas fa-sign-in-alt"></span>&nbsp;Iniciar Sesion</a>
-            <a href="/productCart"><span class="fas fa-shopping-bag"></span>&nbsp;Carrito</a>
+            <% if (!locals.localusuarioLogeado) { %>
+                <a href="/login"><span class="fas fa-sign-in-alt"></span>&nbsp;Iniciar Sesion</a>
+                <% }else{ %>
+                    <!-- <a href="/editarUsuario"><span class="fas fa-sign-in-alt"></span>&nbsp;<%= usuario.nombre %></a> -->
+                    <div class="dropMenuContainer">
+                        <div class="dropMenu">
+                            <a href="">
+                                <%= usuario.nombre %>
+                                <i class="far fa-caret-square-down"></i>
+                            </a>
+                            <ul>
+                                <li><a href="/editarUsuario">Editar tus datos</a></li>
+                                <li><a href="/user/deslogear"></span>Deslogearte</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <%}%>
+
+                        <a href="/productCart"><span class="fas fa-shopping-bag"></span>&nbsp;Carrito</a>
         </div>
     </div>
     <!-- Fin row section -->
@@ -23,9 +41,12 @@
         </div>
         <nav class="menu r-70">
             <li><a href="/">Inicio</a></li>
-            <li><a href="/productDetail">Producto</a></li>
             <li><a href="/store">Tienda</a></li>
             <li><a href="#">Contacto</a></li>
+            <% if (locals.localAdminLogeado) { %>
+                <li><a href="/dashboard">Administrador</a></li>
+                <%}%>
+
         </nav>
         <!-- Buscador -->
         <div class="buscador r-30">
@@ -43,7 +64,7 @@
         <nav>
             <li><a href="/">Inicio</a></li>
             <li><a href="/productDetail">Producto</a></li>
-            <a href="#">Tienda</a>
+            <a href="/store">Tienda</a>
             <a href="#">Contacto</a>
             <a href="#">Politica de Privacidad</a>
             <a href="#">Terminos y Condiciones</a>

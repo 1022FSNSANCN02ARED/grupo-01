@@ -273,5 +273,21 @@
         "image2": "image-1675459538390.jpg",
         "image3": "image-1675459792194.jpg",
         "image4": "default-image.png"
+    },
+    {
+        "id": 1677352667139,
+        "name": "Remera",
+        "description": "Remera mangas cortas",
+        "category": "Oferta",
+        "genero": "Mujer",
+        "marca": "Humbro",
+        "material": "Poliéster",
+        "price": 20000,
+        "discount": 17000,
+        "image": "image-1677352667130.jpg",
+        "image1": "image-1677352667131.jpg",
+        "image2": "image-1677352667131.jpg",
+        "image3": "default-image.png",
+        "image4": "default-image.png"
     }
 ]

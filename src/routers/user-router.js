@@ -6,8 +6,14 @@ const router = Router();
 const userController = require("../controllers/user-controller");
 const validacionesRegistro=require("../validaciones/validacionesregistro");
 const validacionesLogin=require("../validaciones/validacionesLogin");
+const validacionesEditUsuario=require("../validaciones/validacionesEditUsuario");
 const resultadoValidaciones=require("../middlewares/resultadoValidaciones");
 const resultadoValidacionesLogin=require("../middlewares/resultadoValidacionesLogin");
+const resultadoValidacionesEdit=require("../middlewares/resultadoValidacionesEdit");
+const middlewareAdminLogeado=require("../middlewares/middlewareAdminLogeado");
+const middlewareusuarioNoLogeado=require("../middlewares/middlewareusuarioNoLogeado");
+const middlewareusuarioLogeado=require("../middlewares/middlewareusuarioLogeado");
+
 
 
 /* multer */
@@ -28,7 +34,13 @@ const upload = multer({
 router.post("/registroUsuario",upload.single("imagen"),validacionesRegistro,resultadoValidaciones,userController.proccesRegister);
 
 /*** procesamiento login de usuario***/
-router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,userController.proccesLogin); 
+router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,userController.proccesLogin);
+
+/*** procesamiento logout de usuario***/
 router.get("/deslogear",userController.logout)
+
+/*** Edición del perfil del usuario***/
+router.get("/editarUsuario",upload.single("imagen"),middlewareusuarioLogeado,userController.editarUsuario);
+router.put("/guardarUsuario",upload.single("imagen"),middlewareusuarioLogeado,validacionesEditUsuario,resultadoValidacionesEdit,userController.procceseditarUsuario);
 
 module.exports = router;

@@ -2,11 +2,11 @@ const users = require("../data/users");
 const bscryptjs=require("bcryptjs");
 
 
+
 const userControllers={
     
     /** Registro de usuario nuevo **/
     proccesRegister:(req,res)=>{
-        console.log(req.file)
         const user = {
             id: Date.now(),
             nombre:req.body.nombre,
@@ -17,10 +17,12 @@ const userControllers={
             fechanacimiento: req.body.fechanacimiento,
             domicilio:req.body.domicilio,
             password:bscryptjs.hashSync(req.body.password,10),     
-            imagen:req.file ? req.file.filename : "default-image.png",    
+            imagen:req.file ? req.file.filename : "default-image.png", 
+            credencial: "cliente"
+
         };
         users.saveUser(user);
-        return    res.redirect("/")
+        res.redirect("/")
         },
 
     /** Login de usuario **/
@@ -29,7 +31,7 @@ const userControllers={
              const usuarioLogeado=users.findByemail(req.body.email)
              /* Se verifica que el email ingresado exista en nuestra base de datos */
             if(!usuarioLogeado){
-               return res.render("login",{errors:{
+               res.render("login",{errors:{
                     email:{msg:"Credenciales inválidas"}},registro: registro})               
             }else{
              /* Si el email existe se verifica el password */
@@ -41,17 +43,47 @@ const userControllers={
             }
             delete usuarioLogeado.password;
             req.session.usuarioLogeado=usuarioLogeado;
-            return res.redirect("/");
+            res.redirect("/");
     }, 
 
     /** Logout de usuario **/
 
     logout:(req,res)=>{
         req.session.destroy()
-     return res.redirect("/")
-    }
+        res.redirect("/")
+    },
 
-    
+    /**Edición del perfil del usuario **/
+
+    editarUsuario:(req,res)=>{
+    //obtener datos de usuario logeado
+    //enviar datos del usuariologeado a la vista
+    const oldValues=req.session.usuarioLogeado;
+    res.render("editarUsuario",{oldValues:oldValues,usuario:oldValues})
+    },
+
+    /**Proceso de edición del perfil del usuario **/
+
+    procceseditarUsuario:(req,res)=>{
+    //Obtener los datos del formulario y adecuarlos    
+        const user = {
+            id: req.session.usuarioLogeado.id,
+            nombre:req.body.nombre,
+            apellido:req.body.apellido,
+            dni:Number(req.body.dni),
+            email:req.body.email,
+            usuario:req.body.usuario,
+            fechanacimiento: req.body.fechanacimiento,
+            domicilio:req.body.domicilio,             
+            imagen:req.file ? req.file.filename : "default-image.png", 
+        };
+        users.saveUserEdited(user);
+    //Se actualizan los datos de req.session 
+    req.session.usuarioLogeado=user;
+    //Después de guardar los datos, retorna a la misma vista.
+    const oldValues=req.session.usuarioLogeado;
+    res.render("editarUsuario",{oldValues:oldValues,usuario:oldValues})      
+    }   
 };
  
 module.exports=userControllers;

@@ -221,15 +221,15 @@
     },
     {
         "id": 1676214697954,
-        "nombre": "Miguel Ángel",
+        "nombre": "Miguel",
         "apellido": "Sánchez",
         "dni": 1234567,
         "email": "mangelsany6@gmail.com",
         "usuario": "miguel",
         "fechanacimiento": "1977-11-10",
-        "domicilio": "pellegrini",
+        "domicilio": "pellegrini 123",
+        "imagen": "default-image.png",
         "password": "$2a$10$mE3LYpKFkqdX9g4vnjjk/uPm.02mf7bZ6OQ7CUw6AJG3Yi3KW6FL6",
-        "confirmarpassword": "123",
         "credencial": "administrador"
     },
     {
@@ -242,6 +242,20 @@
         "fechanacimiento": "1900-01-01",
         "domicilio": "123456",
         "password": "$2a$10$g5uryYj0mBdHC4Cv4b7DfuDbZkZIcUnLyuCKZlerPiNS3lF9u4fSS",
-        "imagen": "default-image.png"
+        "imagen": "default-image.png",
+        "credencial": "cliente"
+    },
+    {
+        "id": 1677789694878,
+        "nombre": "Administrador",
+        "apellido": "Administrador",
+        "dni": 12345678,
+        "email": "administrador@admin.com",
+        "usuario": "admin",
+        "fechanacimiento": "2000-01-01",
+        "domicilio": "123456",
+        "password": "$2a$10$d7yy0kt3utNi0KgI6MLlK.8a/NuRLFhPOIaweZZByI4vQGaZeYMwq",
+        "imagen": "image-1677789694856.jpeg",
+        "credencial": "administrador"
     }
 ]

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partialsDashboard/head') %>
+</head>
+
+    <body class="dashboard">
+
+    <%- include('partialsDashboard/header') %>
+
+    <!-- row section -->
+    <main class="u-section-row padding-tb">
+      <section class="main_login">
+
+
+          <div class="tabset">
+              <!-- Tab 1 Inicio de Sesion-->
+              <input type="radio" name="tabset" id="tab1" aria-controls="marzen" 
+
+              <% if (registro==0) { %>
+               checked
+              <% } %> >
+              <label for="tab1">Buscar usuario</label>
+              <!-- Tab 2 Registro-->
+              <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier"
+              <% if (registro==1) { %>
+                  checked
+                 <% } %>>
+              <label for="tab2">Crear usuario</label>
+
+              <div class="tab-panels">
+                  <section id="marzen" class="tab-panel">
+                      <h2 class="reg-login">Buscar usuario</h2>
+
+                      <form action="/user/userToEdit" method="post" class="formulario">
+
+                          <label for="email">Ingrese email de usuario</label>
+                          <input type="text" name="email" id="email" class="border-box"
+                          value="<%= locals.oldValues? locals.oldValues.email:null %>">
+                          <% if (locals.errors && errors.email) { %>
+                              <p class="errorMsg">
+                              <%= errors.email.msg %>
+                              </p>
+                              <% } %>
+
+                         
+                          <div class="botones">
+                              <button class="submit" type="submit">Buscar usuario</button>
+                          </div>
+                      </form>
+
+                  </section>
+
+
+                  <section id="rauchbier" class="tab-panel">
+                      <h2 class="reg-login">Crear usuario</h2>
+                      <form action="/user/userToEdit" method="post" enctype="multipart/form-data"
+                            class="formulario bg-gris-claro" >
+
+                          <label for="nombre">Nombre</label>
+                          <input type="text" name="nombre" id="nombre" class="border-box is-invalid"
+                                 value="<%= locals.oldValues? locals.oldValues.nombre:null %>">
+
+                          <% if (locals.errors && errors.nombre) { %>
+                              <p class="errorMsg">
+                              <%= errors.nombre.msg %>
+                              </p>
+                          <% } %>
+                          <label for="apellido">Apellido</label>
+                          <input type="text" name="apellido" id="apellido" class="border-box"
+                                 value="<%= locals.oldValues? locals.oldValues.apellido:null %>">
+                          <% if (locals.errors && errors.apellido) { %>
+                              <p class="errorMsg">
+                              <%= errors.apellido.msg %>
+                              </p>
+                          <% } %>
+                          <label for="dni">DNI</label>
+                          <input type="text" name="dni" id="dni" class="border-box"
+                                 value="<%= locals.oldValues? locals.oldValues.dni:null %>">
+                          <% if (locals.errors && errors.dni) { %>
+                              <p class="errorMsg">
+                                  <%= errors.dni.msg %>
+                              </p>
+                          <% } %>
+                          <label for="email">Correo electrónico</label>
+                          <input type="text" name="email" id="email" class="border-box"
+                                 value="<%= locals.oldValues? locals.oldValues.email:null %>">
+                           <% if (locals.errors && errors.email) { %>
+                              <p class="errorMsg">
+                              <%= errors.email.msg %>
+                              </p>
+                              <% } %>
+                              <label for="ususario">Usuario</label>
+                              <input type="text" name="usuario" id="usuario"
+                                     class="border-box"
+                                  value="<%= locals.oldValues? locals.oldValues.usuario:null %>">
+                              <% if (locals.errors && errors.usuario) { %>
+                                  <p class="errorMsg">
+                                  <%= errors.usuario.msg %>
+                                  </p>
+                              <% } %>
+                              <label for="fechanacimiento">Fecha de nacimiento</label>
+                              <input type="date" name="fechanacimiento"
+                                      id="fechanacimiento" class="border-box"
+                                      value="<%= locals.oldValues? locals.oldValues.fechanacimiento:null %>">
+                              <% if (locals.errors && errors.fechanacimiento){ %>
+                                  <p class="errorMsg">
+                                  <%= errors.fechanacimiento.msg %>
+                                  </p>
+                              <% } %>
+                              <label for="domicilio">Domicilio</label>
+                              <input type="text" name="domicilio"
+                                     id="domicilio" class="border-box"
+                                     value="<%= locals.oldValues? locals.oldValues.domicilio:null %>">
+                              <% if (locals.errors && errors.domicilio) { %>
+                                     <p class="errorMsg">
+                                     <%= errors.domicilio.msg %>
+                                      </p>
+                              <% } %>
+                              <label for="password">Ingrese su password</label>
+                              <input type="password" name="password" id="password" class="border-box">
+                              <% if (locals.errors && errors.password) { %>
+                                  <p class="errorMsg">
+                                  <%= errors.password.msg %>
+                                  </p>
+                               <% } %>
+                              <label for="confirmarpassword">Confirme password</label>
+                              <input type="password" name="confirmarpassword" id="confirmarpassword" class="border-box">
+                              <% if (locals.errors && errors.confirmarpassword){ %>
+                                  <p class="errorMsg">
+                                   <%= errors.confirmarpassword.msg %>
+                                  </p>
+                              <% } %>
+                              <label for="imagen">Seleccione una imagen</label>
+                              <input type="file" name="imagen" accept="image/png,image/jpeg" class="border-box">
+                              <div class="w-100">
+                                <label for="category" class="form-label">Credenciales</label>
+                                <select name="category" id="category" class="form-input">
+                                  <option value="">Elegí</option>
+                                  <option value="cliente">Cliente</option>
+                                  <option value="administrador" >Administrador</option>
+                                </select>
+                              </div>
+                  
+                              <div class="botones">
+                                      <button class="submit" type="submit">Registrarme</button>
+                                      <button class="rest" type="reset">Borrar</button>
+                              </div>
+                      </form>
+                  </section>
+
+
+              </div>
+
+          </div>
+          <!-- </div> -->
+      </section>
+  </main>
+    <!-- Fin row section -->
+
+    <!-- Copyright -->
+    <%- include('partialsDashboard/footer') %>
+        
+    </body>
+
+</html>

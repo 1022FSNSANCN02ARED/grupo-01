@@ -83,7 +83,41 @@ const userControllers={
     //Después de guardar los datos, retorna a la misma vista.
     const oldValues=req.session.usuarioLogeado;
     res.render("editarUsuario",{oldValues:oldValues,usuario:oldValues})      
-    }   
+    },
+    
+    editUser:(req,res)=>{
+        let registro=0;
+        res.render("dashboard/editUser",{registro:registro})
+    },
+    userToEdit:(req,res)=>{
+        const oldValues=users.findByemail(req.body.email);
+        req.session.userToEdit=users.findByemail(req.body.email)
+        res.render("dashboard/userToEdit",{oldValues:oldValues,usuario:oldValues})
+    },
+
+    editUserAdmin:(req,res)=>{
+        //Obtener los datos del formulario y adecuarlos  
+            const user = {
+                id:req.session.userToEdit.id,
+                nombre:req.body.nombre,
+                apellido:req.body.apellido,
+                dni:Number(req.body.dni),
+                email:req.body.email,
+                usuario:req.body.usuario,
+                fechanacimiento: req.body.fechanacimiento,
+                domicilio:req.body.domicilio, 
+                imagen:req.session.userToEdit.imagen, 
+                credencial:req.body.credencial,          
+            };
+        console.log(user)  
+
+            users.saveUserEditedAdmin(user);
+        
+        //Después de guardar los datos, retorna a la misma vista.
+        const oldValues=req.body;
+        res.render("dashboard/userToEdit",{oldValues:oldValues,usuario:oldValues})      
+        },
+
 };
  
 module.exports=userControllers;

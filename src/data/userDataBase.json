@@ -257,5 +257,31 @@
         "password": "$2a$10$d7yy0kt3utNi0KgI6MLlK.8a/NuRLFhPOIaweZZByI4vQGaZeYMwq",
         "imagen": "image-1677789694856.jpeg",
         "credencial": "administrador"
+    },
+    {
+        "id": 1678283422798,
+        "nombre": "Natalia",
+        "apellido": "Lange",
+        "dni": 34035337,
+        "email": "natalia.lange1801@gmail.com",
+        "usuario": "LNatalia",
+        "fechanacimiento": "1988-10-02",
+        "domicilio": "Del pozo 2012",
+        "password": "$2a$10$90aI7rxG3QfhhYHGkkH9HuF5kmmQuU1gLqf/OrW/v7sU2DtmejjGe",
+        "imagen": "default-image.png",
+        "credencial": "cliente"
+    },
+    {
+        "id": 1678284252177,
+        "nombre": "Natalia",
+        "apellido": "Lange",
+        "dni": 34035337,
+        "email": "natalia_lange@hotmail.com",
+        "usuario": "natalialange",
+        "fechanacimiento": "1988-10-02",
+        "domicilio": "Del pozo 2012",
+        "password": "$2a$10$KSsOZKpVVgzRegYFH7G/4O8n07zTgP9drtlrBCNuaF8byW7wojVou",
+        "imagen": "default-image.png",
+        "credencial": "administrador"
     }
 ]

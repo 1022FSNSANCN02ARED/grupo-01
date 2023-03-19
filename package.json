@@ -4,8 +4,10 @@
   "description": "Temática del Market Place:",
   "main": "index.js",
   "scripts": {
+    
     "start": "nodemon src/app.js"
   },
+ 
   "keywords": [],
   "author": "",
   "license": "ISC",

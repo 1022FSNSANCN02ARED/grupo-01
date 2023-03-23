@@ -77,24 +77,7 @@ CREATE TABLE images_products (
   name_archive VARCHAR(255) NOT NULL,
   FOREIGN KEY (product_id) REFERENCES products(id)
 );
-CREATE TABLE products (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  price DECIMAL(10,2) NOT NULL,
-  stock INT NOT NULL,
-  genre_id INT,
-  brand_id INT,
-  category_id INT,
-  sizes_id INT,
-  colors_id INT,
-  material_id INT,
-  FOREIGN KEY (genre_id) REFERENCES genre(id),
-  FOREIGN KEY (brand_id) REFERENCES brand(id),
-  FOREIGN KEY (category_id) REFERENCES category(id),
-  FOREIGN KEY (sizes_id) REFERENCES sizes(id),
-  FOREIGN KEY (colors_id) REFERENCES colors(id),
-  FOREIGN KEY (material_id) REFERENCES material(id)
-);
+
 CREATE TABLE orders (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT,
@@ -129,7 +112,7 @@ CREATE TABLE users (
   role_id INT NOT NULL,
   FOREIGN KEY (role_id) REFERENCES role(id)
 );
-DROP TABLE IF EXISTS products;
+
 CREATE TABLE products (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
@@ -148,5 +131,3 @@ CREATE TABLE products (
   FOREIGN KEY (colors_id) REFERENCES colors(id),
   FOREIGN KEY (material_id) REFERENCES material(id)
 );
-
-DROP TABLE marca;

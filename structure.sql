@@ -1,9 +1,5 @@
 DROP SCHEMA IF EXISTS `snsports_db`;
-
-
 CREATE SCHEMA `snsports_db`;
-
-
 USE `snsports_db`;
 
 CREATE TABLE genre_products (
@@ -77,7 +73,6 @@ CREATE TABLE images_products (
   name_archive VARCHAR(255) NOT NULL,
   FOREIGN KEY (product_id) REFERENCES products(id)
 );
-
 CREATE TABLE orders (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT,
@@ -86,7 +81,6 @@ CREATE TABLE orders (
   status VARCHAR(20) NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
-
 CREATE TABLE order_products (
   id INT AUTO_INCREMENT PRIMARY KEY,
   product_id INT,
@@ -98,7 +92,6 @@ CREATE TABLE role (
   id INT AUTO_INCREMENT PRIMARY KEY,
   role VARCHAR(50) NOT NULL
 );
-
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(50) NOT NULL,
@@ -112,7 +105,6 @@ CREATE TABLE users (
   role_id INT NOT NULL,
   FOREIGN KEY (role_id) REFERENCES role(id)
 );
-
 CREATE TABLE products (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,

@@ -1,5 +1,6 @@
 const products = require("../data/product");
-
+const {Products} = require ('../database/models');
+const sequelize_ = require ('sequelize');
 
 
 const controller = {
@@ -21,8 +22,16 @@ const controller = {
   },
   
   // Añadir Nuevo Producto en el Escritorio
+  
   addProduct: (req, res) => {
-       const product = {
+
+      const product = req.body;
+      Products.create(product).then((product) => {
+        res.redirect("/dashboard/product");
+      });
+    },
+
+    /* const product = {
         id: Date.now(),
         name: req.body.name,
         description: req.body.description,
@@ -42,10 +51,8 @@ const controller = {
 
     // res.send(product);
     products.saveProduct(product);
-   return res.redirect("/dashboard/product");
-  },
+   return res.redirect("/dashboard/product"); */
   
-
   // Lista de Productos en el Escritorio
    productosadmin: (req, res) => {
    return res.render("dashboard/product", { products: products.findAll() });
@@ -92,6 +99,6 @@ const controller = {
   },
 
 
-};
-
+  
+}
 module.exports = controller;

@@ -1,21 +1,5 @@
 [
     {
-        "id": 1675460154429,
-        "name": "Remera 10",
-        "genero": "Hombre",
-        "marca": "Adidas",
-        "material": "",
-        "price": 20000,
-        "discount": 15000,
-        "category": "Oferta",
-        "description": "Remera blanca",
-        "image": "image-1675458731767.jpg",
-        "image1": "image-1675458715777.jpg",
-        "image2": "image-1675459176425.jpg",
-        "image3": "image-1675459480890.jpg",
-        "image4": "image-1675459538390.jpg"
-    },
-    {
         "id": 1675460544900,
         "name": "Pantalón",
         "genero": "Mujer",

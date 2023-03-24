@@ -246,7 +246,6 @@
         "credencial": "administrador"
     },
     {
-<<<<<<< HEAD
         "id": 1678283422798,
         "nombre": "Natalia",
         "apellido": "Lange",
@@ -270,7 +269,8 @@
         "domicilio": "Del pozo 2012",
         "password": "$2a$10$KSsOZKpVVgzRegYFH7G/4O8n07zTgP9drtlrBCNuaF8byW7wojVou",
         "imagen": "default-image.png",
-=======
+    },
+    {
         "id": 1678050721240,
         "nombre": "Miguel ",
         "apellido": "Sánchez",
@@ -281,7 +281,6 @@
         "domicilio": "pellegrini 123",
         "imagen": "default-image.png",
         "password": "$2a$10$vgkiCzy2w5elya9xhhb.puYhwSlCVN.LVui/tHFxHOTI34MqdHr96",
->>>>>>> sessionAdmin
         "credencial": "administrador"
     }
 ]

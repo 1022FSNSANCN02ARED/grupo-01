@@ -2,6 +2,7 @@ const { Router , urlencoded} = require("express");
 const path=require("path");
 
 
+
 const router = Router();
 const userController = require("../controllers/user-controller");
 const validacionesRegistro=require("../validaciones/validacionesregistro");
@@ -45,7 +46,7 @@ router.get("/deslogear",userController.logout)
 
 /*** Edición del perfil del usuario***/
 router.get("/editarUsuario",upload.single("imagen"),middlewareusuarioLogeado,userController.editarUsuario);
-router.put("/guardarUsuario",upload.single("imagen"),middlewareAdminLogeado,validacionesEditUsuario,resultadoValidacionesEdit,userController.procceseditarUsuario);
+router.put("/guardarUsuario",upload.single("imagen"),middlewareusuarioLogeado,validacionesEditUsuario,resultadoValidacionesEdit,userController.procceseditarUsuario);
 
 /*** Edición del perfil del usuario para administrador***/
 

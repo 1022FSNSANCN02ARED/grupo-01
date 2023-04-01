@@ -282,5 +282,31 @@
         "imagen": "default-image.png",
         "password": "$2a$10$vgkiCzy2w5elya9xhhb.puYhwSlCVN.LVui/tHFxHOTI34MqdHr96",
         "credencial": "administrador"
+    },
+    {
+        "id": 1679740509877,
+        "nombre": "Miguel Ángel",
+        "apellido": "Sánchez",
+        "dni": 123365,
+        "email": "mangelsany67@gmail.com",
+        "usuario": "angel123",
+        "fechanacimiento": "1920-01-01",
+        "domicilio": "123545",
+        "password": "$2a$10$O3LBJGMiRHDy.Acz4B6Cbetpdx2i7SyDkomJXivrefpWCYKKDQjEy",
+        "imagen": "default-image.png",
+        "credencial": "cliente"
+    },
+    {
+        "id": 1679740701870,
+        "nombre": "Marcelo",
+        "apellido": "Falcone",
+        "dni": 11112333,
+        "email": "Marcelo@gmail.com",
+        "usuario": "Marcelo",
+        "fechanacimiento": "2000-01-01",
+        "domicilio": "123",
+        "password": "$2a$10$iOUqhve01j1raJkEZwMtDeop1t8N.KWwWTSmNB/3/66wrIq6ZMrxy",
+        "imagen": "default-image.png",
+        "credencial": "cliente"
     }
 ]

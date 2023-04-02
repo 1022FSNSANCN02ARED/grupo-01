@@ -15,6 +15,7 @@ const resultadoValidacionesLogin=require("../middlewares/resultadoValidacionesLo
 const resultadoValidacionesBuscarUsuario=require("../middlewares/resultadoValidacionesBuscarUsuario");
 const resultadoValidacionesEdit=require("../middlewares/resultadoValidacionesEdit");
 const resultadoValidacionesEditAdmin=require("../middlewares/resultadoValidacionesEditAdmin");
+const resultadoValidacionesCreateUserByAdmin=require("../middlewares/resultadoValidacionesCreateUserByAdmin");
 const middlewareAdminLogeado=require("../middlewares/middlewareAdminLogeado");
 const middlewareusuarioNoLogeado=require("../middlewares/middlewareusuarioNoLogeado");
 const middlewareusuarioLogeado=require("../middlewares/middlewareusuarioLogeado");
@@ -53,4 +54,5 @@ router.put("/guardarUsuario",upload.single("imagen"),middlewareusuarioLogeado,va
 router.get("/editUser",upload.single("imagen"),middlewareusuarioLogeado,userController.editUser)
 router.post("/userToEdit",urlencoded(),validacionesBuscarUsuario,resultadoValidacionesBuscarUsuario,userController.userToEdit)
 router.put("/editUserAdmin",upload.single("imagen"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesEditAdmin,userController.editUserAdmin)
+router.post("/createUserAdmin",upload.single("imagen"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesCreateUserByAdmin,userController.createUserAdmin)
 module.exports = router;

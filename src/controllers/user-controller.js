@@ -7,39 +7,20 @@ const { Users } = require("../database/models");
 const userControllers={
     
     /** Registro de usuario nuevo **/
-    /* proccesRegister:(req,res)=>{
-        const user = {
-            id: Date.now(),
-            nombre:req.body.nombre,
-            apellido:req.body.apellido,
-            dni:Number(req.body.dni),
-            email:req.body.email,
-            usuario:req.body.usuario,
-            fechanacimiento: req.body.fechanacimiento,
-            domicilio:req.body.domicilio,
-            password:bscryptjs.hashSync(req.body.password,10),     
-            imagen:req.file ? req.file.filename : "default-image.png", 
-            credencial: "cliente"
+    
 
-        };
-        users.saveUser(user);
-        res.redirect("/")
-        }, */
-
-        proccesRegister:(req,res)=>{
+    proccesRegister:(req,res)=>{
+            console.log(req.body);
             const user = {
-            name:req.body.nombre,
-            lastname:req.body.apellido,
-            identification_document:Number(req.body.dni),
-            email:req.body.email,
-            user:req.body.usuario,
-            birthdate: req.body.fechanacimiento,
-            adress:req.body.domicilio,
+                ...req.body,
             password:bscryptjs.hashSync(req.body.password,10),     
             /* imagen:req.file ? req.file.filename : "default-image.png" */ 
-             }     
 
-            Users.create(user).then((user) => {
+             }     
+            Users.create({
+                ...user,
+                role_id:2
+            }).then((user) => {
               res.redirect("/");
             });
         },
@@ -61,25 +42,25 @@ const userControllers={
                 }
             }
             delete user.dataValues.password;
-            req.session.usuarioLogeado=user;
-           return res.redirect("/");
-        });
-    }, 
+            req.session.usuarioLogeado=user.dataValues;
+            return res.redirect("/");
+            });
+        }, 
 
     /** Logout de usuario **/
 
     logout:(req,res)=>{
         req.session.destroy()
         res.redirect("/")
-    },
+        },
 
     /**Edición del perfil del usuario **/
 
     editarUsuario:(req,res)=>{
     //obtener datos de usuario logeado
     //enviar datos del usuariologeado a la vista
-    const oldValues=req.session.usuarioLogeado;
-    return res.render("editarUsuario",{oldValues:oldValues,usuario:oldValues})
+        const oldValues=req.session.usuarioLogeado;
+        return res.render("editarUsuario",{oldValues:oldValues,usuario:oldValues})
     },
 
     /**Proceso de edición del perfil del usuario **/
@@ -87,17 +68,10 @@ const userControllers={
     procceseditarUsuario:(req,res)=>{
     //Obtener los datos del formulario y adecuarlos  
         const user = {
-            id: req.session.usuarioLogeado.id,
-            nombre:req.body.nombre,
-            apellido:req.body.apellido,
-            dni:Number(req.body.dni),
-            email:req.body.email,
-            usuario:req.body.usuario,
-            fechanacimiento: req.body.fechanacimiento,
-            domicilio:req.body.domicilio,             
+            ...req.body,
+            id: req.session.usuarioLogeado.id,         
            // imagen:req.file ? req.file.filename : "default-image.png", 
         };
-
     //Guardar los datos en la base de datos    
         Users.update(user, {
             where: {
@@ -119,8 +93,11 @@ const userControllers={
                 })
         }) 
     },
+
+ /* CONTROLADORES DE ADMINISTRADOR */   
     
-    /**Edición del perfil del usuario por el administrador **/   
+    /**Edición del perfil del usuario por el administrador **/
+
     editUser:(req,res)=>{
         let registro=0;
         res.render("dashboard/editUser",{registro:registro})
@@ -133,28 +110,28 @@ const userControllers={
             }
        })
        .then((user)=>{        
-             req.session.usuarioLogeado=user.dataValues;
+             req.session.userToEdit=user.dataValues;
+            
              //Después de guardar los datos, retorna a la misma vista.
-            const oldValues=req.session.usuarioLogeado;
+            const oldValues=req.session.userToEdit;
             res.render("dashboard/userToEdit",{oldValues:oldValues,usuario:oldValues})     
         })
         
     },
 
+
+ ///////Guardar datos del usuario editado por el administrador/////////////
+
     editUserAdmin:(req,res)=>{
         //Obtener los datos del formulario y adecuarlos  
             const user = {
+                ...req.body,
                 id:req.session.userToEdit.id,
-                nombre:req.body.nombre,
-                apellido:req.body.apellido,
-                dni:Number(req.body.dni),
-                email:req.body.email,
-                usuario:req.body.usuario,
-                fechanacimiento: req.body.fechanacimiento,
-                domicilio:req.body.domicilio, 
-                imagen:req.session.userToEdit.imagen, 
-                credencial:req.body.credencial,          
+                
+                //imagen:req.session.userToEdit.imagen, 
+                         
             };
+        
          //Guardar los datos en la base de datos    
          Users.update(user, {
             where: {
@@ -175,7 +152,26 @@ const userControllers={
                 })
         }) 
 
-    }        
+    },
+
+ ///////Creación de un usuario nuevo por el administrador/////////////
+
+    createUserAdmin:(req,res)=>{
+        console.log(req.body);
+        const user = {
+            ...req.body,
+        password:bscryptjs.hashSync(req.body.password,10),     
+        /* imagen:req.file ? req.file.filename : "default-image.png" */ 
+
+         }     
+        Users.create({
+            ...user,
+            
+        }).then((user) => {
+          res.render("dashboard/dashboard");
+        });
+    },
+    
 
 };
  

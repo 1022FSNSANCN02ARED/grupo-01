@@ -7,31 +7,32 @@ const { Users } = require("../database/models");
 
 
 const validacionesRegistro=[
-body("nombre").notEmpty().withMessage("Debes completar este campo"),
-body("apellido").notEmpty().withMessage("Debes completar este campo"),
-body("dni").notEmpty().withMessage("Debes completar este campo"),
+body("first_name").notEmpty().withMessage("Debes completar este campo"),
+body("last_name").notEmpty().withMessage("Debes completar este campo"),
+body("identification_document").notEmpty().withMessage("Debes completar este campo"),
 body("email").notEmpty().withMessage("Debes completar este campo").bail()
 .isEmail().withMessage("Debe ser un email válido").bail()
  .custom((value,{req})=>{
+    const email=req.body.email;
     
-    Users.findOne({where:{email:req.body.email}
-    }).then((user) => {       
-        console.log(user);
+    Users.findOne({where:{email:email}})
+    .then((user) => {       
+        console.log("Hola " + user);
         if(user!=[]&& user!=null){
             throw new Error("El email ya se encuentra registrado");
       }
-      console.log(user);
+      console.log("chau" + user);
 
  return true;
 });
-}), 
-body("usuario").notEmpty().withMessage("Debes completar este campo"),
-body("fechanacimiento").notEmpty().withMessage("Debes completar este campo"),
-body("domicilio").notEmpty().withMessage("Debes completar este campo"),
+}) , 
+body("user").notEmpty().withMessage("Debes completar este campo"),
+body("birthdate").notEmpty().withMessage("Debes completar este campo"),
+body("adress").notEmpty().withMessage("Debes completar este campo"),
 body("password").notEmpty().withMessage("Debes completar este campo"),
 body("confirmarpassword").notEmpty().withMessage("Debes completar este campo")
 .custom((value,{ req})=>{
-    console.log(user);
+    
 
     if(req.body.password!==req.body.confirmarpassword){
         throw new Error("La confirmación del password debe ser igual que el password");

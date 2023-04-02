@@ -6,9 +6,9 @@ const { Users } = require("../database/models");
 
 
 const validacionesEditUsuario=[
-    body("nombre").notEmpty().withMessage("Debes completar este campo"),
-    body("apellido").notEmpty().withMessage("Debes completar este campo"),
-    body("dni").notEmpty().withMessage("Debes completar este campo"),
+    body("first_name").notEmpty().withMessage("Debes completar este campo"),
+    body("last_name").notEmpty().withMessage("Debes completar este campo"),
+    body("identification_document").notEmpty().withMessage("Debes completar este campo"),
     body("email").notEmpty().withMessage("Debes completar este campo").bail()
     .isEmail().withMessage("Debe ser un email válido").bail()
     /* .custom((value,{req})=>{
@@ -18,8 +18,8 @@ const validacionesEditUsuario=[
     };
     return true;
     }) */,
-    body("usuario").notEmpty().withMessage("Debes completar este campo"),
-    body("fechanacimiento").notEmpty().withMessage("Debes completar este campo"),
-    body("domicilio").notEmpty().withMessage("Debes completar este campo"),
+    body("user").notEmpty().withMessage("Debes completar este campo"),
+    body("birthdate").notEmpty().withMessage("Debes completar este campo"),
+    body("adress").notEmpty().withMessage("Debes completar este campo"),
     ]
 module.exports=validacionesEditUsuario;

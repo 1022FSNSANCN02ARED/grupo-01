@@ -4,7 +4,7 @@ function middlewareUsuarioLogeado(req,res,next){
     if (req.session.usuarioLogeado) {
     res.locals.localusuarioLogeado=true;        
     }
-    if (req.session.usuarioLogeado && req.session.usuarioLogeado.rol=="administrador") {
+    if (req.session.usuarioLogeado && req.session.usuarioLogeado.role_id=="1") {
         res.locals.localAdminLogeado=true;    
         }
     next()

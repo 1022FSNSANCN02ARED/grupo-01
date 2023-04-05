@@ -10,7 +10,7 @@ const userControllers={
     
 
     proccesRegister:(req,res)=>{
-            console.log(req.body);
+        
             const user = {
                 ...req.body,
             password:bscryptjs.hashSync(req.body.password,10),     

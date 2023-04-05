@@ -1,6 +1,6 @@
 const products = require("../data/product");
-const {Products} = require ('../database/models');
-const sequelize_ = require ('sequelize');
+const Sequelize_ = require ('sequelize');
+const { Products } = require("../database/models");
 
 
 const controller = {

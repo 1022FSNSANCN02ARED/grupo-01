@@ -5,8 +5,9 @@ const { validationResult }=require("express-validator");
         
         const resultvalidations=validationResult(req);
         const oldValues=req.body;
+    
         if (resultvalidations.errors.length>0) {
-            return  res.render("editarUsuario",{
+            return  res.render("dashboard/createUserAdmint",{
             errors:resultvalidations.mapped(),
             oldValues:oldValues,
             usuario:oldValues,

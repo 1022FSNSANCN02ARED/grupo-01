@@ -55,91 +55,17 @@
 
                   <section id="rauchbier" class="tab-panel">
                       <h2 class="reg-login">Crear usuario</h2>
-                      <form action="/user/userToEdit" method="post" enctype="multipart/form-data"
+                      <form action="/user/createUserAdmin" method="post" enctype="multipart/form-data"
                             class="formulario bg-gris-claro" >
+                            <%- include("../partials/formularioUsuario") %>
 
-                          <label for="nombre">Nombre</label>
-                          <input type="text" name="nombre" id="nombre" class="border-box is-invalid"
-                                 value="<%= locals.oldValues? locals.oldValues.nombre:null %>">
-
-                          <% if (locals.errors && errors.nombre) { %>
-                              <p class="errorMsg">
-                              <%= errors.nombre.msg %>
-                              </p>
-                          <% } %>
-                          <label for="apellido">Apellido</label>
-                          <input type="text" name="apellido" id="apellido" class="border-box"
-                                 value="<%= locals.oldValues? locals.oldValues.apellido:null %>">
-                          <% if (locals.errors && errors.apellido) { %>
-                              <p class="errorMsg">
-                              <%= errors.apellido.msg %>
-                              </p>
-                          <% } %>
-                          <label for="dni">DNI</label>
-                          <input type="text" name="dni" id="dni" class="border-box"
-                                 value="<%= locals.oldValues? locals.oldValues.dni:null %>">
-                          <% if (locals.errors && errors.dni) { %>
-                              <p class="errorMsg">
-                                  <%= errors.dni.msg %>
-                              </p>
-                          <% } %>
-                          <label for="email">Correo electrónico</label>
-                          <input type="text" name="email" id="email" class="border-box"
-                                 value="<%= locals.oldValues? locals.oldValues.email:null %>">
-                           <% if (locals.errors && errors.email) { %>
-                              <p class="errorMsg">
-                              <%= errors.email.msg %>
-                              </p>
-                              <% } %>
-                              <label for="ususario">Usuario</label>
-                              <input type="text" name="usuario" id="usuario"
-                                     class="border-box"
-                                  value="<%= locals.oldValues? locals.oldValues.usuario:null %>">
-                              <% if (locals.errors && errors.usuario) { %>
-                                  <p class="errorMsg">
-                                  <%= errors.usuario.msg %>
-                                  </p>
-                              <% } %>
-                              <label for="fechanacimiento">Fecha de nacimiento</label>
-                              <input type="date" name="fechanacimiento"
-                                      id="fechanacimiento" class="border-box"
-                                      value="<%= locals.oldValues? locals.oldValues.fechanacimiento:null %>">
-                              <% if (locals.errors && errors.fechanacimiento){ %>
-                                  <p class="errorMsg">
-                                  <%= errors.fechanacimiento.msg %>
-                                  </p>
-                              <% } %>
-                              <label for="domicilio">Domicilio</label>
-                              <input type="text" name="domicilio"
-                                     id="domicilio" class="border-box"
-                                     value="<%= locals.oldValues? locals.oldValues.domicilio:null %>">
-                              <% if (locals.errors && errors.domicilio) { %>
-                                     <p class="errorMsg">
-                                     <%= errors.domicilio.msg %>
-                                      </p>
-                              <% } %>
-                              <label for="password">Ingrese su password</label>
-                              <input type="password" name="password" id="password" class="border-box">
-                              <% if (locals.errors && errors.password) { %>
-                                  <p class="errorMsg">
-                                  <%= errors.password.msg %>
-                                  </p>
-                               <% } %>
-                              <label for="confirmarpassword">Confirme password</label>
-                              <input type="password" name="confirmarpassword" id="confirmarpassword" class="border-box">
-                              <% if (locals.errors && errors.confirmarpassword){ %>
-                                  <p class="errorMsg">
-                                   <%= errors.confirmarpassword.msg %>
-                                  </p>
-                              <% } %>
-                              <label for="imagen">Seleccione una imagen</label>
-                              <input type="file" name="imagen" accept="image/png,image/jpeg" class="border-box">
+                          
                               <div class="w-100">
-                                <label for="category" class="form-label">Credenciales</label>
-                                <select name="category" id="category" class="form-input">
+                                <label for="role_id" class="form-label">Credenciales</label>
+                                <select name="role_id" id="category" class="form-input">
                                   <option value="">Elegí</option>
-                                  <option value="cliente">Cliente</option>
-                                  <option value="administrador" >Administrador</option>
+                                  <option value="2">Cliente</option>
+                                  <option value="1" >Administrador</option>
                                 </select>
                               </div>
                   

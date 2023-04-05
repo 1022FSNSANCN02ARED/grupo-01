@@ -16,78 +16,19 @@
             <!-- Body Dashboard -->
             <div class="das-body">
 
-                <!-- Formulario Crear Producto -->
+                <!-- Formulario Crear Usuario -->
                
                       <form action="/user/editUserAdmin/?_method=put" method="post" enctype="multipart/form-data"
                             class="formulario bg-gris-claro" >
 
-                          <label for="nombre">Nombre</label>
-                          <input type="text" name="nombre" id="nombre" class="border-box is-invalid"
-                                 value="<%= locals.oldValues? locals.oldValues.nombre:null %>">
-
-                          <% if (locals.errors && errors.nombre) { %>
-                              <p class="errorMsg">
-                              <%= errors.nombre.msg %>
-                              </p>
-                          <% } %>
-                          <label for="apellido">Apellido</label>
-                          <input type="text" name="apellido" id="apellido" class="border-box"
-                                 value="<%= locals.oldValues? locals.oldValues.apellido:null %>">
-                          <% if (locals.errors && errors.apellido) { %>
-                              <p class="errorMsg">
-                              <%= errors.apellido.msg %>
-                              </p>
-                          <% } %>
-                          <label for="dni">DNI</label>
-                          <input type="text" name="dni" id="dni" class="border-box"
-                                 value="<%= locals.oldValues? locals.oldValues.dni:null %>">
-                          <% if (locals.errors && errors.dni) { %>
-                              <p class="errorMsg">
-                                  <%= errors.dni.msg %>
-                              </p>
-                          <% } %>
-                          <label for="email">Correo electrónico</label>
-                          <input type="text" name="email" id="email" class="border-box"
-                                 value="<%= locals.oldValues? locals.oldValues.email:null %>">
-                           <% if (locals.errors && errors.email) { %>
-                              <p class="errorMsg">
-                              <%= errors.email.msg %>
-                              </p>
-                              <% } %>
-                              <label for="ususario">Usuario</label>
-                              <input type="text" name="usuario" id="usuario"
-                                     class="border-box"
-                                  value="<%= locals.oldValues? locals.oldValues.usuario:null %>">
-                              <% if (locals.errors && errors.usuario) { %>
-                                  <p class="errorMsg">
-                                  <%= errors.usuario.msg %>
-                                  </p>
-                              <% } %>
-                              <label for="fechanacimiento">Fecha de nacimiento</label>
-                              <input type="date" name="fechanacimiento"
-                                      id="fechanacimiento" class="border-box"
-                                      value="<%= locals.oldValues? locals.oldValues.fechanacimiento:null %>">
-                              <% if (locals.errors && errors.fechanacimiento){ %>
-                                  <p class="errorMsg">
-                                  <%= errors.fechanacimiento.msg %>
-                                  </p>
-                              <% } %>
-                              <label for="domicilio">Domicilio</label>
-                              <input type="text" name="domicilio"
-                                     id="domicilio" class="border-box"
-                                     value="<%= locals.oldValues? locals.oldValues.domicilio:null %>">
-                              <% if (locals.errors && errors.domicilio) { %>
-                                     <p class="errorMsg">
-                                     <%= errors.domicilio.msg %>
-                                      </p>
-                              <% } %>
+                <%- include("../partials/formularioUsuario") %>
                               
                               <div class="w-100">
-                                <label for="credencial" class="form-label">Credenciales</label>
-                                <select name="credencial" id="credencial" class="form-input">
+                                <label for="role_id" class="form-label">Credenciales</label>
+                                <select name="role_id" id="role_id" class="form-input">
                                   <option value="">Elegí</option>
-                                  <option value="cliente" <%=locals.oldValues.credencial=="cliente" ? "selected" : "" %>>Cliente</option>
-                                  <option value="administrador"  <%=locals.oldValues.credencial=="administrador" ? "selected" : "" %>>Administrador</option>
+                                  <option value="2" <%=locals.oldValues.role_id=="2" ? "selected" : "" %>>Cliente</option>
+                                  <option value="1"  <%=locals.oldValues.role_id=="1" ? "selected" : "" %>>Administrador</option>
                                 </select>
                               </div>
                   

@@ -1,5 +1,31 @@
+
+
+/* module.exports= (sequelize, DataTypes)=>{
+const users = sequelize.define(
+    'Users',{
+        
+        name:DataTypes.STRING,
+        lastname: DataTypes.STRING,
+        email:DataTypes.STRING,
+        identification_document: DataTypes.INTEGER,
+        user:DataTypes.INTEGER,
+        birthdate:DataTypes.DATE,
+        adress:DataTypes.STRING,
+        password:DataTypes.STRING,
+        
+    },
+    {
+        tableName: 'users',
+        timestamps:false
+    });
+        return users;
+}; */
+
+
 module.exports = (sequelize, DataTypes) => {
-    const Users = sequelize.define('Users', {
+     
+    const alias = 'Users';
+ const cols ={
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -27,6 +53,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: true
       },
+      adress: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        
+      },
       birthdate: {
         type: DataTypes.DATEONLY,
         allowNull: true
@@ -39,8 +70,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       }
-    });
+    };
+    const config ={
+        timestamps: true,
+        tableName: "users",
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: false
+    };
 
+    const Users = sequelize.define(alias, cols, config);
     
   /*   CREATE TABLE users (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -59,7 +98,7 @@ module.exports = (sequelize, DataTypes) => {
     Users.associate = function(models) {
 
         //cada usuario pertenece a un solo rol
-      Users.belongsTo(models.Role, {
+      Users.belongsTo(models.Roles, {
         as: 'role',
         foreignKey: 'role_id'
       });

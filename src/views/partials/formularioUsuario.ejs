@@ -1,0 +1,86 @@
+<!-- <form action="/user/registroUsuario" method="post" enctype="multipart/form-data"
+                                  class="formulario bg-gris-claro" > -->
+
+                                <label for="first_name">Nombre</label>
+                                <input type="text" name="first_name" id="first_name" class="border-box is-invalid"
+                                       value="<%= locals.oldValues? locals.oldValues.first_name:null %>">
+
+                                <% if (locals.errors && errors.first_name) { %>
+                                    <p class="errorMsg">
+                                    <%= errors.nombre.msg %>
+                                    </p>
+                                <% } %>
+                                <label for="last_name">Apellido</label>
+                                <input type="text" name="last_name" id="last_name" class="border-box"
+                                       value="<%= locals.oldValues? locals.oldValues.last_name:null %>">
+                                <% if (locals.errors && errors.last_name) { %>
+                                    <p class="errorMsg">
+                                    <%= errors.apellido.msg %>
+                                    </p>
+                                <% } %>
+                                <label for="identification_document">DNI</label>
+                                <input type="text" name="identification_document" id="identification_document" class="border-box"
+                                       value="<%= locals.oldValues? locals.oldValues.identification_document:null %>">
+                                <% if (locals.errors && errors.identification_document) { %>
+                                    <p class="errorMsg">
+                                        <%= errors.dni.msg %>
+                                    </p>
+                                <% } %>
+                                <label for="email">Correo electrónico</label>
+                                <input type="text" name="email" id="email" class="border-box"
+                                       value="<%= locals.oldValues? locals.oldValues.email:null %>">
+                                 <% if (locals.errors && errors.email) { %>
+                                    <p class="errorMsg">
+                                    <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
+                                    <label for="user">Usuario</label>
+                                    <input type="text" name="user" id="user"
+                                           class="border-box"
+                                        value="<%= locals.oldValues? locals.oldValues.user:null %>">
+                                    <% if (locals.errors && errors.user) { %>
+                                        <p class="errorMsg">
+                                        <%= errors.user.msg %>
+                                        </p>
+                                    <% } %>
+                                    <label for="birthdate">Fecha de nacimiento</label>
+                                    <input type="date" name="birthdate"
+                                            id="birthdate" class="border-box"
+                                            value="<%= locals.oldValues? locals.oldValues.birthdate:null %>">
+                                    <% if (locals.errors && errors.birthdate){ %>
+                                        <p class="errorMsg">
+                                        <%= errors.fechanacimiento.msg %>
+                                        </p>
+                                    <% } %>
+                                    <label for="adress">Domicilio</label>
+                                    <input type="text" name="adress"
+                                           id="adress" class="border-box"
+                                           value="<%= locals.oldValues? locals.oldValues.adress:null %>">
+                                    <% if (locals.errors && errors.adress) { %>
+                                           <p class="errorMsg">
+                                           <%= errors.domicilio.msg %>
+                                            </p>
+                                    <% } %>
+                                    <% if (!locals.oldValues) { %>
+                                     
+                                    
+                                    <label for="password">Ingrese supassword</label>
+                                    <input type="password" name="password" id="password" class="border-box">
+                                    <% if (locals.errors && errors.password) { %>
+                                        <p class="errorMsg">
+                                        <%= errors.password.msg %>
+                                        </p>
+                                     <% } %>
+                                    <label for="confirmarpassword">Confirme password</label>
+                                    <input type="password" name="confirmarpassword" id="confirmarpassword" class="border-box">
+                                    <% if (locals.errors && errors.confirmarpassword){ %>
+                                        <p class="errorMsg">
+                                         <%= errors.confirmarpassword.msg %>
+                                        </p>
+                                    <% } %>
+                                    <% } %>
+                                    <label for="image">Seleccione una imagen</label>
+                                    <input type="file" name="image" accept="image/png,image/jpeg" class="border-box">
+
+                                    
+                            <!-- </form> -->

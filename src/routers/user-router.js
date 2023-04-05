@@ -17,8 +17,8 @@ const resultadoValidacionesEdit=require("../middlewares/resultadoValidacionesEdi
 const resultadoValidacionesEditAdmin=require("../middlewares/resultadoValidacionesEditAdmin");
 const resultadoValidacionesCreateUserByAdmin=require("../middlewares/resultadoValidacionesCreateUserByAdmin");
 const middlewareAdminLogeado=require("../middlewares/middlewareAdminLogeado");
-const middlewareusuarioNoLogeado=require("../middlewares/middlewareusuarioNoLogeado");
-const middlewareusuarioLogeado=require("../middlewares/middlewareusuarioLogeado");
+const middlewareusuarioNoLogeado=require("../middlewares/middlewareUsuarioNoLogeado");
+const middlewareusuarioLogeado=require("../middlewares/middlewareUsuarioLogeado");
 
 
 
@@ -37,17 +37,17 @@ const upload = multer({
 
 
 /*** procesamiento registro de usuario nuevo***/
-router.post("/registroUsuario",upload.single("imagen"),validacionesRegistro,resultadoValidaciones,userController.proccesRegister);
+router.post("/registroUsuario",upload.single("imagen"),validacionesRegistro,resultadoValidaciones,userController.processRegister);
 
 /*** procesamiento login de usuario***/
-router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,userController.proccesLogin);
+router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,userController.processLogin);
 
 /*** procesamiento logout de usuario***/
 router.get("/deslogear",userController.logout)
 
 /*** Edición del perfil del usuario***/
 router.get("/editarUsuario",upload.single("imagen"),middlewareusuarioLogeado,userController.editarUsuario);
-router.put("/guardarUsuario",upload.single("imagen"),middlewareusuarioLogeado,validacionesEditUsuario,resultadoValidacionesEdit,userController.procceseditarUsuario);
+router.put("/guardarUsuario",upload.single("imagen"),middlewareusuarioLogeado,validacionesEditUsuario,resultadoValidacionesEdit,userController.processeditarUsuario);
 
 /*** Edición del perfil del usuario para administrador***/
 

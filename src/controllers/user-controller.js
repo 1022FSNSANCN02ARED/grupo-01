@@ -9,7 +9,7 @@ const userControllers={
     /** Registro de usuario nuevo **/
     
 
-    proccesRegister:(req,res)=>{
+    processRegister:(req,res)=>{
         
             const user = {
                 ...req.body,
@@ -26,7 +26,7 @@ const userControllers={
         },
 
     /** Login de usuario **/
-    proccesLogin:(req,res)=>{
+    processLogin:(req,res)=>{
              let registro=0;         
              const usuarioLogeado=Users.findOne({where:{email:req.body.email}})
              .then(user=>{
@@ -65,7 +65,7 @@ const userControllers={
 
     /**Proceso de edición del perfil del usuario **/
 
-    procceseditarUsuario:(req,res)=>{
+    processeditarUsuario:(req,res)=>{
     //Obtener los datos del formulario y adecuarlos  
         const user = {
             ...req.body,

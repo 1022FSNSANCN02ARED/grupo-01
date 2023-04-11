@@ -11,14 +11,15 @@ const validacionesEditUsuario=[
     body("identification_document").notEmpty().withMessage("Debes completar este campo"),
     body("email").notEmpty().withMessage("Debes completar este campo").bail()
     .isEmail().withMessage("Debe ser un email válido").bail()
-   // .custom((value,{req})=>{
-    //Se controla que el email que se intenta ingresar no exita en otro usuario
-    
-    /* if(users.findByemail(req.body.email) && users.findByemail(req.body.email).id!==req.session.userToEdit.id ){
-        throw new Error("El correo ya se encuentra registrado");
-    };
-    return true;
-    }) */,
+    .custom((value,{req})=>{
+           return Users.findOne({where:{email:value}})
+            .then(user => {
+         //Se controla que el email que se intenta ingresar no exita en otro usuario
+            if (user && user.id!==req.session.userToEdit.id) {
+            return Promise.reject('El Email ya se encuentra registrado');
+             }
+           }); 
+    }),
     body("user").notEmpty().withMessage("Debes completar este campo"),
     body("birthdate").notEmpty().withMessage("Debes completar este campo"),
     body("adress").notEmpty().withMessage("Debes completar este campo"),

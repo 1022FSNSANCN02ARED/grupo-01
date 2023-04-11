@@ -66,11 +66,12 @@ const userControllers={
     /**Proceso de edición del perfil del usuario **/
 
     processeditarUsuario:(req,res)=>{
-    //Obtener los datos del formulario y adecuarlos  
+    //Obtener los datos del formulario y adecuarlos 
+
         const user = {
             ...req.body,
             id: req.session.usuarioLogeado.id,         
-           // imagen:req.file ? req.file.filename : "default-image.png", 
+            image:req.file ? req.file.filename : "default-image.png", 
         };
     //Guardar los datos en la base de datos    
         Users.update(user, {
@@ -128,7 +129,7 @@ const userControllers={
                 ...req.body,
                 id:req.session.userToEdit.id,
                 
-                //imagen:req.session.userToEdit.imagen, 
+                //image:req.session.userToEdit.imagen, 
                          
             };
         

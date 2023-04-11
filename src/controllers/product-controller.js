@@ -1,6 +1,7 @@
 const products = require("../data/product");
 const Sequelize_ = require ('sequelize');
-const { Products } = require("../database/models");
+const { Product, Brand, Colors, Genre, Sizes,Category } = require("../database/models");
+const category = require("../database/models/category");
 
 
 const controller = {
@@ -15,18 +16,33 @@ const controller = {
   },
 
   // Añadir Nuevo Producto en el Escritorio
-  newproduct: (req, res) => {
-  return  res.render("dashboard/newProduct", {
-
-    });
+  newproduct: async (req, res) => {
+    let marca=await Brand.findAll();
+    let colors=await Colors.findAll();
+    let genre=await Genre.findAll();
+    let sizes=await Sizes.findAll();
+    let category=await Category.findAll();
+    
+    return  res.render("dashboard/newProduct", {
+    brand:marca,
+    colors:colors,
+    genre:genre,
+    sizes:sizes,
+    category:category,
+    })
   },
   
   // Añadir Nuevo Producto en el Escritorio
   
   addProduct: (req, res) => {
-
-      const product = req.body;
-      Products.create(product).then((product) => {
+console.log(req.body.category)
+      const product ={ 
+        ...req.body,
+        brand_id:req.body.brand,
+        genre_id:req.body.genre,
+        category_id:req.body.category
+      }
+      Product.create(product).then((product) => {
         res.redirect("/dashboard/product");
       });
     },

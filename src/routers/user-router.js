@@ -37,7 +37,7 @@ const upload = multer({
 
 
 /*** procesamiento registro de usuario nuevo***/
-router.post("/registroUsuario",upload.single("imagen"),validacionesRegistro,resultadoValidaciones,userController.processRegister);
+router.post("/registroUsuario",upload.single("image"),validacionesRegistro,resultadoValidaciones,userController.processRegister);
 
 /*** procesamiento login de usuario***/
 router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,userController.processLogin);
@@ -46,13 +46,13 @@ router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,u
 router.get("/deslogear",userController.logout)
 
 /*** Edición del perfil del usuario***/
-router.get("/editarUsuario",upload.single("imagen"),middlewareusuarioLogeado,userController.editarUsuario);
-router.put("/guardarUsuario",upload.single("imagen"),middlewareusuarioLogeado,validacionesEditUsuario,resultadoValidacionesEdit,userController.processeditarUsuario);
+router.get("/editarUsuario",upload.single("image"),middlewareusuarioLogeado,userController.editarUsuario);
+router.put("/guardarUsuario",upload.single("image"),middlewareusuarioLogeado,validacionesEditUsuario,resultadoValidacionesEdit,userController.processeditarUsuario);
 
 /*** Edición del perfil del usuario para administrador***/
 
-router.get("/editUser",upload.single("imagen"),middlewareusuarioLogeado,userController.editUser)
+router.get("/editUser",upload.single("image"),middlewareusuarioLogeado,userController.editUser)
 router.post("/userToEdit",urlencoded(),validacionesBuscarUsuario,resultadoValidacionesBuscarUsuario,userController.userToEdit)
-router.put("/editUserAdmin",upload.single("imagen"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesEditAdmin,userController.editUserAdmin)
-router.post("/createUserAdmin",upload.single("imagen"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesCreateUserByAdmin,userController.createUserAdmin)
+router.put("/editUserAdmin",upload.single("image"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesEditAdmin,userController.editUserAdmin)
+router.post("/createUserAdmin",upload.single("image"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesCreateUserByAdmin,userController.createUserAdmin)
 module.exports = router;

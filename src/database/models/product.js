@@ -33,11 +33,11 @@ module.exports= (sequelize, DataTypes)=>{
 };
 
 const config ={
-    timestamps: true,
+   // timestamps: true,
     tableName: "products",
-    createdAt: "created_at",
+    /* createdAt: "created_at",
     updatedAt: "updated_at",
-    deletedAt: false,
+    deletedAt: false, */
 };
 
 const Product = sequelize.define(alias, cols, config);
@@ -54,7 +54,14 @@ const Product = sequelize.define(alias, cols, config);
 
     Product.associate = models =>{
         //un producto tiene muchos géneros .Ej: el producto remera puede tener genero masculino, femenino,etc
-        Product.belongsToMany(models.Genre, {
+      
+          Product.belongsTo(models.Genre,{
+  
+              as:'genre',
+              foreignKey: "genre_id",
+          }),
+        
+        /* Product.belongsToMany(models.Genre, {
     
             as: "genre",
             through: "genre_products",
@@ -63,7 +70,7 @@ const Product = sequelize.define(alias, cols, config);
             otherKey: "genre_id",
             timestamps: false,
             onDelete: "cascade",
-          });
+          }); */
 
 
           /* CREATE TABLE genre_products (
@@ -82,15 +89,11 @@ const Product = sequelize.define(alias, cols, config);
     
 
     //Un producto puede pertenecer a varias marcas. Ej: el producto remera puede tener muchas marcas.    
-    Product.belongsToMany(models.Brand, {
+    Product.belongsTo(models.Brand, {
     
         as: "brand",
-        through: "brand_products",
-        foreignKey: "product_id",
-        foreignKeyConstraint: true,
-        otherKey: "brand_id",
-        timestamps: false,
-        onDelete: "cascade",
+        foreignKey: "brand_id",
+       
       });
     /* CREATE TABLE brand_products (
     products_id INT,

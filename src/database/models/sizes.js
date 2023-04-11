@@ -14,11 +14,11 @@ module.exports= (sequelize, DataTypes) =>{
             },
         };
         const config ={
-            timestamps: true,
+            timestamps: false,
             tableName: "sizes",
-            createdAt: "created_at",
-            updatedAt: "updated_at",
-            deletedAt: false,
+            /* createdAt: "created_at",
+            updatedAt: "updated_at", */
+            //deletedAt: false,
         };
     
         

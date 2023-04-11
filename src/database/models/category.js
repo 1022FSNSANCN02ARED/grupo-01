@@ -14,11 +14,11 @@ module.exports= (sequelize, DataTypes) =>{
         },
     };
     const config ={
-        timestamps: true,
-        tableName: "brand",
-        createdAt: "created_at",
-        updatedAt: "updated_at",
-        deletedAt: false,
+        timestamps: false,
+        tableName: "category",
+       /*  createdAt: "created_at",
+        updatedAt: "updated_at", */
+        //deletedAt: false,
     };
 
 /* CREATE TABLE category (
@@ -31,6 +31,15 @@ module.exports= (sequelize, DataTypes) =>{
   Category.associate = function (models){
 
      //una categoría puede tener varios productos. Ej: La categoría Oferta tiene varios productos
+     /* Category.hasMany(models.Product,{
+        as: "products",
+    
+        foreignKey: "category_id",
+        
+    });
+  };
+
+  return Category; */
     Category.belongsToMany(models.Product,{
         as: "products",
         through: "category_products",

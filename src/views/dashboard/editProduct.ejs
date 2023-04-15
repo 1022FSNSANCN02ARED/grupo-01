@@ -25,16 +25,16 @@
           <!-- Columna Izquierda -->
           <div class="r-40">
 
-            <div style="background-image: url(/images/product/<%= product.image %>); width:100% ; height: 300px; ">
-              <label for="image">Imagen destacada</label>
-              <input type="file" name="images" accept="image/png,image/jpeg" class="border-box" multiple>
+            <div style="background-image: url(/images/product/<%= product.images[0].name_archive %>); width:100% ; height: 300px; ">
+              <label for="images">Imagen destacada</label>
+              <input type="file" name="images" accept="image/png,image/jpeg,image/jpg" class="border-box" multiple>
 
             </div>
             <div class="galeria">
-              <img class="img-small" src="/images/product/<%= product.image1 %>" />
-              <img class="img-small" src="/images/product/<%= product.image2 %>" />
-              <img class="img-small" src="/images/product/<%= product.image3 %>" />
-              <img class="img-small" src="/images/product/<%= product.image4 %>" />
+              <img class="img-small" src="/images/product/<%= product.images[1].name_archive %>" />
+              <img class="img-small" src="/images/product/<%= product.images[2].name_archive %>" />
+              <img class="img-small" src="/images/product/<%= product.images[3].name_archive%>" />
+              <img class="img-small" src="/images/product/<%= product.images[4].name_archive %>" />
             </div>
           </div>
           <!-- Fin Columna Izquierda -->
@@ -54,37 +54,84 @@
                 cols="50"><%= product.description %></textarea>
             </div>
 
-            <div class="w-100">
-              <label for="category" class="form-label">Categoría:</label>
-              <select name="category" id="category" class="form-input">
-                <option value="">Elegí</option>
-                <option value="Oferta" <%=product.category=="Oferta" ? "selected" : "" %>>OFERTA</option>
-                <option value="Destacado" <%=product.category=="Destacado" ? "selected" : "" %>>DESTACADO</option>
-              </select>
-            </div>
+            <div class="w-100 ">
+              
+              <div class="w-100">
+                <label for="category" class="form-label">Categoría:</label>                     
+                <select name="category" id="category" class="form-input" >
 
+                  <% for( let i = 0; i < category.length; i++ ) { %>
+                    <option value="<%= category[i].id %>"<%=product.category_id== category[i].id? "selected" : "" %>><%=category[i].type %></option>
+                  <% } %>
+                </select>
+            </div>
+          </div>
+            <div class="w-100 flex">
+
+            <div class="r-25">
+                   
+              <label for="colors" class="form-label">Seleccione el color:</label>                        
+                    <ul class="caja-talles">
+                    <% for( let i = 0; i < colors.length; i++ ) { %>
+                      <li class="div-talles"><%=colors[i].color %>
+                        <input type="checkbox" name="colors" id="colors" value="<%=colors[i].id %>"
+                        <% for( let j = 0; j < productColors.length; j++ ) { %> 
+                        <%=productColors[j].color_id== colors[i].id? "checked" : "" %>
+                        <% } %>>
+                      </li>
+                      <% } %>
+                    </ul>
+              </div>
+
+            <div class="r-25">
+                   
+              <label for="sizes" class="form-label">Seleccione el Talle:</label>                        
+                    <ul class="caja-talles">
+                    <% for( let i = 0; i < sizes.length; i++ ) { %>
+                      <li class="div-talles"><%=sizes[i].size %>
+                        <input type="checkbox" name="sizes" id="sizes" value="<%=sizes[i].id %>"
+                        <% for( let j = 0; j < productSizes.length; j++ ) { %> 
+                        <%=productSizes[j].size_id== sizes[i].id? "checked" : "" %>
+                        <% } %>>
+                      </li>
+                      <% } %>
+                    </ul>
+              </div>
+          </div>
             <div class="w-100 flex">
               <div class="r-33">
-                <label for="genero" class="form-label">Genero:</label>
-                <select name="genero" id="genero" class="form-input">
-                  <option value="">Elegí</option>
-                  <option value="Niños" <%=product.genero=="Niños" ? "selected" : "" %>>Niños</option>
-                  <option value="Mujer" <%=product.genero=="Mujer" ? "selected" : "" %>>Mujer</option>
-                  <option value="Hombre" <%=product.genero=="Hombre" ? "selected" : "" %>>Hombre</option>
-                  <option value="Unisex" <%=product.genero=="Unisex" ? "selected" : "" %>>Unisex</option>
-                </select>
+                <label for="genre" class="form-label">Genero:</label>
+                <select name="genre" id="genre" class="form-input" >
+                  <% for( let i = 0; i < genre.length; i++ ) { %>
+                    <option value="<%= genre[i].id %>"<%=product.genre_id== genre[i].id? "selected" : "" %>><%=genre[i].genre %></option>
+                  <% } %>
+                 
+              </select>
+               
               </div>
 
               <div class="r-33">
-                <label for="marca" class="form-label">Marca:</label>
-                <input type="text" id="marca" name="marca" placeholder="<%= product.marca %>" class="w-100"
-                  value="<%= product.marca %>" />
+                <label for="brand" class="form-label">Marca:</label>
+                <select name="brand" id="brand" class="form-input" >
+                  <% for( let i = 0; i < brand.length; i++ ) { %>
+                    <option value="<%= brand[i].id %>"<%=product.brand_id== brand[i].id? "selected" : "" %>><%= brand[i].name %></option>
+                  
+                  <% } %>
+                 
+              </select>
               </div>
 
               <div class="r-33">
                 <label for="material" class="form-label">Material:</label>
-                <input type="text" id="material" name="material" placeholder="<%= product.material %>" class="w-100"
-                  value="<%= product.material %>" />
+
+                <select name="material" id="material" class="form-input" >
+                  <% for( let i = 0; i < material.length; i++ ) { %>
+                    <option value="<%= material[i].id %>"<%=product.material_id== material[i].id? "selected" : "" %>><%= material[i].type %></option>
+                  
+                  <% } %>
+                 
+              </select>
+
               </div>
             </div>
 
@@ -100,7 +147,7 @@
                 value="<%= product.discount %>" />
             </div>
 
-            <div class="w-100 ">
+            <!-- <div class="w-100 ">
 
               <label for="talle" class="form-label">Seleccione el Talle:</label>
 
@@ -119,7 +166,7 @@
                 </li>
               </ul>
 
-            </div>
+            </div> -->
 
             <div class="w-100 botones padding-tb">
 

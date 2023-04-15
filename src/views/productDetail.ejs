@@ -12,12 +12,12 @@
 
     <section class="u-section-row padding-tb detalle">
       <div class="r-40">
-        <img class="img-destacada" src="/images/product/<%= product.image %>" />
+        <img class="img-destacada" src="/images/product/<%= product.images[0].name_archive %>" />
         <div class="galeria">
-          <img class="img-small" src="/images/product/<%= product.image1 %>" />
-          <img class="img-small" src="/images/product/<%= product.image2 %>" />
-          <img class="img-small" src="/images/product/<%= product.image3 %>" />
-          <img class="img-small" src="/images/product/<%= product.image4 %>" />
+          <img class="img-small" src="/images/product/<%= product.images[1].name_archive %>" />
+              <img class="img-small" src="/images/product/<%= product.images[2].name_archive %>" />
+              <img class="img-small" src="/images/product/<%= product.images[3].name_archive%>" />
+              <img class="img-small" src="/images/product/<%= product.images[4].name_archive %>" />
         </div>
       </div>
 
@@ -43,15 +43,15 @@
             <div class='table_row'>
               <div class='table_small'>
                 <div class='table_cell'>Genero</div>
-                <div class='table_cell'><%= product.genero %>.</div>
+                <div class='table_cell'><%= product.genre.genre %>.</div>
               </div>
               <div class='table_small'>
                 <div class='table_cell'>Marca</div>
-                <div class='table_cell'><%= product.marca %></div>
+                <div class='table_cell'><%= product.brand.name %></div>
               </div>
               <div class='table_small'>
                 <div class='table_cell'>Material</div>
-                <div class='table_cell'><%= product.material %></div>
+                <div class='table_cell'><%= product.material.type %></div>
               </div>
             </div>
           </div>

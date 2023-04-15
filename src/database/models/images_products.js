@@ -10,15 +10,15 @@ module.exports= (sequelize, DataTypes) =>{
         },
         name_archive: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
     };
     const config ={
-        timestamps: true,
+        timestamps: false,
         tableName: "images_products",
-        createdAt: "created_at",
+        /* createdAt: "created_at",
         updatedAt: "updated_at",
-        deletedAt: false,
+        deletedAt: false, */
     };
 
 

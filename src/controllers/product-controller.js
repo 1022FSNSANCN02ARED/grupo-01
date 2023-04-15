@@ -1,6 +1,6 @@
 const products = require("../data/product");
 const Sequelize_ = require ('sequelize');
-const { Product, Brand, Colors, Genre, Sizes,Category } = require("../database/models");
+const { Product, Brand, Colors, Genre, Sizes,Category, Images, ProductSizes, ProductColors, Material } = require("../database/models");
 const category = require("../database/models/category");
 
 
@@ -22,6 +22,7 @@ const controller = {
     let genre=await Genre.findAll();
     let sizes=await Sizes.findAll();
     let category=await Category.findAll();
+    let material=await Material.findAll();
     
     return  res.render("dashboard/newProduct", {
     brand:marca,
@@ -29,89 +30,173 @@ const controller = {
     genre:genre,
     sizes:sizes,
     category:category,
+    material:material
     })
   },
   
   // Añadir Nuevo Producto en el Escritorio
   
-  addProduct: (req, res) => {
-console.log(req.body.category)
+  addProduct: async(req, res) => {
       const product ={ 
         ...req.body,
         brand_id:req.body.brand,
         genre_id:req.body.genre,
-        category_id:req.body.category
+        category_id:req.body.category,
+        material_id:req.body.material,
       }
-      Product.create(product).then((product) => {
-        res.redirect("/dashboard/product");
-      });
+      let sizes=req.body.sizes
+      let colors=req.body.colors
+      
+      let image={}
+      //Guarda en la tabla productos
+      let productCreated=await Product.create(product);
+      //Guarda en la tabla imágenes
+      for (let i = 0; i < 5; i++) {
+         image={name_archive:req.files[i] ? req.files[i].filename : "default-image.png",
+                   product_id:productCreated.id
+                   }
+      await Images.create(image)
+    };
+    //Guarda en la tabla intermedia ProductSizes
+    for (let i = 0; i < sizes.length; i++) {
+     await ProductSizes.create({
+      product_id:productCreated.id,
+      size_id:sizes[i]
+    }) 
+     };  
+ 
+     //Guarda en la tabla intermedia ProductColors
+    for (let i = 0; i < colors.length; i++) {
+      await ProductColors.create({
+       product_id:productCreated.id,
+       color_id:colors[i]
+     }) 
+      };  
+    
+    res.redirect("/dashboard/product"); 
     },
 
-    /* const product = {
-        id: Date.now(),
-        name: req.body.name,
-        description: req.body.description,
-        category: req.body.category,
-        genero: req.body.genero,
-        marca: req.body.marca,
-        material: req.body.material,
-        price: Number(req.body.price),
-        discount: Number(req.body.discount),
-        image: req.files[0] ? req.files[0].filename : "default-image.png",
-        image1: req.files[1] ? req.files[1].filename : "default-image.png",
-        image2: req.files[2] ? req.files[2].filename : "default-image.png",
-        image3: req.files[3] ? req.files[3].filename : "default-image.png",
-        image4: req.files[4] ? req.files[4].filename : "default-image.png",
-    };
     
-
-    // res.send(product);
-    products.saveProduct(product);
-   return res.redirect("/dashboard/product"); */
   
   // Lista de Productos en el Escritorio
-   productosadmin: (req, res) => {
-   return res.render("dashboard/product", { products: products.findAll() });
+   productosadmin: async(req, res) => {
+    let products=await Product.findAll({
+      include:[{association:"images"}]
+   })
+   return res.render("dashboard/product", { products:products  });
   },
 
-  // Actualizar - Formulario para editar Producto
-  editarproducto: (req, res) => {
-    const product = products.findById(req.params.id);
-   return res.render("dashboard/editProduct", { product });
+  //Mostrar - Formulario para editar Producto
+  editarproducto:async (req, res) => {
+    let marca=await Brand.findAll();
+    let colors=await Colors.findAll();
+    let genre=await Genre.findAll();
+    let sizes=await Sizes.findAll();
+    let material=await Material.findAll();
+    let productSizes=await ProductSizes.findAll({
+      where:{
+        product_id:req.params.id
+      }
+    });
+    let productColors=await ProductColors.findAll({
+      where:{
+        product_id:req.params.id
+      }
+    });
+    
+    let category=await Category.findAll();
+    const product =await Product.findByPk(req.params.id,
+      {
+        include:[{association:"images"},{association:"genre"},{association:"brand"},{association:"category"},{association:"sizes"},{association:"material"}]
+     });
+   return res.render("dashboard/editProduct", { product:product,
+    brand:marca,
+    colors:colors,
+    genre:genre,
+    sizes:sizes,
+    category:category,
+    material:material,
+    productSizes:productSizes,
+    productColors:productColors
+    });
   },
 
   // Actualizar - Método para actualizar
-  actualizar: (req, res) => {
-    
-    
-    const productoriginal = products.findById(req.params.id);
+  actualizar: async(req, res) => {
+    const product ={ 
+      name:req.body.name,
+      description:req.body.description,
+      price:req.body.price,
+      discount:req.body.discount,
+      brand_id:req.body.brand,
+      genre_id:req.body.genre,
+      category_id:req.body.category,
+      material_id:req.body.material
+    }
+    let sizes=req.body.sizes
+    let colors=req.body.colors
+    let image={}
+    let productToUpdate=await Product.update(product,{where:{
+      id:req.params.id,
+    }});
+    if(req.files.length!=0){
+    for (let i = 0; i < 5; i++) {
+       image={name_archive:req.files[i] ? req.files[i].filename : "default-image.png",
+                 product_id:productToUpdate.id
+                 }
+    await Images.update(image)
+    }
+  }
+   //Guarda en la tabla intermedia ProductSizes
 
-    const product = {
-      
-        id: Number(req.params.id),            
-        name: req.body.name,   
-        genero: req.body.genero,
-        marca: req.body.marca,
-        material: req.body.material,       
-        price: Number(req.body.price),
-        discount: Number(req.body.discount),
-        category: req.body.category,
-        description: req.body.description,
-        image: req.files[0] ? req.files[0].filename : productoriginal.image,
-        image1: req.files[1] ? req.files[1].filename : productoriginal.image1,
-        image2: req.files[2] ? req.files[2].filename : productoriginal.image2,
-        image3: req.files[3] ? req.files[3].filename : productoriginal.image3,
-        image4: req.files[4] ? req.files[4].filename : productoriginal.image4,
+     await ProductSizes.destroy({where:{
+  product_id:req.params.id
 
+     }})
+    for (let i = 0; i < sizes.length; i++) {
+     await ProductSizes.create({
+    product_id:req.params.id,
+    size_id:sizes[i]
+     }) }
 
-    };
-    products.saveProductEdited(product);
-  return  res.redirect("/dashboard/product");
+//Guarda en la tabla intermedia ProductColors
+
+await ProductColors.destroy({where:{
+  product_id:req.params.id
+
+     }})
+    for (let i = 0; i < colors.length; i++) {
+     await ProductColors.create({
+    product_id:req.params.id,
+    color_id:colors[i]
+     }) }
+
+     res.redirect("/dashboard/product"); 
   },
+    
+   
   // Eliminar: elimina un producto de la base de datos
-  eliminar: (req, res) => {
-    products.deleteProduct(req.params.id);
-  return res.redirect("/dashboard/product");
+  eliminar: async (req, res) => {
+    //Eliminar imágenes del producto a borrar
+    
+      for (let i = 0; i < 5; i++) {
+      await Images.destroy({where:{
+        product_id:req.params.id
+      }})
+      }
+    
+
+    //Eliminar datos de talles
+    await ProductSizes.destroy({where:{
+      product_id:req.params.id
+         }})
+     
+    //Eliminar datos de la tabla productos
+    await Product.destroy({where:{
+            id:req.params.id
+          }})     
+    res.redirect("/dashboard/product"); 
+
   },
 
 

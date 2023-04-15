@@ -43,7 +43,7 @@
                               <ul class="caja-talles">
                             <% for( let i = 0; i < colors.length; i++ ) { %>
                               <li class="div-talles"><%= colors[i].color %>
-                                <input type="checkbox" name="<%= colors[i].color %>" id="<%= colors[i].color %>" value="<%= colors[i].id %>" >
+                                <input type="checkbox" name="colors" id="colors" value="<%= colors[i].id %>" >
                               </li>
                               <% } %>
                               
@@ -55,7 +55,7 @@
                           <ul class="caja-talles">
                           <% for( let i = 0; i < sizes.length; i++ ) { %>
                             <li class="div-talles"><%= sizes[i].size %>
-                              <input type="checkbox" name="<% sizes[i].name %>" id="<% sizes[i].name %>" value="<% sizes[i].id %>">
+                              <input type="checkbox" name="sizes" id="sizes" value="<%= sizes[i].id %>">
                             </li>
                             <% } %>
                           </ul>
@@ -68,20 +68,10 @@
                       <select name="genre" id="genre" class="form-input" >
                         <% for( let i = 0; i < genre.length; i++ ) { %>
                           <option value="<%= genre[i].id %>"><%= genre[i].genre %></option>
-              
-
-
-
                         <% } %>
                        
                     </select>
-                      <!-- <select name="genero" id="genero" class="form-input" >
-                        <option value="">Elegí</option>
-                        <option value="Niños">Niños</option>
-                        <option value="Mujer">Mujer</option>
-                        <option value="Hombre">Hombre</option>
-                        <option value="Unisex">Unisex</option>
-                    </select> -->
+                     
                     </div>
 
                     <div class="r-33">
@@ -97,7 +87,13 @@
 
                     <div class="r-33">
                       <label for="material" class="form-label">Material:</label>
-                      <input type="text" id="material" name="material" placeholder="Material" class="w-100" />
+                      <select name="material" id="material" class="form-input" >
+                        <% for( let i = 0; i < material.length; i++ ) { %>
+                          <option value="<%= material[i].id %>"><%= material[i].type %></option>
+                        
+                        <% } %>
+                       
+                    </select>
                     </div>
                   </div>
 

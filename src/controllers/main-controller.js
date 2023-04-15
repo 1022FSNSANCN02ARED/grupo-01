@@ -1,18 +1,25 @@
 const products = require("../data/product");
 
+const { Product, Brand, Colors, Genre, Sizes,Category, Images, ProductSizes, ProductColors } = require("../database/models");
+
+
 
 module.exports = {
     // Pagina de Inicio
-    store: (req, res) => {
+    store: async (req, res) => {
       const usuario=req.session.usuarioLogeado;
+      let products=await Product.findAll({
+      include:[{association:"images"}]
+      })
+      res.render("store", { products: products, usuario:usuario });
+      },
 
-      res.render("store", { products: products.findAll(), usuario:usuario });
-    },
-
-    home: (req, res) => {
-      const productsList= products.findAll();
-      const productSale=productsList.filter((p) => p.category =="Oferta");  
-      const productFeatured=productsList.filter((p) => p.category =="Destacado");
+    home: async (req, res) => {
+      const productsList= await Product.findAll({
+        include:[{association:"images"}]
+        });
+      const productSale=productsList.filter((p) => p.category_id ==2);  
+      const productFeatured=productsList.filter((p) => p.category_id ==1);
       const usuario=req.session.usuarioLogeado;
       res.render("index", { productSale, productFeatured, usuario:usuario });
     },
@@ -35,8 +42,10 @@ module.exports = {
     },
     
     // Detalle de un producto en la pagina Frontal
-    detailproduct: (req, res) => {
-      const product = products.findById(req.params.id);
+    detailproduct: async (req, res) => {
+      const product = await Product.findByPk(req.params.id,{
+        include:[{association:"images"},{association:"genre"},{association:"brand"},{association:"category"},{association:"sizes"},{association:"material"}]
+     });
       const usuario=req.session.usuarioLogeado;
 
     return  res.render("productDetail", { product,usuario:usuario });

@@ -40,14 +40,19 @@ module.exports= (sequelize, DataTypes) =>{
   };
 
   return Category; */
-    Category.belongsToMany(models.Product,{
+    /* Category.belongsToMany(models.Product,{
         as: "products",
         through: "category_products",
         foreignKey: "category_id",
         otherKey: "product_id",
         timestamps: false,
         onDelete: "cascade",
-    });
+    }); */
+    Category.hasMany(models.Product,{
+  
+      as:'productscat',
+      foreignKey: "category_id",
+  });
   };
 
   return Category;

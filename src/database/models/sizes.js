@@ -33,21 +33,13 @@ module.exports= (sequelize, DataTypes) =>{
          //un talle puede tener varios productos. Ej: el talle L pertenece a varios productos
         Sizes.belongsToMany(models.Product,{
             as: "products",
-            through: "products_sizes",
+            through: models.ProductSizes,
             foreignKey: "size_id",
             otherKey: "product_id",
-            timestamps: false,
-            onDelete: "cascade",
+           
         });
       };
 
-     /*  CREATE TABLE products_sizes (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        product_id INT,
-        size_id INT,
-        FOREIGN KEY (product_id) REFERENCES products(id),
-        FOREIGN KEY (size_id) REFERENCES sizes(id)
-      ); */
-    
+     
       return Sizes;
     };

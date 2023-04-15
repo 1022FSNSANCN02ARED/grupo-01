@@ -41,7 +41,7 @@ module.exports= (sequelize, DataTypes) =>{
          //un color puede tener varios productos. Ej: el color negro puede pertenecer a varios productos
       Colors.belongsToMany(models.Product,{
           as: "products",
-          through: "colors_products",
+          through: models.ProductColors,
           foreignKey: "color_id",
           otherKey: "product_id",
           timestamps: false,

@@ -13,9 +13,7 @@ const userControllers={
         
             const user = {
                 ...req.body,
-            password:bscryptjs.hashSync(req.body.password,10),     
-            /* imagen:req.file ? req.file.filename : "default-image.png" */ 
-
+            password:bscryptjs.hashSync(req.body.password,10),
              }     
             Users.create({
                 ...user,
@@ -161,9 +159,7 @@ const userControllers={
         console.log(req.body);
         const user = {
             ...req.body,
-        password:bscryptjs.hashSync(req.body.password,10),     
-        /* imagen:req.file ? req.file.filename : "default-image.png" */ 
-
+        password:bscryptjs.hashSync(req.body.password,10), 
          }     
         Users.create({
             ...user,

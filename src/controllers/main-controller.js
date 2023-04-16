@@ -5,7 +5,7 @@ const { Product, Brand, Colors, Genre, Sizes,Category, Images, ProductSizes, Pro
 
 
 module.exports = {
-    // Pagina de Inicio
+  //Tienda, se muestran todos los productos  
     store: async (req, res) => {
       const usuario=req.session.usuarioLogeado;
       let products=await Product.findAll({
@@ -13,7 +13,7 @@ module.exports = {
       })
       res.render("store", { products: products, usuario:usuario });
       },
-
+// Pagina de Inicio
     home: async (req, res) => {
       const productsList= await Product.findAll({
         include:[{association:"images"}]

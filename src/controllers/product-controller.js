@@ -15,7 +15,7 @@ const controller = {
     });
   },
 
-  // Añadir Nuevo Producto en el Escritorio
+  // Mostrar formulario para añadir Nuevo Producto en el Escritorio
   newproduct: async (req, res) => {
     let marca=await Brand.findAll();
     let colors=await Colors.findAll();
@@ -136,15 +136,22 @@ const controller = {
     let sizes=req.body.sizes
     let colors=req.body.colors
     let image={}
+    let images_id={}
     let productToUpdate=await Product.update(product,{where:{
       id:req.params.id,
     }});
     if(req.files.length!=0){
+      console.log(req.files)
     for (let i = 0; i < 5; i++) {
        image={name_archive:req.files[i] ? req.files[i].filename : "default-image.png",
-                 product_id:productToUpdate.id
-                 }
-    await Images.update(image)
+              product_id:req.params.id           
+      }
+                        
+      images_id=await Images.findOne({where:{product_id:req.params.id }})
+    await Images.update(image,{where:{
+      product_id:req.params.id,
+       id:images_id.id+i
+    }})
     }
   }
    //Guarda en la tabla intermedia ProductSizes

@@ -27,7 +27,7 @@
         <h2 class="nombre"><%= product.name %></h2>
         
         <!-- Precios -->
-        <p class="descuento"><s><%= product.discount %></s> <strong>$<%= product.price %></strong></p>
+        <p class="descuento"><s><%= product.price %></s> <strong>$<%= product.discount %></strong></p>
 
         <!-- Descripción -->
         <p class=""> <%= product.description %></p>
@@ -43,7 +43,7 @@
             <div class='table_row'>
               <div class='table_small'>
                 <div class='table_cell'>Genero</div>
-                <div class='table_cell'><%= product.genre.genre %>.</div>
+                <div class='table_cell'><%= product.genre.genre %></div>
               </div>
               <div class='table_small'>
                 <div class='table_cell'>Marca</div>
@@ -60,24 +60,14 @@
         <div class="w-100 ">
                     
           <h5>Seleccione el Talle:</h5>
-
-            <ul class="caja-talles">
-              <li class="div-talles">S
-                  <input type="radio" name="talle" id="s">
-              </li>
-              <li class="div-talles">M
-                  <input type="radio" name="talle" id="m">
-              </li>
-              <li class="div-talles">L
-                  <input type="radio" name="talle" id="l">
-              </li>
-              <li class="div-talles">XL
-                  <input type="radio" name="talle" id="xl">
-              </li>
+          <ul class="caja-talles">
+           <% for( let i = 0; i < product.sizes.length; i++ ) { %>
+                <li class="div-talles"><%= product.sizes[i].size %>
+    <input type="radio" name="sizes" id="sizes" >
+                </li>
+           <% } %>
             </ul>
-
         </div>
-
         <div class="w-100 ">
           <h5>Cantidad:</h5>
           <div class="contador">

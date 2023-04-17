@@ -1,9 +1,10 @@
 const products = require("../data/product");
+const Sequelize= require ('sequelize');
 
 const { Product, Brand, Colors, Genre, Sizes,Category, Images, ProductSizes, ProductColors } = require("../database/models");
 
 
-
+const Op = Sequelize.Op;
 module.exports = {
   //Tienda, se muestran todos los productos  
     store: async (req, res) => {
@@ -13,6 +14,43 @@ module.exports = {
       })
       res.render("store", { products: products, usuario:usuario });
       },
+
+  //Tienda, se muestran todos los productos de Hombres 
+
+      storeHombre: async (req, res) => {
+        const usuario=req.session.usuarioLogeado;
+        let products=await Product.findAll({where:{
+          genre_id:2
+        },
+          include:[{association:"images"}]
+          })
+        
+        res.render("store", { products: products, usuario:usuario });
+        },
+
+         //Tienda, se muestran todos los productos de Mujeres
+
+      storeMujer: async (req, res) => {
+        const usuario=req.session.usuarioLogeado;
+        let products=await Product.findAll({where:{
+          genre_id:1
+        },
+          include:[{association:"images"}]
+          })
+        
+        res.render("store", { products: products, usuario:usuario });
+        },
+
+        storeKids: async (req, res) => {
+          const usuario=req.session.usuarioLogeado;
+          let products=await Product.findAll({where:{
+            genre_id:{[Op.or]: [3,4]}
+          },
+            include:[{association:"images"}]
+            })
+          
+          res.render("store", { products: products, usuario:usuario });
+          },
 // Pagina de Inicio
     home: async (req, res) => {
       const productsList= await Product.findAll({

@@ -1,5 +1,5 @@
 const products = require("../data/product");
-const Sequelize_ = require ('sequelize');
+const Sequelize= require ('sequelize');
 const { Product, Brand, Colors, Genre, Sizes,Category, Images, ProductSizes, ProductColors, Material } = require("../database/models");
 const category = require("../database/models/category");
 

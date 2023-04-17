@@ -10,6 +10,9 @@ const router = Router();
 
 router.get("/", mainController.home);
 router.get("/store", mainController.store);
+router.get("/storeHombre", mainController.storeHombre);
+router.get("/storeMujer", mainController.storeMujer);
+router.get("/storeKids", mainController.storeKids);
 
 router.get("/productCart", mainController.carrito);
 

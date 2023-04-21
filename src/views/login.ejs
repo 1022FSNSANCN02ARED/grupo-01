@@ -39,21 +39,17 @@
                                 <input type="text" name="email" id="email" class="border-box"
                                 value="<%= locals.oldValues? locals.oldValues.email:null %>">
                                 <% if (locals.errors && errors.email) { %>
-                                    <div class="error-container"><p class="errorMsg">
+                                    <p class="errorMsg">
                                     <%= errors.email.msg %>
                                     </p>
-                                    </div>
                                     <% } %>
 
                                 <label for="password">Ingrese su password</label>
                                 <input type="password" name="password" id="password" class="border-box">
                                 <% if (locals.errors && errors.password) { %>
-                                    <div class="error-container">
                                     <p class="errorMsg">
-                        
                                     <%= errors.password.msg %>
                                     </p>
-                                    </div>
                                  <% } %>
                                 <div class="botones">
                                     <button class="submit" type="submit">Iniciar Sesión</button>
@@ -167,7 +163,7 @@
 
         <!-- footer -->
         <%- include("partials/footer") %>
-
+        <script src="/js/formulario_fe.js"></script>
 </body>
 
 </html>

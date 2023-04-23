@@ -5,7 +5,7 @@ const bscryptjs=require("bcryptjs");
 
 const validacionesLogin=[
 
-body("email").notEmpty().withMessage("Debes completar el campo").bail()
+body("emailLogin").notEmpty().withMessage("Debes completar el campo").bail()
              .isEmail().withMessage("Debes ingresar un email válido").bail()
                               
 ]

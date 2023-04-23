@@ -35,12 +35,12 @@
 
                             <form action="/user/login" method="post" class="formulario">
 
-                                <label for="email">Usuario</label>
-                                <input type="text" name="email" id="email" class="border-box"
-                                value="<%= locals.oldValues? locals.oldValues.email:null %>">
-                                <% if (locals.errors && errors.email) { %>
+                                <label for="emailLogin">Usuario</label>
+                                <input type="text" name="emailLogin" id="emailLogin" class="border-box"
+                                value="<%= locals.oldValues? locals.oldValues.emailLogin:null %>">
+                                <% if (locals.errors && errors.emailLogin) { %>
                                     <p class="errorMsg">
-                                    <%= errors.email.msg %>
+                                    <%= errors.emailLogin.msg %>
                                     </p>
                                     <% } %>
 

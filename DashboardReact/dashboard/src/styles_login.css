@@ -1,0 +1,181 @@
+/*
+ CSS para los tabs
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  width: 49%;
+  padding: 25px 25px 25px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+.tabset > label:hover,
+.tabset > input:focus + label {
+  color:#8C52FF;
+}
+
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+
+.reg-login {
+  text-align: center;
+  padding: 15px;
+  background-color: #8C52FF;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+
+.border-box {
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding: 15px;
+}
+
+.perfil-de-usuario {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-around;
+}
+
+.errorMsg {
+  color: red;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-95 {
+  width: 95%;
+}
+
+.intereses {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-around;
+
+
+}
+
+.botones {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+
+/*
+ CSS para los Formularios
+*/
+
+.formulario { 
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+  margin: auto;
+}
+
+.formulario .r-60{
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+}
+
+.form-label{
+  margin-bottom: 20px !important;
+  font-size: 14px;
+}
+
+.formulario input, .formulario textarea, .formulario select{
+  padding: 15px;
+  margin: 5px 0px;
+  border: 1px solid #8c52ff40;
+  border-radius: 0px;
+  width: 100%;
+}
+
+.form-control {
+  font-size: 25px;
+  line-height: 1.1;
+  display: grid;
+  margin-right: 20px;
+  justify-content: flex-start; 
+  gap: 0em;
+}
+
+
+
+@media (max-width: 768px) {
+  .formulario { 
+    padding: 10px 0PX;
+    display: flex;
+    border-radius: 5px;
+    margin: auto;
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 381px) {
+  .formulario { 
+    padding: 10px 0PX;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .tabset > label {
+   
+    width: 100%;
+   
+  }
+}

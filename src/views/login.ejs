@@ -33,22 +33,22 @@
                         <section id="marzen" class="tab-panel">
                             <h2 class="reg-login">Iniciar Sesion</h2>
 
-                            <form action="/user/login" method="post" class="formulario">
+                            <form action="/user/login" method="post" class="formulario formLogin">
 
-                                <label for="email">Usuario</label>
-                                <input type="text" name="email" id="email" class="border-box"
+                                <label for="emailLogin">Usuario</label>
+                                <input type="text" name="emailLogin" id="emailLogin" class="border-box"
                                 value="<%= locals.oldValues? locals.oldValues.email:null %>">
-                                <% if (locals.errors && errors.email) { %>
+                                <% if (locals.errors && errors.emailLogin) { %>
                                     <p class="errorMsg">
-                                    <%= errors.email.msg %>
+                                    <%= errors.emailLogin.msg %>
                                     </p>
                                     <% } %>
 
-                                <label for="password">Ingrese su password</label>
-                                <input type="password" name="password" id="password" class="border-box">
-                                <% if (locals.errors && errors.password) { %>
+                                <label for="passwordLogin">Ingrese su password</label>
+                                <input type="passwordLogin" name="passwordLogin" id="passwordLogin" class="border-box">
+                                <% if (locals.errors && errors.passwordLogin) { %>
                                     <p class="errorMsg">
-                                    <%= errors.password.msg %>
+                                    <%= errors.passwordLogin.msg %>
                                     </p>
                                  <% } %>
                                 <div class="botones">
@@ -62,11 +62,13 @@
                         <section id="rauchbier" class="tab-panel">
                             <h2 class="reg-login">Registrarse</h2>
                             <form action="/user/registroUsuario" method="post" enctype="multipart/form-data"
-                            class="formulario bg-gris-claro" >
+                            class="formulario bg-gris-claro formReg" >
                             <label for="first_name">Nombre</label>
                             <input type="text" name="first_name" id="first_name" class="border-box is-invalid"
                                    value="<%= locals.oldValues? locals.oldValues.first_name:null %>">
-
+                                
+                                <p class=" errorMsg errorFirstName"></p>
+                                
                             <% if (locals.errors && errors.first_name) { %>
                                 <p class="errorMsg">
                                 <%= errors.first_name.msg %>
@@ -75,6 +77,8 @@
                             <label for="last_name">Apellido</label>
                             <input type="text" name="last_name" id="last_name" class="border-box"
                                    value="<%= locals.oldValues? locals.oldValues.last_name:null %>">
+                                   <p class="errorMsg errorLastName"></p>
+                             
                             <% if (locals.errors && errors.last_name) { %>
                                 <p class="errorMsg">
                                 <%= errors.last_name.msg %>

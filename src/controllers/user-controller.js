@@ -26,7 +26,7 @@ const userControllers={
     /** Login de usuario **/
     processLogin:(req,res)=>{
              let registro=0;         
-             const usuarioLogeado=Users.findOne({where:{email:req.body.email}})
+             const usuarioLogeado=Users.findOne({where:{email:req.body.emailLogin}})
              .then(user=>{
              /* Se verifica que el email ingresado exista en nuestra base de datos */
             if(!user){
@@ -34,7 +34,7 @@ const userControllers={
                     email:{msg:"Credenciales inválidas"}},registro: registro})               
             }else{
              /* Si el email existe se verifica el password */
-            if(!bscryptjs.compareSync(req.body.password,user.dataValues.password)){
+            if(!bscryptjs.compareSync(req.body.passwordLogin,user.dataValues.password)){
              return  res.render("login",{errors:{
                     email:{msg:"Credenciales inválidas"}},registro: registro})
                 }

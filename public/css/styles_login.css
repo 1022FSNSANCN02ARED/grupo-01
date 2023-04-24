@@ -150,7 +150,11 @@
   gap: 0em;
 }
 
+is-invalid{
+  color: red;
+  
 
+}
 
 @media (max-width: 768px) {
   .formulario { 

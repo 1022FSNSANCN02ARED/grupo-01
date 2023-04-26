@@ -6,6 +6,8 @@ import { Route, Switch } from "react-router-dom";
 import SideBar from "./SideBar.jsx";
 import MainContent from "./MainContent.jsx";
 import ProductList from "./ProductList";
+import ProductDetail from "./ProductDetail";
+//import EditProduct from "./EditProduct";
 import UserList from "./UserList";
 import Page404 from "../pages/page404.jsx";
 
@@ -18,11 +20,20 @@ function Main () {
 
     </Route>
 
-    <Route path="/ProductList" >
+    <Route path="/productList" >
     
       <ProductList/>
      
     </Route>
+    <Route path="/productDetail/:id"  component={ProductDetail}/>
+    
+    
+      
+    {/* <Route path="/EditProduct/id" >
+    
+      <EditProduct/>
+     
+    </Route> */}
     <Route path="/UserList" >
     
       <UserList/>

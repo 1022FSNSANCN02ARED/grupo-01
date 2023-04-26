@@ -53,7 +53,7 @@ const controller = {
       console.log(req.files)
       //Guarda en la tabla imágenes
       for (let i = 0; i < 5; i++) {
-         image={name_archive:req.files[i] ? "http://localhost:3001/public/images/product/" + req.files[i].filename : "default-image.png",
+         image={name_archive:req.files[i] ? + req.files[i].filename : "default-image.png",
                    product_id:productCreated.id
                    }
       await Images.create(image)

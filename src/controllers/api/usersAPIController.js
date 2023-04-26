@@ -7,9 +7,11 @@ const usersAPIController = {
     let users = await Users.findAll()
     let usersToSend = users.map((user) => {
       delete user.dataValues.password
+      user.dataValues.urlDetail = "/api/users/" + user.dataValues.id
+
       return user;
     })
-    console.log(usersToSend);
+    
 
     let respuesta = {
       meta: {

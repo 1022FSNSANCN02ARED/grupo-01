@@ -44,7 +44,15 @@ class UserList extends Component {
 
   render() {
     return (
-      
+      <div className=" u-section-row padding-tb">
+
+          <h2 className="das-titulo">Productos</h2>
+
+          {/*<!-- Body Dashboard -->*/}
+          <div className="das-body">
+
+            {/*<div className="productDetail">*/}
+
           
         
         
@@ -84,7 +92,9 @@ class UserList extends Component {
           })}
         </tbody>
       </table> 
-    
+    </div>
+  </div>
+  
     );
   
         }

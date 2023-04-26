@@ -16,8 +16,8 @@ function SideBar() {
     {/*<!-- Menu Admin -->*/}
     <nav className="menu-admin">
         <li><Link to="/"> <i className="fas fa-home"></i> <span>Dashboard</span></Link></li>
-        <li><Link to="/ProductList"> <i className="fas fa-store"></i> <span>Productos</span></Link></li>
-        <li><Link to="/NewProduct"> <i className="fas fa-store"></i> <span>Agregar producto</span></Link></li>
+        <li><Link to="/productList"> <i className="fas fa-store"></i> <span>Productos</span></Link></li>
+        <li><Link to="/newProduct"> <i className="fas fa-store"></i> <span>Agregar producto</span></Link></li>
         <li><Link to="#"> <i className="fas fa-shopping-cart"></i> <span>Pedidos</span></Link></li>
         <li><Link to="/UserList"> <i className="fas fa-users"></i> <span>Usuarios</span></Link></li>
         <li><Link to="/dashboard/page"> <i className="fas fa-store"></i> <span>Paginas</span> </Link></li>

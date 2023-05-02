@@ -23,7 +23,6 @@ class ProductList extends Component {
         return response.json();
       })
       .then((result) => {
-        console.log(result)
         this.setState({
 
           products: result.data,
@@ -66,7 +65,7 @@ class ProductList extends Component {
 
                     <div className="efect">
                       <img className="img-product efect-img1" src={"http://localhost:3001/images/product/" + product.images[0].name_archive} alt={"Imagen " + product.name} />
-                      <img className="img-product efect-img2" src={"http://localhost:3001/images/product/" + product.images[1].name_archive} alt="Imagen remera" />
+                      <img className="img-product efect-img2" src={"http://localhost:3001/images/product/" + product.images[1].name_archive} alt={"Imagen " + product.name} />
                     </div>
                     <div className="div-productos">
 
@@ -95,8 +94,6 @@ class ProductList extends Component {
                 )
               }
               )}
-              {/*} <!-- HACER EL FOREACH -->*/}
-
             </div>
           </div>
           {/*<!-- Fin Body Dashboard -->*/}

@@ -3,11 +3,12 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 
-import SideBar from "./SideBar.jsx";
+//import SideBar from "./SideBar.jsx";
 import MainContent from "./MainContent.jsx";
 import ProductList from "./ProductList";
 import ProductDetail from "./ProductDetail";
-//import EditProduct from "./EditProduct";
+import NewProduct from "./NewProduct";
+import UserDetail from "./UserDetail";
 import UserList from "./UserList";
 import Page404 from "../pages/page404.jsx";
 
@@ -27,7 +28,11 @@ function Main () {
     </Route>
     <Route path="/productDetail/:id"  component={ProductDetail}/>
     
+    <Route path="/newProduct" >
     
+      <NewProduct/>
+     
+    </Route>
       
     {/* <Route path="/EditProduct/id" >
     
@@ -39,6 +44,8 @@ function Main () {
       <UserList/>
      
     </Route>
+    <Route path="/userDetail/:id"  component={UserDetail}/>
+
     <Route path="*" component={Page404} />
 
 

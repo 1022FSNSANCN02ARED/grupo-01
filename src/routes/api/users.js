@@ -5,9 +5,9 @@ const usersAPIController = require('../../controllers/api/usersAPIController');
 //Rutas
 //Listado de todos los usuarios
  router.get('/', usersAPIController.list);
-/*//Detalle del usuario
-router.get('/:id', usersAPIController.detail);
-//Agregar un usuario
+//Detalle del usuario
+router.get('/:id', usersAPIController.userDetail);
+/*//Agregar un usuario
 router.post('/create', usersAPIController.create);
 //Modificar un usuario
 router.put('/update/:id', usersAPIController.update); */

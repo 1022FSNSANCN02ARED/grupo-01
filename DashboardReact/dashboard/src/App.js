@@ -1,7 +1,7 @@
 import React from "react";
 import Main from "./components/Main.jsx";
 import SideBar from "./components/SideBar.jsx";
-import MainContent from "./components/MainContent.jsx";
+//import MainContent from "./components/MainContent.jsx";
 
 
 

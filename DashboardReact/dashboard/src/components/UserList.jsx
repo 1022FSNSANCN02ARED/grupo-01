@@ -75,7 +75,7 @@ class UserList extends Component {
                 <th>{user.last_name}</th>
                 <th>{user.email}</th>
                 <th>
-                  <Link to={`/users/${user.id}`}>
+                  <Link to={`/userDetail/${user.id}`}>
                     <button className="btn text-success">
                       <i className="fas fa-eye"></i>
                     </button>

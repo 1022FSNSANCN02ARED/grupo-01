@@ -18,20 +18,33 @@ const productsAPIController = {
     let sizes = await Sizes.findAll();
     let category = await Category.findAll();
     let material = await Material.findAll();
-
-    return res.render("dashboard/newProduct", {
+    let respuesta = {
+      meta: {
+        status: 200,
+        url: "api/newproduct",
+      },
+      data:{
       brand: marca,
       colors: colors,
       genre: genre,
       sizes: sizes,
       category: category,
       material: material
-    })
+      }
+    };
+    res.json(respuesta);
+
+
   },
 
   // Añadir Nuevo Producto en el Escritorio
 
   addProduct: async (req, res) => {
+    console.log(req.body)
+    /* let productos=req.body
+    let prod=JSON.parse(productos)
+    console.log(prod); 
+ */
     const product = {
       ...req.body,
       brand_id: req.body.brand,
@@ -46,13 +59,13 @@ const productsAPIController = {
     //Guarda en la tabla productos
     let productCreated = await Product.create(product);
     //Guarda en la tabla imágenes
-    for (let i = 0; i < 5; i++) {
+    /* for (let i = 0; i < 5; i++) {
       image = {
         name_archive: req.files[i] ? req.files[i].filename : "default-image.png",
         product_id: productCreated.id
       }
       await Images.create(image)
-    };
+    }; 
     //Guarda en la tabla intermedia ProductSizes
     for (let i = 0; i < sizes.length; i++) {
       await ProductSizes.create({
@@ -67,9 +80,24 @@ const productsAPIController = {
         product_id: productCreated.id,
         color_id: colors[i]
       })
-    };
+    };*/
 
-    res.redirect("/dashboard/product");
+    
+      let respuesta = {
+        meta: {
+          status: 200,
+        
+          url: "api/products/saveproduct",
+        },
+        /* data: confirm, */
+      };
+      
+      res.json(respuesta);
+    /* })
+    .catch((error) => {
+      console.log(error);
+      res.send(error);
+    }); */
   },
 
 
@@ -77,7 +105,7 @@ const productsAPIController = {
   // Lista de Productos en el Escritorio
   list: async (req, res) => {
     let partialProducts = await Product.findAll({
-      include: [{ association: "images" }, { association: "sizes" }]
+      include: [{ association: "images" }, { association: "sizes" }], order:[["id","DESC"]]
     })
     let products = partialProducts.map((product) => {
       product.dataValues.urlDetail = "/api/products/" + product.dataValues.id

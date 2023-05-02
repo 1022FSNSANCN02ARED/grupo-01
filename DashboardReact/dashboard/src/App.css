@@ -333,6 +333,10 @@ display: block;
 		flex-wrap: wrap;
 	}
 
+	.databox{
+		border-radius: 5px;
+		border:10px solid greenyellow;
+	}
 
 	/*seccion slider*/
 

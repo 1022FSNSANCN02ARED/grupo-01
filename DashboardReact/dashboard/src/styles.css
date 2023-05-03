@@ -764,15 +764,26 @@
 	}
 
 	.table-userDetail{
-
+		display:inline-table;
 		border: 2px solid #c3e7ed;
-		width: 100%;
+		width: 50%;
+		
 	}
 	.table-userDetail tr{
-		border: 2px solid #d45151;
-		text-align: center;
+		display: grid;
+		border-top: 1px solid #c3e7ed;
+		text-align: left;
 		width: 100%;
+		padding: 10px;
 	}
+	 .table-userDetail th{
+		background-color: #ae8def;
+		color: #1b1a1c;
+		/* display: grid;
+		border-top: 1px solid #c3e7ed;
+		text-align: left;
+		width: 50%; */
+	} 
 
 	@media (max-width: 481px) {
 

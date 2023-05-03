@@ -29,7 +29,7 @@ return(
 <div className="das-body-userDetail">
 <table className="table-userDetail">
         
-          <th className="tableheader">
+          <th >
             <tr>Id</tr>
             <tr>Nombre</tr>
             <tr>Apellido</tr>
@@ -41,7 +41,7 @@ return(
             <tr>Dirección</tr>
           </th>
     
-              <th>
+              <td>
                 <tr>{user.id}</tr>
                 <tr>{user.first_name}</tr>
                 <tr>{user.last_name}</tr>
@@ -52,7 +52,7 @@ return(
                 <tr>{ user.role.role}</tr>
                 <tr>{ user.adress}</tr>
           
-              </th>
+              </td>
             
       
       </table> 

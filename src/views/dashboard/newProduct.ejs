@@ -21,12 +21,24 @@
 
                   <div class="w-100">
                     <label for="name" class="form-label">Nombre del producto:</label>
-                    <input type="text" id="name" name="name" placeholder="Nombre del Producto" class="w-100" />
+                    <input type="text" id="name" name="name" placeholder="Nombre del Producto" class="w-100" 
+                    value="<%= product.name %>" />
+                    <% if (locals.errors && errors.name) { %>
+                      <p class="errorMsg">
+                      <%= errors.name.msg %>
+                      </p>
+                    <% } %>
                   </div>
 
                   <div class="w-100">
                     <label for="description" class="form-label">Descripcion producto:</label>
-                    <textarea name="description" id="description" placeholder="Descripción" class="w-100" rows="8" cols="50" ></textarea>
+                    <textarea name="description" id="description" placeholder="Descripción" class="w-100" rows="8" cols="50" 
+                    value="<%= product.description %>" ></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                      <p class="errorMsg">
+                      <%= errors.name.msg %>
+                      </p>
+                    <% } %>
                   </div>
 
                   <div class="w-100 flex">
@@ -46,7 +58,6 @@
                                 <input type="checkbox" name="colors" id="colors" value="<%= colors[i].id %>" >
                               </li>
                               <% } %>
-                              
                             </ul>
                   </div>
                     <div class="r-25">
@@ -99,7 +110,13 @@
 
                   <div class="r-50">
                     <label for="price" class="form-label">Precio:</label>
-                    <input type="text" id="price" name="price" placeholder="Precio" class="w-100" />
+                    <input type="text" id="price" name="price" placeholder="Precio" class="w-100" 
+                    value="<%= product.price %>" />
+                    <% if (locals.errors && errors.price) { %>
+                      <p class="errorMsg">
+                      <%= errors.price.msg %>
+                      </p>
+                  <% } %>
                   </div>
 
                   <div class="r-50">

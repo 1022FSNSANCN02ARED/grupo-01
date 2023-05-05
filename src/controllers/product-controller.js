@@ -1,6 +1,6 @@
 const products = require("../data/product");
 const Sequelize= require ('sequelize');
-const { Product, Brand, Colors, Genre, Sizes,Category, Images, ProductSizes, ProductColors, Material } = require("../database/models");
+const { Product, Brand, Colors, Genre, Sizes, Category, Images, ProductSizes, ProductColors, Material } = require("../database/models");
 const category = require("../database/models/category");
 
 
@@ -24,13 +24,16 @@ const controller = {
     let category=await Category.findAll();
     let material=await Material.findAll();
     
+    
+
     return  res.render("dashboard/newProduct", {
-    brand:marca,
-    colors:colors,
-    genre:genre,
-    sizes:sizes,
-    category:category,
-    material:material
+    product: products,
+    brand: marca,
+    colors: colors,
+    genre: genre,
+    sizes: sizes,
+    category: category,
+    material: material
     })
   },
   

@@ -41,6 +41,7 @@ const productsAPIController = {
 
   addProduct: async (req, res) => {
     console.log(req.body)
+    console.log(req.files)
     /* let productos=req.body
     let prod=JSON.parse(productos)
     console.log(prod); 
@@ -55,17 +56,17 @@ const productsAPIController = {
     let sizes = req.body.sizes
     let colors = req.body.colors
 
-    let image = {}
+  let image = {}
     //Guarda en la tabla productos
     let productCreated = await Product.create(product);
-    //Guarda en la tabla imágenes
-    /* for (let i = 0; i < 5; i++) {
-      image = {
+      /* //Guarda en la tabla imágenes
+       for (let i = 0; i < 5; i++) {
+      image = { 
         name_archive: req.files[i] ? req.files[i].filename : "default-image.png",
         product_id: productCreated.id
-      }
+       } 
       await Images.create(image)
-    }; 
+      } */ 
     //Guarda en la tabla intermedia ProductSizes
     for (let i = 0; i < sizes.length; i++) {
       await ProductSizes.create({
@@ -80,7 +81,7 @@ const productsAPIController = {
         product_id: productCreated.id,
         color_id: colors[i]
       })
-    };*/
+    };
 
     
       let respuesta = {

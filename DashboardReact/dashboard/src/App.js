@@ -12,18 +12,12 @@ import './admin.css';
 
 function App() {
   return (
-<>
-<body className="dashboard">
+    <body className="dashboard">
       <SideBar />
-      
       <div className="a-panel-dashboard">
-
       <Main/>
-         
-    
       </div> 
     </body>
-</>
   );
 }
 

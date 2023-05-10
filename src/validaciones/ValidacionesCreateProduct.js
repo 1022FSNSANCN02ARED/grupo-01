@@ -18,11 +18,11 @@ const validacionesCreateProduct= [
         body("price").notEmpty().withMessage("Ingresa el precio del producto"),
         body("brand")
             .notEmpty()
-            .withMessage("Ingresa la marca del producto."),
-        body("category").notEmpty().withMessage("Selecciona una categoría."),
-        body("material").notEmpty().withMessage("Selecciona un material."),
-        body("colors").notEmpty().withMessage("Selecciona un colors."),
-        body("sizes").notEmpty().withMessage("Selecciona un sizes."),
+            .withMessage("Debes seleccionar la marca del producto."),
+        body("category").notEmpty().withMessage("Debes seleccionar una categoría."),
+        body("material").notEmpty().withMessage("Debes seleccionara un material."),
+        body("colors").notEmpty().withMessage("Debes seleccionar un color"),
+        body("sizes").notEmpty().withMessage("Debes seleccionar un talle"),
        /*  body("discount")
             .optional()
             .custom((value, { req }) => {
@@ -35,17 +35,21 @@ const validacionesCreateProduct= [
                     throw new Error("Debe ingresar un número entre 1 y 100");
                 }
             }), */
-        body("image").custom((value, { req }) => {
-            let file = req.file;
+        body("images")
+        .custom((value, { req }) => {
+            let files = req.files;
             let acceptedExtensions = [".jpg", ".jpeg",".png"];
+            console.log(files)
 
-            if (file) {
+            if (files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
                 let fileExtension = path.extname(file.originalname);
                 if (!acceptedExtensions.includes(fileExtension)) {
                     throw new Error(
                         "Las extensiones de imágenes permitidas son .jpg, jpeg o .png."
                     );
-                }
+                }}
             }
 
             return true;

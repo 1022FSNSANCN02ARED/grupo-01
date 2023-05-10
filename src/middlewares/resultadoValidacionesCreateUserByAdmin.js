@@ -5,12 +5,13 @@ const { validationResult }=require("express-validator");
         
         const resultvalidations=validationResult(req);
         const oldValues=req.body;
-    
+        let registro=1;
         if (resultvalidations.errors.length>0) {
-            return  res.render("dashboard/createUserAdmint",{
+            return  res.render("dashboard/editUser",{
             errors:resultvalidations.mapped(),
             oldValues:oldValues,
             usuario:oldValues,
+            registro:registro,
              });   
         }else{
             next();

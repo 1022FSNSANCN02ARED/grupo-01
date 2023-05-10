@@ -153,9 +153,9 @@ const image = document.getElementById('image');
      }
    })
    
-   const formularioRegister = document.querySelector("form.formReg");
+ const formularioRegister = document.querySelector("form.formReg");
    console.log("entré2")
-   formularioRegister.addEventListener("change", function(evento) {
+ formularioRegister.addEventListener("change", function(evento) {
    console.log("entré3")
 
      evento.preventDefault();

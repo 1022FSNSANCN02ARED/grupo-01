@@ -200,6 +200,11 @@ await ProductColors.destroy({where:{
     await ProductSizes.destroy({where:{
       product_id:req.params.id
          }})
+
+     //Eliminar datos de colores
+     await ProductColors.destroy({where:{
+      product_id:req.params.id
+         }})     
      
     //Eliminar datos de la tabla productos
     await Product.destroy({where:{

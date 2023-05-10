@@ -81,6 +81,11 @@
   width: 100%;
   padding-bottom: 10px;
 }
+.chkerrorMsg {
+  color: red;
+  width: 100%;
+  
+}
 
 .w-40 {
   width: 40%;

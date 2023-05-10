@@ -2,6 +2,8 @@
 <html lang="es">
 
 <head>
+  <script src="/js/form-product.js"></script>
+
     <%- include('partialsDashboard/head') %>
 </head>
 
@@ -17,12 +19,15 @@
             <div class="das-body">
 
                 <!-- Formulario Crear Producto -->
-                <form action="/dashboard" method="post" enctype="multipart/form-data" class="formulario bg-gris-claro">
+                <form action="/dashboard" method="post" enctype="multipart/form-data" class="formulario bg-gris-claro formNewProduct">
 
                   <div class="w-100">
                     <label for="name" class="form-label">Nombre del producto:</label>
                     <input type="text" id="name" name="name" placeholder="Nombre del Producto" class="w-100" 
                     value="<%= product.name %>" />
+                    <p class="errorMsg">
+                      
+                      </p>
                     <% if (locals.errors && errors.name) { %>
                       <p class="errorMsg">
                       <%= errors.name.msg %>
@@ -33,10 +38,12 @@
                   <div class="w-100">
                     <label for="description" class="form-label">Descripcion producto:</label>
                     <textarea name="description" id="description" placeholder="Descripción" class="w-100" rows="8" cols="50" 
-                    value="<%= product.description %>" ></textarea>
+                    ><%= product.description %></textarea>
+                    <p class="errorMsg">
+
                     <% if (locals.errors && errors.description) { %>
                       <p class="errorMsg">
-                      <%= errors.name.msg %>
+                      <%= errors.description.msg %>
                       </p>
                     <% } %>
                   </div>
@@ -46,27 +53,65 @@
                       <label for="category" class="form-label">Categoría:</label>                     
                       <select name="category" id="category" class="form-input" >
                         <% for( let i = 0; i < category.length; i++ ) { %>
-                          <option value="<%= category[i].id %>"><%= category[i].type %></option>
+                          <option value="<%= category[i].id %>" <%=product.category== category[i].id? "selected" : "" %>><%= category[i].type %></option>
                         <% } %>
                       </select>
                     </div>
                     <div class="r-25">
-                      <label for="colors" class="form-label">Colores:</label>      
+                      <label for="colors" class="form-label">
+                        
+                        <% if (locals.errors && errors.colors) { %>
+                          <p class="errorMsg">
+                          <%= errors.colors.msg %>
+                          </p>
+                          <% } else { %>
+                            <p class="colorMsg">Seleccione un color:</p>
+                            
+                        <% }%>
+                        
+                     </label>      
                               <ul class="caja-talles">
                             <% for( let i = 0; i < colors.length; i++ ) { %>
                               <li class="div-talles"><%= colors[i].color %>
-                                <input type="checkbox" name="colors" id="colors" value="<%= colors[i].id %>" >
+                               
+                                <input type="checkbox" name="colors" id="colors" value="<%= colors[i].id %>" 
+                                
+                                <% if (product.colors) { %>
+                                <% for( let j = 0; j < product.colors.length; j++ ) { %> 
+                                  <%=product.colors[j]== colors[i].id? "checked" : "" %>
+                                  <% } %>
+                                  <% } %>>
+                                
                               </li>
+                            
+
                               <% } %>
+                              
                             </ul>
                   </div>
                     <div class="r-25">
                     
-                    <label for="sizes" class="form-label">Seleccione el Talle:</label>                        
+                    <label for="sizes" class="form-label">
+                      <% if (locals.errors && errors.sizes) { %>
+                        <p class="errorMsg">
+                        <%= errors.sizes.msg %>
+                        </p>
+                        <% } else { %>
+                          <p class="sizeMsg">Seleccione un talle:</p>
+
+                      <% }%>
+                    </label>                        
                           <ul class="caja-talles">
                           <% for( let i = 0; i < sizes.length; i++ ) { %>
                             <li class="div-talles"><%= sizes[i].size %>
-                              <input type="checkbox" name="sizes" id="sizes" value="<%= sizes[i].id %>">
+                              <input type="checkbox" name="sizes" id="sizes" value="<%= sizes[i].id %>"
+                              <% if (product.sizes) { %>
+                               
+                              
+                              <% for( let j = 0; j < product.sizes.length; j++ ) { %> 
+                                <%=product.sizes[j]== sizes[i].id? "checked" : "" %>
+                                <% } %>
+                                <% } %>>
                             </li>
                             <% } %>
                           </ul>
@@ -78,7 +123,7 @@
                       <label for="genre" class="form-label">Genero:</label>
                       <select name="genre" id="genre" class="form-input" >
                         <% for( let i = 0; i < genre.length; i++ ) { %>
-                          <option value="<%= genre[i].id %>"><%= genre[i].genre %></option>
+                          <option value="<%= genre[i].id %>" <%=product.genre== genre[i].id? "selected" : "" %>><%= genre[i].genre %></option>
                         <% } %>
                        
                     </select>
@@ -89,7 +134,7 @@
                       <label for="brand" class="form-label">Marca:</label>
                       <select name="brand" id="brand" class="form-input" >
                         <% for( let i = 0; i < brand.length; i++ ) { %>
-                          <option value="<%= brand[i].id %>"><%= brand[i].name %></option>
+                          <option value="<%= brand[i].id %>" <%=product.brand== brand[i].id? "selected" : "" %>><%= brand[i].name %></option>
                         
                         <% } %>
                        
@@ -100,7 +145,7 @@
                       <label for="material" class="form-label">Material:</label>
                       <select name="material" id="material" class="form-input" >
                         <% for( let i = 0; i < material.length; i++ ) { %>
-                          <option value="<%= material[i].id %>"><%= material[i].type %></option>
+                          <option value="<%= material[i].id %>" <%=product.material== material[i].id? "selected" : "" %>><%= material[i].type %></option>
                         
                         <% } %>
                        
@@ -112,6 +157,8 @@
                     <label for="price" class="form-label">Precio:</label>
                     <input type="text" id="price" name="price" placeholder="Precio" class="w-100" 
                     value="<%= product.price %>" />
+                    <p class="errorMsg">
+
                     <% if (locals.errors && errors.price) { %>
                       <p class="errorMsg">
                       <%= errors.price.msg %>
@@ -125,13 +172,21 @@
                   </div>
     
 
-                  <label for="images">Imagen destacada</label>
+                  <label for="images">
+
+                    <% if (locals.errors && errors.images) { %>
+                    <p class="errorMsg">
+                    <%= errors.images.msg %>
+                    </p>
+                    <% } else { %>
+                      Seleccione una imagen:
+                  <% }%></label>
                   <input type="file" name="images" accept="image/png,image/jpeg,image/jpg" class="border-box" multiple>
 
 
                   <div class="w-100 botones padding-tb">
                     <button type="reset" class="rest"><span class="far fa-trash-alt"> </span> Limpiar</button>
-                    <button type="submit" class="submit">GUARDAR </i></button>
+                    <button type="submit" class="submit" id="submit-button">GUARDAR </i></button>
                      
                   </div>
 

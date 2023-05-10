@@ -17,7 +17,7 @@ const resultadoValidacionesEdit=require("../middlewares/resultadoValidacionesEdi
 const resultadoValidacionesEditAdmin=require("../middlewares/resultadoValidacionesEditAdmin");
 const resultadoValidacionesCreateUserByAdmin=require("../middlewares/resultadoValidacionesCreateUserByAdmin");
 const middlewareAdminLogeado=require("../middlewares/middlewareAdminLogeado");
-const middlewareusuarioNoLogeado=require("../middlewares/middlewareUsuarioNoLogeado");
+//const middlewareusuarioNoLogeado=require("../middlewares/middlewareUsuarioNoLogeado");
 const middlewareusuarioLogeado=require("../middlewares/middlewareUsuarioLogeado");
 
 

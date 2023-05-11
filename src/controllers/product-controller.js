@@ -49,7 +49,7 @@ const controller = {
       }
       let sizes=req.body.sizes
       let colors=req.body.colors
-      
+      console.log(product, colors, sizes);
       let image={}
       //Guarda en la tabla productos
       let productCreated=await Product.create(product);

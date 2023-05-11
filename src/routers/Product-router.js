@@ -38,7 +38,7 @@ router.post("/", upload.array("images",5), validacionesCreateProduct, resultadoV
 /*** Editar un PRODUCTO ***/
 router.get("/:id/editProduct",productController.editarproducto);
  
-router.put("/:id",upload.array("images",5), validacionesEditProduct, resultadoValidacionesEditProduct, productController.actualizar);
+router.put("/:id",upload.array("images",5), productController.actualizar);
 
 /*** Elimina un PRODUCTO***/
 router.delete("/:id", productController.eliminar);

@@ -162,39 +162,16 @@
                 value="<%= product.discount %>" />
             </div>
 
-            <!-- <div class="w-100 ">
-
-              <label for="talle" class="form-label">Seleccione el Talle:</label>
-
-              <ul class="caja-talles">
-                <li class="div-talles">S
-                  <input type="checkbox" name="S" id="s">
-                </li>
-                <li class="div-talles">M
-                  <input type="checkbox" name="m" id="m">
-                </li>
-                <li class="div-talles">L
-                  <input type="checkbox" name="l" id="l">
-                </li>
-                <li class="div-talles">XL
-                  <input type="checkbox" name="xl" id="xl">
-                </li>
-              </ul>
-
-            </div> -->
+          
+            
 
             <div class="w-100 botones padding-tb">
-              
-              <button type="submit" class="rest"><span class="far fa-trash-alt"></span> Eliminar</button>
-
-             
-
+              <button type="submit" class="submit ">Guardar cambios </i></button>
         </form>
-        <!-- Fin Formulario Editar Producto -->
-
+       
         <!-- Formulario Boton Eliminar Producto -->
         <form action="/dashboard/<%= product.id %>?_method=delete" method="POST">
-          <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
+          <button type="reset" class="submit far fa-trash-alt rest"> Eliminar </i></button>
         </form>
         <!-- Fin Formulario Boton Eliminar Producto -->
 

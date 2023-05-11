@@ -2,7 +2,9 @@ console.log("El archivo form-product.js se ha cargado correctamente.");
 
 window.addEventListener("load", () => {
     console.log("entró correctamente.");
-let errors=0
+let errors={
+   
+}
     //Validacion Formulario de PRODUCTOS
 
     // Obtener los elementos del formulario
@@ -21,12 +23,13 @@ let errors=0
    
     if (nameInput.value.length < 4) {
         nameInput.classList.add('is-invalid');
-        errors+=1;
+        errors.name="1";
         // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
         const errorMsg = document.querySelector('#name + .errorMsg');
         errorMsg.innerText = 'El nombre es OBLIGATORIO, debe tener AL MENOS 5 caracteres';
     } else {
-        errors-=1;
+        errors.name="";
+
 
         nameInput.classList.remove('is-invalid');
         // Limpiar el mensaje de error
@@ -43,10 +46,15 @@ let errors=0
     // Validar el campo "description"
     if (descriptionInput.value.length < 5) {
         descriptionInput.classList.add('is-invalid');
+        errors.description="1";
+
         // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
         const errorMsg = document.querySelector('#description + .errorMsg');
         errorMsg.innerText = 'La descripcion es OBLIGATORIA, debe tener AL MENOS 5 caracteres';
     } else {
+        errors.description="";
+
+
         descriptionInput.classList.remove('is-invalid');
         // Limpiar el mensaje de error
         const errorMsg = document.querySelector('#description + .errorMsg');
@@ -55,12 +63,17 @@ let errors=0
 
     // Validar el campo "colors"
     if (!colorsInput.checked) {
+        errors.colors="1";
+
+
         // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
         const errorMsg = document.querySelector('.colorMsg');
         errorMsg.classList.add('is-invalid');
         errorMsg.classList.add('chkerrorMsg');
         errorMsg.innerText = 'Debe seleccionar un color';
     } else {
+        errors.colors="";
+
         
         // Limpiar el mensaje de error
         const errorMsg = document.querySelector('.colorMsg');
@@ -72,12 +85,17 @@ let errors=0
   
  // Validar el campo "sizes"
  if (!sizesInput.checked) {
+    errors.sizes="1";
+
+
     // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
     const errorMsg = document.querySelector('.sizeMsg');
     errorMsg.classList.add('is-invalid');
     errorMsg.classList.add('chkerrorMsg');
     errorMsg.innerText = 'Debe seleccionar un talle';
 } else {
+    errors.sizes="";
+
     
     // Limpiar el mensaje de error
     const errorMsg = document.querySelector('.sizeMsg');
@@ -96,6 +114,9 @@ let errors=0
     }
 
     if (priceInput.value.length < 2) {
+        errors.price="1";
+
+
         priceInput.classList.add('is-invalid');
         // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
         const errorMsg = document.querySelector('#price + .errorMsg');
@@ -103,11 +124,15 @@ let errors=0
       
     } else {
         priceInput.classList.remove('is-invalid');
+        errors.price="";
+
+
         // Limpiar el mensaje de error
         const errorMsg = document.querySelector('#price + .errorMsg');
         errorMsg.innerText = '';
     } 
-    if (errors==0) {
+    console.log(errors)
+    if (!(errors.name || errors.description || errors.colors || errors.sizes || errors.price )) {
         
     
     // Si todos los campos son válidos, enviar el formulario al servidor

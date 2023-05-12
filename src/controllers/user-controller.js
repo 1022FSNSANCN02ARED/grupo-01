@@ -123,10 +123,12 @@ const userControllers={
 
     editUserAdmin:(req,res)=>{
         //Obtener los datos del formulario y adecuarlos  
+        console.log(req.files)
             const user = {
                 ...req.body,
                 id:req.session.userToEdit.id,
-                
+                image:req.file ? req.file.filename : "default-image.png", 
+
                 //image:req.session.userToEdit.imagen, 
                          
             };
@@ -160,6 +162,8 @@ const userControllers={
         const user = {
             ...req.body,
         password:bscryptjs.hashSync(req.body.password,10), 
+        image:req.file ? req.file.filename : "default-image.png", 
+
          }     
         Users.create({
             ...user,

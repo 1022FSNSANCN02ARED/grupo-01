@@ -81,6 +81,11 @@
   width: 100%;
   padding-bottom: 10px;
 }
+.chkerrorMsg {
+  color: red;
+  width: 100%;
+  
+}
 
 #errorMessages, #errorPassword , #errorLogin, #errorPassLogin {
   color: orangered;
@@ -161,7 +166,11 @@ box-shadow:  0 0 10px purple;
   gap: 0em;
 }
 
+is-invalid{
+  color: red;
+  
 
+}
 
 @media (max-width: 768px) {
   .formulario { 

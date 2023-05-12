@@ -1,7 +1,7 @@
 const { Router, urlencoded } = require("express")
 const mainController = require("../controllers/main-controller");
 const middlewareAdminLogeado=require("../middlewares/middlewareAdminLogeado");
-const middlewareusuarioNoLogeado=require("../middlewares/middlewareusuarioNoLogeado");
+const middlewareusuarioNoLogeado=require("../middlewares/middlewareUsuarioNoLogeado");
 
 
 

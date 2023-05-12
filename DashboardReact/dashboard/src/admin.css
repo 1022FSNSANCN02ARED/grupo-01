@@ -1,0 +1,143 @@
+/*
+ CSS PANEL DE ADMINISTRACION
+*/
+
+.dashboard {
+  gap: 0px;
+  box-sizing: border-box;
+}
+
+.a-panel-menu {
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  background-color: #333;
+  align-items: center;
+}
+
+.a-panel-dashboard {
+  margin-left: calc(15%);
+  width: 85%;
+}
+
+.menu-admin {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 12px;
+  border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+.menu-admin li {
+  border-top: 1px solid rgb(151, 151, 151);
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.menu-admin li i {
+  margin-right: 10px;
+}
+
+.menu-admin li:hover {
+  background-color: #8c52ff;
+}
+
+.menu-admin li a {
+  color: #fff;
+}
+
+.menu-admin li a:hover {
+  color: #333;
+}
+
+.das-titulo {
+  text-align: left;
+  font-size: 30px;
+  color: #333;
+}
+
+.das-body {
+  background-color: #8c52ff18;
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+}
+
+.z-100 {
+  width: 50%;
+}
+
+.das-footer {
+  bottom: 0 !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #858796;
+}
+.tableheader{
+  background-color: #c6aff3;
+}
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #e3e6f0;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e3e6f0;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #c6c8d6;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.35rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #8c52ff;
+  color: #0f0f10;
+
+}
+.text-danger {
+  color: #e74a3b !important;
+}
+.text-success {
+  color: #1cc88a !important;
+}
+
+
+
+@media (max-width: 768px) {
+  .menu-admin li a span {
+    display: none;
+  }
+  .menu-admin li {
+    text-align: center;
+  }
+}
+
+@media (max-width: 381px) {
+  .menu-admin li a span {
+    display: none;
+  }
+}

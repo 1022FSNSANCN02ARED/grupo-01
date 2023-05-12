@@ -46,12 +46,22 @@
               <label for="name" class="form-label">Nombre del producto:</label>
               <input type="text" id="name" name="name" placeholder="<%= product.name %>" class="w-100"
                 value="<%= product.name %>" />
+                <% if (locals.errors && errors.name) { %>
+                  <p class="errorMsg">
+                  <%= errors.name.msg %>
+                  </p>
+              <% } %>
             </div>
 
             <div class="w-100">
               <label for="description" class="form-label">Descripcion producto:</label>
               <textarea name="description" id="description" class="w-100" rows="8"
                 cols="50"><%= product.description %></textarea>
+                <% if (locals.errors && errors.description) { %>
+                  <p class="errorMsg">
+                  <%= errors.description.msg %>
+                  </p>
+              <% } %>
             </div>
 
             <div class="w-100 ">
@@ -139,6 +149,11 @@
               <label for="price" class="form-label">Precio:</label>
               <input type="text" id="price" name="price" placeholder="<%= product.price %>" class="w-100"
                 value="<%= product.price %>" />
+                <% if (locals.errors && errors.price) { %>
+                  <p class="errorMsg">
+                  <%= errors.price.msg %>
+                  </p>
+              <% } %>
             </div>
 
             <div class="r-50">
@@ -146,38 +161,13 @@
               <input type="text" id="discount" name="discount" placeholder="<%= product.discount %>" class="w-100"
                 value="<%= product.discount %>" />
             </div>
-
-            <!-- <div class="w-100 ">
-
-              <label for="talle" class="form-label">Seleccione el Talle:</label>
-
-              <ul class="caja-talles">
-                <li class="div-talles">S
-                  <input type="checkbox" name="S" id="s">
-                </li>
-                <li class="div-talles">M
-                  <input type="checkbox" name="m" id="m">
-                </li>
-                <li class="div-talles">L
-                  <input type="checkbox" name="l" id="l">
-                </li>
-                <li class="div-talles">XL
-                  <input type="checkbox" name="xl" id="xl">
-                </li>
-              </ul>
-
-            </div> -->
-
             <div class="w-100 botones padding-tb">
-
-              <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
-
+              <button type="submit" class="submit ">Guardar cambios </i></button>
         </form>
-        <!-- Fin Formulario Editar Producto -->
-
+       
         <!-- Formulario Boton Eliminar Producto -->
         <form action="/dashboard/<%= product.id %>?_method=delete" method="POST">
-          <button type="submit" class="rest"><span class="far fa-trash-alt"></span> Eliminar</button>
+          <button type="reset" class="submit far fa-trash-alt rest"> Eliminar </i></button>
         </form>
         <!-- Fin Formulario Boton Eliminar Producto -->
 

@@ -26,17 +26,17 @@ const userControllers={
     /** Login de usuario **/
     processLogin:(req,res)=>{
              let registro=0;         
-             const usuarioLogeado=Users.findOne({where:{email:req.body.email}})
+             const usuarioLogeado=Users.findOne({where:{email:req.body.emailLogin}})
              .then(user=>{
              /* Se verifica que el email ingresado exista en nuestra base de datos */
             if(!user){
              return  res.render("login",{errors:{
-                    email:{msg:"Credenciales inválidas"}},registro: registro})               
+                    emailLogin:{msg:"Credenciales inválidas"}},registro: registro})               
             }else{
              /* Si el email existe se verifica el password */
-            if(!bscryptjs.compareSync(req.body.password,user.dataValues.password)){
+            if(!bscryptjs.compareSync(req.body.passwordLogin,user.dataValues.password)){
              return  res.render("login",{errors:{
-                    email:{msg:"Credenciales inválidas"}},registro: registro})
+                    emailLogin:{msg:"Credenciales inválidas"}},registro: registro})
                 }
             }
             delete user.dataValues.password;
@@ -123,10 +123,12 @@ const userControllers={
 
     editUserAdmin:(req,res)=>{
         //Obtener los datos del formulario y adecuarlos  
+        console.log(req.files)
             const user = {
                 ...req.body,
                 id:req.session.userToEdit.id,
-                
+                image:req.file ? req.file.filename : "default-image.png", 
+
                 //image:req.session.userToEdit.imagen, 
                          
             };
@@ -160,6 +162,8 @@ const userControllers={
         const user = {
             ...req.body,
         password:bscryptjs.hashSync(req.body.password,10), 
+        image:req.file ? req.file.filename : "default-image.png", 
+
          }     
         Users.create({
             ...user,

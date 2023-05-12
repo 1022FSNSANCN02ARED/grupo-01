@@ -1,6 +1,6 @@
 const products = require("../data/product");
 const Sequelize= require ('sequelize');
-const { Product, Brand, Colors, Genre, Sizes,Category, Images, ProductSizes, ProductColors, Material } = require("../database/models");
+const { Product, Brand, Colors, Genre, Sizes, Category, Images, ProductSizes, ProductColors, Material } = require("../database/models");
 const category = require("../database/models/category");
 
 
@@ -24,13 +24,16 @@ const controller = {
     let category=await Category.findAll();
     let material=await Material.findAll();
     
+    
+
     return  res.render("dashboard/newProduct", {
-    brand:marca,
-    colors:colors,
-    genre:genre,
-    sizes:sizes,
-    category:category,
-    material:material
+    product: products,
+    brand: marca,
+    colors: colors,
+    genre: genre,
+    sizes: sizes,
+    category: category,
+    material: material
     })
   },
   
@@ -46,10 +49,11 @@ const controller = {
       }
       let sizes=req.body.sizes
       let colors=req.body.colors
-      
+      console.log(product, colors, sizes);
       let image={}
       //Guarda en la tabla productos
       let productCreated=await Product.create(product);
+      console.log(req.files)
       //Guarda en la tabla imágenes
       for (let i = 0; i < 5; i++) {
          image={name_archive:req.files[i] ? req.files[i].filename : "default-image.png",
@@ -137,11 +141,14 @@ const controller = {
     let colors=req.body.colors
     let image={}
     let images_id={}
+    console.log(product)
     let productToUpdate=await Product.update(product,{where:{
       id:req.params.id,
     }});
-    if(req.files.length!=0){
-      console.log(req.files)
+
+  console.log(req.files)
+    if(req.files.length!==0){
+    
     for (let i = 0; i < 5; i++) {
        image={name_archive:req.files[i] ? req.files[i].filename : "default-image.png",
               product_id:req.params.id           
@@ -155,6 +162,8 @@ const controller = {
     }
   }
    //Guarda en la tabla intermedia ProductSizes
+if (sizes) {
+  
 
      await ProductSizes.destroy({where:{
   product_id:req.params.id
@@ -165,8 +174,10 @@ const controller = {
     product_id:req.params.id,
     size_id:sizes[i]
      }) }
-
+    }
 //Guarda en la tabla intermedia ProductColors
+if (colors) {
+  
 
 await ProductColors.destroy({where:{
   product_id:req.params.id
@@ -176,7 +187,7 @@ await ProductColors.destroy({where:{
      await ProductColors.create({
     product_id:req.params.id,
     color_id:colors[i]
-     }) }
+     }) }}
 
      res.redirect("/dashboard/product"); 
   },
@@ -197,7 +208,11 @@ await ProductColors.destroy({where:{
     await ProductSizes.destroy({where:{
       product_id:req.params.id
          }})
-     
+     //Eliminar datos de colores
+    await ProductColors.destroy({where:{
+      product_id:req.params.id
+         }})
+
     //Eliminar datos de la tabla productos
     await Product.destroy({where:{
             id:req.params.id

@@ -37,7 +37,7 @@
 
                                 <label for="emailLogin">Usuario</label>
                                 <input type="text" name="emailLogin" id="emailLogin" class="border-box"
-                                value="<%= locals.oldValues? locals.oldValues.email:null %>">
+                                value="<%= locals.oldValues? locals.oldValues.emailLogin:null %>">
                                 <% if (locals.errors && errors.emailLogin) { %>
                                     <p class="errorMsg">
                                     <%= errors.emailLogin.msg %>

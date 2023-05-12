@@ -8,9 +8,16 @@ module.exports = (sequelize, DataTypes) => {
       role: {
         type: DataTypes.STRING,
         allowNull: true
-      }
-    });
-
+      }},
+      {
+      timestamps: false,
+      tableName: "role",
+      /* createdAt: "created_at",
+      updatedAt: "updated_at", */
+      //deletedAt: false,
+  }
+    );
+    
     /* CREATE TABLE role (
         id INT AUTO_INCREMENT PRIMARY KEY,
         role VARCHAR(50) NOT NULL

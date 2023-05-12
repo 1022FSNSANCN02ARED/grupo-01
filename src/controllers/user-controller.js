@@ -31,12 +31,12 @@ const userControllers={
              /* Se verifica que el email ingresado exista en nuestra base de datos */
             if(!user){
              return  res.render("login",{errors:{
-                    email:{msg:"Credenciales inválidas"}},registro: registro})               
+                    emailLogin:{msg:"Credenciales inválidas"}},registro: registro})               
             }else{
              /* Si el email existe se verifica el password */
             if(!bscryptjs.compareSync(req.body.passwordLogin,user.dataValues.password)){
              return  res.render("login",{errors:{
-                    email:{msg:"Credenciales inválidas"}},registro: registro})
+                    emailLogin:{msg:"Credenciales inválidas"}},registro: registro})
                 }
             }
             delete user.dataValues.password;

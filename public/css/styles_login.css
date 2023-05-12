@@ -82,6 +82,17 @@
   padding-bottom: 10px;
 }
 
+#errorMessages, #errorPassword , #errorLogin, #errorPassLogin {
+  color: orangered;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.invalid{
+border: solid 1px purple;
+box-shadow:  0 0 10px purple;
+}
+
 .w-40 {
   width: 40%;
 }

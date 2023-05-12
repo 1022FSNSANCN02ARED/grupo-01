@@ -1,151 +1,226 @@
-console.log("El archivo registro.js se ha cargado correctamente.");
+/* console.log("El archivo registro.js se ha cargado correctamente.") */
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
+  const form = document.querySelector("#formRegistro");
+  //Validación FRONT = Capturo los campos
+  const firstName = document.getElementById("first_name");
+  const lastName = document.getElementById("last_name");
+  const emailInput = document.getElementById("emailRegistro");
+  const password = document.getElementById("password1");
+  const errorPassword = document.getElementById("errorPassword");
+  const confirmPassword = document.getElementById("confirmarpasswordReg");
+  const submitButton = document.querySelector('button[type="submit"]');
+  const fileInput = document.getElementById("image");
 
-  function validarFormulario() {
+  const registeredEmails = ["email1@example.com", "email2@example.com"];
 
-    // Validación formulario de LOGIN
-    
-    // Validar email
-    const email = document.getElementById("email").value;
-    
-    if (!email) {
-      mostrarError("email", "El campo email es OBLIGATORIO.");
-      return false;
+  // Validar el formulario al enviar
+  form.addEventListener("submit", function (event) {
+    let totalErrors = 0;
+    totalErrors = totalErrors + validateFields(firstName);
+    totalErrors = totalErrors + validateFields(lastName);
+    totalErrors = totalErrors + validateEmail(emailInput);
+    totalErrors = totalErrors + validatePass(password, confirmPassword);
+    totalErrors = totalErrors + validateFile(fileInput);
+
+    console.log(totalErrors); //si hay error no enviar (contar errores del form)
+    if (totalErrors > 0) {
+      event.preventDefault();
     }
-    if (!validarEmail(email)) {
-      mostrarError("email", "El email ingresado no es VALIDO.");
-      return false;
+  });
+
+  //Función para validar campos nombre y apellido (Debe ser obligatorio y tener al menos 2 caracteres)
+  const validateFields = (campo) => {
+    const field = campo;
+    const fieldValue = campo.value.trim();
+
+    if (fieldValue.length < 2) {
+      field.classList.add("invalid");
+      field.nextElementSibling.classList.add("errorMessages");
+      field.nextElementSibling.textContent =
+        "El " +
+        field.name +
+        " es obligatorio. Debe tener al menos 2 caracteres";
+      return 1;
+    } else {
+      field.classList.remove("invalid");
+      field.nextElementSibling.classList.remove("errorMessages");
+      field.nextElementSibling.textContent = "";
+      return 0;
+    }
+  };
+
+  //Validar email (Debe ser obligatorio y Válido)
+  const validateEmail = (campo) => {
+    const field = campo;
+    const fieldValue = campo.value.trim();
+    console.log(fieldValue);
+    //Expresión regular para email
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    /*   const emailRegex = fieldValue.includes("@"); */
+
+    if (!fieldValue) {
+      field.classList.add("invalid");
+      field.nextElementSibling.classList.add("errorMessages");
+      field.nextElementSibling.textContent =
+        "El mail es Obligatorio.Por favor introduce un email válido";
+      return 1;
+    } else if (!emailRegex.test(fieldValue)) {
+      // Check si el formato es válido
+      field.classList.add("invalid");
+      field.nextElementSibling.classList.add("errorMessages");
+      field.nextElementSibling.textContent =
+        "Por favor introduce un email válido.";
+      return 1;
+    } else if (registeredEmails.includes(fieldValue)) {
+      // Check si el email ya está registrado
+      field.classList.add("invalid");
+      field.nextElementSibling.classList.add("errorMessages");
+      field.nextElementSibling.textContent =
+        "Este email ya ha sido registrado. Por favor introduce otro email.";
+      return 1;
+    } else {
+      field.classList.remove("invalid");
+      field.nextElementSibling.classList.remove("errorMessages");
+      field.nextElementSibling.textContent = "";
+      return 0;
+    }
+  };
+
+  const validatePass = (password, confirmPassword) => {
+    // Verificar que la contraseña cumpla con los requisitos
+    const passwordValue = password.value.trim();
+    const confirmPasswordValue = confirmPassword.value.trim();
+    const errors = [];
+
+    console.log(passwordValue);
+    console.log(confirmPasswordValue);
+    if (passwordValue !== confirmPasswordValue) {
+      errors.push("Las contraseñas no coinciden");
     }
 
-    function validarEmail(email) {
-      // Validar si el email tiene el formato correcto
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
+    if (passwordValue.length < 8) {
+      errors.push("La contraseña debe tener al menos 8 caracteres");
     }
-    
-    
-    // Validar contraseña
-    const password = document.getElementById("password").value;
-    
-    if (!password) {
-      mostrarError("password", "El campo contraseña es OBLIGATORIO.");
-      return false;
+
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!regex.test(passwordValue)) {
+      errors.push(
+        "La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial"
+      );
     }
-    
-    // formulario es válido:
-    return true;
-  }
-  
 
-  function mostrarError(campo, mensaje) {
-
-    // Eliminar cualquier mensaje de error anterior
-    const campoError = document.getElementById(campo).parentNode;
-    const errorAnterior = campoError.querySelector(".errorMsg");
-    if (errorAnterior) {
-      campoError.removeChild(errorAnterior);
+    // Si hay errores, mostrarlos
+    if (errors.length > 0) {
+      errorPassword.innerHTML = errors.join("<br>");
+      submitButton.disabled = true;
+      return 1;
+    } else {
+      errorPassword.innerHTML = "";
+      submitButton.disabled = false;
+      return 0;
     }
-  
-    // Mostrar el nuevo mensaje de error
-    const error = document.createElement("p");
-    error.className = "errorMsg";
-    error.textContent = mensaje;
-    campoError.appendChild(error);
+  };
+
+  //Validar imagen (Deberá ser un archivo válido (JPG, JPEG, PNG, GIF)).
+  const validateFile = (campo) => {
+    const field = campo;
+    const fieldValue = campo.value;
+    const fileExtension = campo.files[0].name.split(".").pop().toLowerCase();
+    const allowedExt = ["jpg", "jpeg", "png", "gif"];
+    console.log(fieldValue);
+    let errors = 0;
+
+    if (!allowedExt.includes(fileExtension)) {
+      field.classList.add("invalid");
+      field.nextElementSibling.classList.add("errorMessages");
+      field.nextElementSibling.textContent =
+        "Por favor introduce un archivo con extensión válida (JPG, JPEG, PNG, GIF)";
+      errors++;
+    } else {
+      field.classList.remove("invalid");
+      field.nextElementSibling.classList.remove("errorMessages");
+      field.nextElementSibling.textContent = "Archivo válido";
+    }
+    return errors;
+  };
+
+});
+
+
+
+
+//Validación formualario Login
+const formLogin = document.querySelector(".formulario");
+const email = document.getElementById("email");
+const passwordLogin = document.getElementById("password");
+const emailError = document.getElementById("errorLogin");
+const passwordError = document.getElementById("errorPassLogin");
+const registeredEmailsLog = ["email1@example.com", "email2@example.com"];
+
+formLogin.addEventListener("submit", function (event) {
+  let totalErrors = 0;
+
+  totalErrors = totalErrors + validateEmailLogin(email);
+  totalErrors = totalErrors + validatePasswordLogin(passwordLogin);
+
+  if (totalErrors > 0) {
+    event.preventDefault();
   }
-  
+});
 
-  // Validación Formulario de REGISTRO
+//Validar email (Debe ser obligatorio y Válido)
+function validateEmailLogin  (campo) {
+  const field = campo;
+  const fieldValue = campo.value.trim();
+  console.log(fieldValue);
+  //Expresión regular para email
+  const emailRegexLogin = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-// Obtener el formulario y los campos
-const form = document.getElementById('form-reg');
-const firstName = document.getElementById('first_name');
-const lastName = document.getElementById('last_name');
-const email = document.getElementById('email-reg');
-const password = document.getElementById('password-reg');
-const confirmPassword = document.getElementById('confirmarpassword');
-const image = document.getElementById('image');
+  /*   const emailRegex = fieldValue.includes("@"); */
 
-
-  // Validar el campo "first_name"
-  if (firstName.value.length < 2) {
-    firstName.classList.add('is-invalid');
-    // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
-    const errorMsg = document.querySelector('#first_name + .errorMsg');
-    errorMsg.innerText = 'El nombre es OBLIGATORIO, debe tener AL MENOS 2 caracteres';
+  if (!fieldValue) {
+    field.classList.add("invalid");
+    field.nextElementSibling.classList.add("emailError");
+    field.nextElementSibling.textContent =
+      "El mail es Obligatorio.Por favor introduce un email válido";
+    return 1;
+  } else if (!emailRegexLogin.test(fieldValue)) {
+    // Check si el formato es válido
+    field.classList.add("invalid");
+    field.nextElementSibling.classList.add("emailError");
+    field.nextElementSibling.textContent =
+      "Por favor introduce un email válido.";
+    return 1;
+  } else if (registeredEmailsLog.includes(fieldValue)) {
+    // Check si el email ya está registrado
+    field.classList.add("invalid");
+    field.nextElementSibling.classList.add("emailError");
+    field.nextElementSibling.textContent =
+      "Este email ya ha sido registrado. Por favor introduce otro email.";
+    return 1;
   } else {
-    firstName.classList.remove('is-invalid');
-    // Limpiar el mensaje de error
-    const errorMsg = document.querySelector('#first_name + .errorMsg');
-    errorMsg.innerText = '';
+    field.classList.remove("invalid");
+    field.nextElementSibling.classList.remove("emailError");
+    field.nextElementSibling.textContent = "";
+    return 0;
   }
+};
 
-  // Validar el campo "last_name"
-  if (lastName.value.length < 2) {
-    lastName.classList.add('is-invalid');
-    // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
-    const errorMsg = document.querySelector('#last_name + .errorMsg');
-    errorMsg.innerText = 'El apellido es OBLIGATORIO, debe tener AL MENOS 2 caracteres';
+
+function validatePasswordLogin (passwordLogin) {
+  const passwordL = passwordLogin.value.trim();
+
+  if (passwordL === "") {
+    passwordLogin.classList.add("invalid");
+    passwordError.textContent = "La contraseña es obligatoria.";
+    return 1;
   } else {
-    lastName.classList.remove('is-invalid');
-    // Limpiar el mensaje de error
-    const errorMsg = document.querySelector('#last_name + .errorMsg');
-    errorMsg.innerText = '';
+    passwordLogin.classList.remove("invalid");
+    passwordError.textContent = "";
+    return 0;
   }
+};
 
-  // Validar el campo "email"
-  if (!validateEmail(email.value)) {
-    email.classList.add('is-invalid');
-    // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
-    const errorMsg = document.querySelector('#email-reg + .errorMsg');
-    errorMsg.innerText = 'El correo electrónico NO es válido';
-  } else {
-    email.classList.remove('is-invalid');
-    // Limpiar el mensaje de error
-    const errorMsg = document.querySelector('#email-reg + .errorMsg');
-    errorMsg.innerText = '';
-  }
-
-  // Validar el campo "password"
-  if (password.value.length < 8) {
-    password.classList.add('is-invalid');
-    // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
-    const errorMsg = document.querySelector('#password-reg + .errorMsg');
-    errorMsg.innerText = 'La contraseña debe tener AL MENOS 8 caracteres';
-  } else {
-    password.classList.remove('is-invalid');
-    // Limpiar el mensaje de error
-    const errorMsg = document.querySelector('#password-reg + .errorMsg');
-    errorMsg.innerText = '';
-  }
-
-  // Validar el campo "confirmarpassword"
-  if (confirmPassword.value.length < 8 || confirmPassword.value !== password.value) {
-    confirmPassword.classList.add('is-invalid');
-    // Obtener el mensaje de error del servidor y mostrarlo en la etiqueta correspondiente
-    const errorMsg = document.querySelector('#confirmarpassword + .errorMsg');
-    errorMsg.innerText = 'Las contraseñas NO coinciden';
-  } else {
-    confirmPassword.classList.remove('is-invalid');
-    // Limpiar el mensaje de error
-    const errorMsg = document.querySelector('#confirmarpassword + .errorMsg');
-    errorMsg.innerText = '';
-  }
-
-
-   // Asociar la función validarFormulario al evento submit del formulario
-   const formulario = document.querySelector("form");
-   formulario.addEventListener("submit", function(evento) {
-     evento.preventDefault();
-     if (validarFormulario()) {
-       formulario.submit();
-     }
-   })
-   })
-  // Validar el campo "image"
-/*   if (!validateFile(image.files[0])) {
-    image.classList
-
-
-  }
- */

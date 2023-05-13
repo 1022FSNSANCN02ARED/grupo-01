@@ -49,11 +49,11 @@ const controller = {
       }
       let sizes=req.body.sizes
       let colors=req.body.colors
-      console.log(product, colors, sizes);
+   
       let image={}
       //Guarda en la tabla productos
       let productCreated=await Product.create(product);
-      console.log(req.files)
+      
       //Guarda en la tabla imágenes
       for (let i = 0; i < 5; i++) {
          image={name_archive:req.files[i] ? req.files[i].filename : "default-image.png",
@@ -141,12 +141,12 @@ const controller = {
     let colors=req.body.colors
     let image={}
     let images_id={}
-    console.log(product)
+  
     let productToUpdate=await Product.update(product,{where:{
       id:req.params.id,
     }});
 
-  console.log(req.files)
+  
     if(req.files.length!==0){
     
     for (let i = 0; i < 5; i++) {

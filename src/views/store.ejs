@@ -12,21 +12,28 @@
 
 	<main class="u-section-row padding-tb">
 
-		<section class="slider">
-			<ul>
-				<li>
-					<img src="/images/1366x600_banner-1.jpg" alt="">
-				</li>
-				<li>
-					<img src="/images/1366x600_cai_puma.jpg" alt="">
-				</li>
-				<li>
-					<img src="/images/1366x600_cumulus24.jpg" alt="">
-				</li>
-				<li>
-					<img src="/images/ar-cro_13-12_horizontal_1366x600px_sf_53.jpg" alt="">
-				</li>
-			</ul>
+		
+
+		
+
+		<section class="ofertas">
+
+			<div class="container-ofertas">
+				<h2>ENCONTRA LO QUE NECESITAS</h2>
+			</div>
+
+			<div class="productDetail">
+				<!-- HACER EL FOREACH -->
+				<%= console.log(products) %>
+				
+				<% products.forEach(product =>  { %>
+
+					<%- include("partials/product-card",{ product })%> 
+				<% }) %>
+				
+			<!-- FIN DEL FOREACH -->
+			</div>
+
 		</section>
 
 		<section class="banners">
@@ -54,26 +61,6 @@
 
 		</section>
 
-
-		<section class="ofertas">
-
-			<div class="container-ofertas">
-				<h2>ENCONTRA LO QUE NECESITAS</h2>
-			</div>
-
-			<div class="productDetail">
-				<!-- HACER EL FOREACH -->
-				<%= console.log(products) %>
-				
-				<% products.forEach(product =>  { %>
-
-					<%- include("partials/product-card",{ product })%> 
-				<% }) %>
-				
-			<!-- FIN DEL FOREACH -->
-			</div>
-
-		</section>
 
 	</main>	
 

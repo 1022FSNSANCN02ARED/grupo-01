@@ -1,4 +1,6 @@
-/* console.log("El archivo registro.js se ha cargado correctamente.") */
+console.log("El archivo registro.js se ha cargado correctamente.") 
+
+
 
 window.addEventListener("load", function () {
   const form = document.querySelector("#formRegistro");
@@ -16,14 +18,17 @@ window.addEventListener("load", function () {
 
   // Validar el formulario al enviar
   form.addEventListener("submit", function (event) {
-    let totalErrors = 0;
-    totalErrors = totalErrors + validateFields(firstName);
+
+let totalErrors = 0;
+     totalErrors = totalErrors + validateFields(firstName);
     totalErrors = totalErrors + validateFields(lastName);
     totalErrors = totalErrors + validateEmail(emailInput);
     totalErrors = totalErrors + validatePass(password, confirmPassword);
-    totalErrors = totalErrors + validateFile(fileInput);
-
-    console.log(totalErrors); //si hay error no enviar (contar errores del form)
+   //totalErrors = totalErrors + validateFile(fileInput);
+ 
+     //si hay error no enviar (contar errores del form)
+   
+    
     if (totalErrors > 0) {
       event.preventDefault();
     }
@@ -54,7 +59,7 @@ window.addEventListener("load", function () {
   const validateEmail = (campo) => {
     const field = campo;
     const fieldValue = campo.value.trim();
-    console.log(fieldValue);
+   
     //Expresión regular para email
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -94,8 +99,7 @@ window.addEventListener("load", function () {
     const confirmPasswordValue = confirmPassword.value.trim();
     const errors = [];
 
-    console.log(passwordValue);
-    console.log(confirmPasswordValue);
+    
     if (passwordValue !== confirmPasswordValue) {
       errors.push("Las contraseñas no coinciden");
     }
@@ -128,9 +132,9 @@ window.addEventListener("load", function () {
   const validateFile = (campo) => {
     const field = campo;
     const fieldValue = campo.value;
-    const fileExtension = campo.files[0].name.split(".").pop().toLowerCase();
+    const fileExtension = campo.file.name.split(".").pop().toLowerCase();
     const allowedExt = ["jpg", "jpeg", "png", "gif"];
-    console.log(fieldValue);
+    
     let errors = 0;
 
     if (!allowedExt.includes(fileExtension)) {
@@ -147,13 +151,13 @@ window.addEventListener("load", function () {
     return errors;
   };
 
-});
+
 
 
 
 
 //Validación formualario Login
-const formLogin = document.querySelector(".formulario");
+const formLogin = document.querySelector(".formlogin");
 const email = document.getElementById("email");
 const passwordLogin = document.getElementById("password");
 const emailError = document.getElementById("errorLogin");
@@ -162,10 +166,10 @@ const registeredEmailsLog = ["email1@example.com", "email2@example.com"];
 
 formLogin.addEventListener("submit", function (event) {
   let totalErrors = 0;
-
   totalErrors = totalErrors + validateEmailLogin(email);
   totalErrors = totalErrors + validatePasswordLogin(passwordLogin);
-
+  
+ 
   if (totalErrors > 0) {
     event.preventDefault();
   }
@@ -175,7 +179,7 @@ formLogin.addEventListener("submit", function (event) {
 function validateEmailLogin  (campo) {
   const field = campo;
   const fieldValue = campo.value.trim();
-  console.log(fieldValue);
+  
   //Expresión regular para email
   const emailRegexLogin = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -210,8 +214,8 @@ function validateEmailLogin  (campo) {
 };
 
 
-function validatePasswordLogin (passwordLogin) {
-  const passwordL = passwordLogin.value.trim();
+function validatePasswordLogin (password) {
+  const passwordL = password.value.trim();
 
   if (passwordL === "") {
     passwordLogin.classList.add("invalid");
@@ -219,8 +223,12 @@ function validatePasswordLogin (passwordLogin) {
     return 1;
   } else {
     passwordLogin.classList.remove("invalid");
-    passwordError.textContent = "";
+    errorPassLogin.textContent = "";
     return 0;
-  }
-};
+  }}
+  
 
+
+
+
+});

@@ -13,7 +13,7 @@ const userControllers={
         
             const user = {
                 ...req.body,
-            password:bscryptjs.hashSync(req.body.password,10),
+            password:bscryptjs.hashSync(req.body.password1,10),
              }     
             Users.create({
                 ...user,
@@ -25,8 +25,9 @@ const userControllers={
 
     /** Login de usuario **/
     processLogin:(req,res)=>{
+        console.log(req.body)
              let registro=0;         
-             const usuarioLogeado=Users.findOne({where:{email:req.body.emailLogin}})
+             const usuarioLogeado=Users.findOne({where:{email:req.body.email}})
              .then(user=>{
              /* Se verifica que el email ingresado exista en nuestra base de datos */
             if(!user){
@@ -34,9 +35,9 @@ const userControllers={
                     emailLogin:{msg:"Credenciales inválidas"}},registro: registro})               
             }else{
              /* Si el email existe se verifica el password */
-            if(!bscryptjs.compareSync(req.body.passwordLogin,user.dataValues.password)){
+            if(!bscryptjs.compareSync(req.body.password,user.dataValues.password)){
              return  res.render("login",{errors:{
-                    emailLogin:{msg:"Credenciales inválidas"}},registro: registro})
+                    email:{msg:"Credenciales inválidas"}},registro: registro})
                 }
             }
             delete user.dataValues.password;
@@ -123,7 +124,7 @@ const userControllers={
 
     editUserAdmin:(req,res)=>{
         //Obtener los datos del formulario y adecuarlos  
-        console.log(req.files)
+      
             const user = {
                 ...req.body,
                 id:req.session.userToEdit.id,
@@ -158,7 +159,7 @@ const userControllers={
  ///////Creación de un usuario nuevo por el administrador/////////////
 
     createUserAdmin:(req,res)=>{
-        console.log(req.body);
+       
         const user = {
             ...req.body,
         password:bscryptjs.hashSync(req.body.password,10), 

@@ -39,8 +39,6 @@ const validacionesCreateProduct= [
         .custom((value, { req }) => {
             let files = req.files;
             let acceptedExtensions = [".jpg", ".jpeg",".png"];
-            console.log(files)
-
             if (files) {
                 for (let i = 0; i < files.length; i++) {
                     const file = files[i];

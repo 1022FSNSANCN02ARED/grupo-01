@@ -25,7 +25,7 @@
             <section id="marzen" class="tab-panel">
               <h2 class="reg-login">Iniciar Sesion</h2>
 
-              <form action="/user/login" method="post" class="formulario">
+              <form action="/user/login" method="post" class="formulario formlogin">
                 <label for="email">Usuario</label>
                 <input
                   type="text"
@@ -55,9 +55,11 @@
                 </div>
               </form>
             </section>
-
+           
             <section id="rauchbier" class="tab-panel">
               <h2 class="reg-login">Registrarse</h2>
+
+              
               <form
                 action="/user/registroUsuario"
                 method="post"
@@ -68,7 +70,7 @@
                 <label for="first_name">Nombre</label>
                 <input
                   type="text"
-                  name="nombre"
+                  name="first_name"
                   id="first_name"
                   class="border-box is-invalid"
                   value="<%= locals.oldValues? locals.oldValues.first_name:null %>"
@@ -82,7 +84,7 @@
                 <label for="last_name">Apellido</label>
                 <input
                   type="text"
-                  name="apellido"
+                  name="last_name"
                   id="last_name"
                   class="border-box"
                   value="<%= locals.oldValues? locals.oldValues.last_name:null %>"
@@ -153,10 +155,10 @@
                 <p class="errorMsg"><%= errors.adress.msg %></p>
                 <% } %>
 
-                <label for="password">Ingrese su password</label>
+                <label for="password1">Ingrese su password</label>
                 <input
                   type="password"
-                  name="password"
+                  name="password1"
                   id="password1"
                   class="border-box"
                 />
@@ -166,10 +168,10 @@
                 <% } %>
               
 
-                <label for="confirmarpassword">Confirme password</label>
+                <label for="confirmarpasswordReg">Confirme password</label>
                 <input
                   type="password"
-                  name="confirmarpassword"
+                  name="confirmarpasswordReg"
                   id="confirmarpasswordReg"
                   class="border-box"
                 />
@@ -185,7 +187,7 @@
                   name="image"
                   accept="image/png,image/jpeg,image/jpg"
                   class="border-box"
-                  multiple
+                 /*  multiple */
                 />
 
                 <div id="errorMessages"></div>

@@ -23,12 +23,12 @@ body("email").notEmpty().withMessage("Debes completar este campo").bail()
 body("user").notEmpty().withMessage("Debes completar este campo"),
 body("birthdate").notEmpty().withMessage("Debes completar este campo"),
 body("adress").notEmpty().withMessage("Debes completar este campo"),
-body("password").notEmpty().withMessage("Debes completar este campo"),
-body("confirmarpassword").notEmpty().withMessage("Debes completar este campo")
+body("password1").notEmpty().withMessage("Debes completar este campo"),
+body("confirmarpasswordReg").notEmpty().withMessage("Debes completar este campo")
 .custom((value,{ req})=>{
     
 
-    if(req.body.password!==req.body.confirmarpassword){
+    if(req.body.password1!==req.body.confirmarpasswordReg){
         throw new Error("La confirmación del password debe ser igual que el password");
     }    
     return true;

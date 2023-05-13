@@ -6,12 +6,10 @@ function resultadoValidacionesLogin(req,res,next){
          const oldValues=req.body;
          const registro=0;
          if(resultadoValidaciones.errors.length>0){
-            console.log(resultadoValidaciones.mapped());
            return res.render("login",{
                 errors:resultadoValidaciones.mapped(),
                 oldValues:oldValues, 
                 registro:registro,
-
             })
          }
          next();

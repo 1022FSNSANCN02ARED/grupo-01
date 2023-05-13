@@ -26,7 +26,7 @@ return(
 <h2 className="das-titulo">Datos de usuario { user.first_name}</h2>
 
 {/*<!-- Body Dashboard -->*/}
-<div className="das-body-userDetail">
+<div className="das-body-userDetail  flex">
 <table className="table-userDetail">
         
           <th >
@@ -56,16 +56,11 @@ return(
             
       
       </table> 
-  {/*<div className="productDetail">*/}
+      <div className="r-50">
+      <img className="img-medium"  src={"http://localhost:3001/images/avatars/" + user.image} alt={"Imagen " + user.first_name}/>
 
-    {/* <h2 className="nombre">Nombre:{ user.first_name}</h2>
-    <h2 className="nombre">Apellido:{ user.last_name}</h2>
-    <h2 className="nombre">Email:{ user.email}</h2>
-    <h2 className="nombre">Documento:{ user.identification_document}</h2>
-    <h2 className="nombre">User:{ user.user}</h2>
-    <h2 className="nombre">Fecha de nacimiento:{ user.birthdate}</h2>
-    <h2 className="nombre">Rol:{ user.role.role}</h2>
-    <h2 className="nombre">Dirección:{ user.adress}</h2> */}
+      </div>
+ 
 </div>
 
 

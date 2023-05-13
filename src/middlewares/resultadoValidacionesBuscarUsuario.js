@@ -7,7 +7,7 @@ function resultadoValidacionesBuscarUsuario(req,res,next){
          const registro=0;
          
          if(resultadoValidaciones.errors.length>0){
-            console.log(resultadoValidaciones);
+         
            return res.render("dashboard/editUser",{
                 errors:resultadoValidaciones.mapped(),
                 oldValues:oldValues, 

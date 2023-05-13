@@ -56,7 +56,7 @@ module.exports = {
       const productsList= await Product.findAll({
         include:[{association:"images"}]
         });
-        console.log(productsList);
+       
       const productSale=productsList.filter((p) => p.category_id ==2);  
       const productFeatured=productsList.filter((p) => p.category_id ==1);
       const usuario=req.session.usuarioLogeado;

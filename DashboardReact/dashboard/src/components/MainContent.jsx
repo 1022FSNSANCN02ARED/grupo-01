@@ -67,15 +67,13 @@ if(products && users){
           <div className="r-50 databox">
             <h3>PRODUCTOS</h3>
 
-            <h3>Total productos: {totalp}</h3>
+            <h3>Productos cargados: {totalp}</h3>
           </div>
           <div className="r-50 databox">
             <h3 >USUARIOS</h3>
-            <h3>Total usuarios: {totalUsers}</h3>
+            <h3>Usuarios cargados: {totalUsers}</h3>
           </div>
-          {/* <div className="r-33">
-            <h3></h3>
-          </div> */}
+          
           {/* último producto*/}
           
           <article className="productos pd_lastProduct">

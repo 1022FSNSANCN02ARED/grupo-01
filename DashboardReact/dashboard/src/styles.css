@@ -637,6 +637,12 @@
 	.img-small {
 		width: 23%;
 	}
+	.img-xsmall {
+		width: 10%;
+	}
+	.img-medium {
+		width: 40%;
+	}
 
 	.descripcion-tarjeta {
 		display: flex;
@@ -753,6 +759,8 @@
 		border-radius: 5px;
 		text-align: center;
 		background-color: #c6aff3;
+		height:100px;
+		padding: 22px;
 	}
 
 	.das-body-userDetail {

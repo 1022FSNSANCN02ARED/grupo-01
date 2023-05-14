@@ -9,6 +9,7 @@ const router = Router();
 
 
 router.get("/", mainController.home);
+router.get("/search", mainController.search);
 router.get("/store", mainController.store);
 router.get("/storeHombre", mainController.storeHombre);
 router.get("/storeMujer", mainController.storeMujer);

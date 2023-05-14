@@ -26,16 +26,16 @@
               <h2 class="reg-login">Iniciar Sesion</h2>
 
               <form action="/user/login" method="post" class="formulario formlogin"  enctype="multipart/form-data">
-                <label for="email">Usuario</label>
+                <label for="emailLogin">Usuario</label>
                 <input
                   type="text"
-                  name="email"
+                  name="emailLogin"
                   id="email"
                   class="border-box"
                   value="<%= locals.oldValues? locals.oldValues.email:null %>"
                 />
-                <% if (locals.errors && errors.email) { %>
-                <p class="errorMsg"><%= errors.email.msg %></p>
+                <% if (locals.errors && errors.emailLogin) { %>
+                <p class="errorMsg"><%= errors.emailLogin.msg %></p>
                 <% } %>
                 <div id="errorLogin"></div>
 

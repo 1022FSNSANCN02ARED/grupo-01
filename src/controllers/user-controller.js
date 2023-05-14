@@ -29,7 +29,7 @@ const userControllers = {
     processLogin: (req, res) => {
         console.log(req.body)
         let registro = 0;
-        const usuarioLogeado = Users.findOne({ where: { email: req.body.email } })
+        const usuarioLogeado = Users.findOne({ where: { email: req.body.emailLogin } })
             .then(user => {
                 /* Se verifica que el email ingresado exista en nuestra base de datos */
                 if (!user) {

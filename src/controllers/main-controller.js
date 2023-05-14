@@ -63,6 +63,24 @@ module.exports = {
       res.render("index", { productSale, productFeatured, usuario:usuario });
     },
 
+    async search(req, res) {
+      const search = req.query.buscar;
+      const usuario=req.session.usuarioLogeado;
+
+      //search products by name
+      const products = await Product.findAll({
+        include:[{association:"images"}],
+      
+          where: {
+              name: {
+                  [Op.like]: `%${search}%`,
+              },
+          },
+      });
+
+      res.render("store", {products: products, usuario:usuario});
+  },
+
     // Pagina del Carrito
     carrito: (req, res) => {
       const usuario=req.session.usuarioLogeado;

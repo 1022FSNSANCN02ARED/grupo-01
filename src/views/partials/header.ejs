@@ -14,7 +14,7 @@
                         <div class="dropMenu">
                             <a href="">
                                 <%= usuario.first_name %>
-                                <i class="far fa-caret-square-down"></i>
+                                    <i class="far fa-caret-square-down"></i>
                             </a>
                             <ul>
                                 <li><a href="/user/editarUsuario">Editar tus datos</a></li>
@@ -41,17 +41,21 @@
         <nav class="menu r-70">
             <li><a href="/">Inicio</a></li>
             <li><a href="/store">Tienda</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#footer">Contacto</a></li>
             <% if (locals.localAdminLogeado) { %>
                 <li><a href="/dashboard">Administrador</a></li>
                 <%}%>
 
         </nav>
         <!-- Buscador -->
+        
         <div class="buscador r-30">
-            <button class="bus-botton"><i class="fas fa-search"></i></button>
-            <input class="bus-input" type="text" name="buscar" required placeholder="Buscar porductos, marcas">
+          <form action="/search" method="GET" class="flex">  
+                <button type="submit" class="bus-botton r-25"><i class="fas fa-search"></i></button>
+                <input class="bus-input r-70" type="text" name="buscar" required placeholder="Buscar porductos">
+         </form>   
         </div>
+
     </div>
 </div>
 
@@ -62,7 +66,7 @@
     <div class="cont-menu">
         <nav>
             <li><a href="/">Inicio</a></li>
-            
+
             <a href="/store">Tienda</a>
             <a href="#">Contacto</a>
             <a href="#">Politica de Privacidad</a>

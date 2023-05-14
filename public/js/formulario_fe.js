@@ -170,7 +170,7 @@ window.addEventListener("load", function () {
     totalErrors = totalErrors + validateEmailLogin(email);
     totalErrors = totalErrors + validatePasswordLogin(passwordLogin);
 
-
+console.log(totalErrors)
     if (totalErrors > 0) {
       event.preventDefault();
     }
@@ -231,6 +231,6 @@ window.addEventListener("load", function () {
 
 
 
-
+console.log("me fui")
 
 });

@@ -40,7 +40,7 @@ const upload = multer({
 router.post("/registroUsuario",upload.single("image"),validacionesRegistro,resultadoValidaciones,userController.processRegister);
 
 /*** procesamiento login de usuario***/
-router.post("/login",urlencoded(),validacionesLogin,resultadoValidacionesLogin,userController.processLogin);
+router.post("/login",upload.single("image"),validacionesLogin,resultadoValidacionesLogin,userController.processLogin);
 
 /*** procesamiento logout de usuario***/
 router.get("/deslogear",userController.logout)
@@ -52,7 +52,7 @@ router.put("/guardarUsuario",upload.single("image"),middlewareusuarioLogeado,val
 /*** Edición del perfil del usuario para administrador***/
 
 router.get("/editUser",upload.single("image"),middlewareusuarioLogeado,userController.editUser)
-router.post("/userToEdit",urlencoded(),validacionesBuscarUsuario,resultadoValidacionesBuscarUsuario,userController.userToEdit)
+router.post("/userToEdit",upload.single("image"),validacionesBuscarUsuario,resultadoValidacionesBuscarUsuario,userController.userToEdit)
 router.put("/editUserAdmin",upload.single("image"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesEditAdmin,userController.editUserAdmin)
 router.post("/createUserAdmin",upload.single("image"),middlewareAdminLogeado,validacionesEditUsuarioAdmin,resultadoValidacionesCreateUserByAdmin,userController.createUserAdmin)
 module.exports = router;

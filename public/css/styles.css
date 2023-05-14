@@ -179,7 +179,7 @@ display: block;
 	.bus-input {
 		background-color: #333;
 		border: #666 solid 1px;
-		padding: 0px 20px;
+		padding: 14px 20px;
 	}
 
 	.r {
@@ -1183,5 +1183,10 @@ display: block;
 	@media (max-width: 381px) {
 		.verProducto {
 		  display: none;
+		}
+
+		.buscador {
+			justify-content: flex-end;
+			display: none;
 		}
 	  }

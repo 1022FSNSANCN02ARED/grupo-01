@@ -32,6 +32,7 @@ userDetail: async (req, res) => {
   const user = await Users.findByPk(req.params.id, {
     include: [{ association: "role" }]
   });
+  delete user.dataValues.password
   let respuesta = {
     meta: {
       status: 200,

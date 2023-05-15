@@ -58,9 +58,10 @@
 
         <!-- Seleccionar Color -->
 <div class="w-100 flex">
-  <div class="r-50">         
+
+  <div class="r-50" id="colorCard" style="padding: 10px;">         
     <h5>Seleccione el color:</h5>
-    <select name="colors" id="colors">
+    <select name="colors" id="colors"  style="border: none;">
       <% for (let i = 0; i < product.colors.length; i++) { %>
         <option value="<%= product.colors[i].color %>"><%= product.colors[i].color %></option>
       <% } %>

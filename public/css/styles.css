@@ -269,6 +269,9 @@ display: block;
     width: 100%;
 	  }
 
+	  #colors{
+		padding: 20px 15px 25px;
+	  }
 	@keyframes cambio {
 		0% {
 			margin-left: 0;

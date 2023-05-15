@@ -19,8 +19,8 @@ window.addEventListener("load", function () {
 
 
     let totalErrors = 0;
-    totalErrors = totalErrors + validateFields(firstName);
-    totalErrors = totalErrors + validateFields(lastName);
+    totalErrors = totalErrors + validateFirstName(firstName);
+    totalErrors = totalErrors + validateLastName(lastName);
     totalErrors = totalErrors + validateEmail(emailInput);
     totalErrors = totalErrors + validatePass(password, confirmPassword);
     totalErrors = totalErrors + validateFile(fileInput);
@@ -33,26 +33,44 @@ window.addEventListener("load", function () {
     }
   });
 
-  //Función para validar campos nombre y apellido (Debe ser obligatorio y tener al menos 2 caracteres)
-  const validateFields = (campo) => {
-    const field = campo;
-    const fieldValue = campo.value.trim();
+  //Validar campos nombre y apellido (Deben ser obligatorios y tener al menos 2 caracteres)
+  // Función para validar el campo del nombre
+const validateFirstName = (firstName) => {
+  const field = firstName;
+  const fieldValue = firstName.value.trim();
 
-    if (fieldValue.length < 2) {
-      field.classList.add("invalid");
-      field.nextElementSibling.classList.add("errorMessages");
-      field.nextElementSibling.textContent =
-        "El " +
-        field.name +
-        " es obligatorio. Debe tener al menos 2 caracteres";
-      return 1;
-    } else {
-      field.classList.remove("invalid");
-      field.nextElementSibling.classList.remove("errorMessages");
-      field.nextElementSibling.textContent = "";
-      return 0;
-    }
-  };
+  if (fieldValue.length < 2) {
+    field.classList.add("invalid");
+    field.nextElementSibling.classList.add("errorMessages");
+    field.nextElementSibling.textContent =
+      "El nombre es obligatorio. Debe tener al menos 2 caracteres";
+    return 1;
+  } else {
+    field.classList.remove("invalid");
+    field.nextElementSibling.classList.remove("errorMessages");
+    field.nextElementSibling.textContent = "";
+    return 0;
+  }
+};
+
+// Función para validar el campo del apellido
+const validateLastName = (lastName) => {
+  const field = lastName;
+  const fieldValue = lastName.value.trim();
+
+  if (fieldValue.length < 2) {
+    field.classList.add("invalid");
+    field.nextElementSibling.classList.add("errorMessages");
+    field.nextElementSibling.textContent =
+      "El apellido es obligatorio. Debe tener al menos 2 caracteres";
+    return 1;
+  } else {
+    field.classList.remove("invalid");
+    field.nextElementSibling.classList.remove("errorMessages");
+    field.nextElementSibling.textContent = "";
+    return 0;
+  }
+};
 
   //Validar email (Debe ser obligatorio y Válido)
   const validateEmail = (campo) => {

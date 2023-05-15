@@ -101,7 +101,7 @@ module.exports = {
     // Detalle de un producto en la pagina Frontal
     detailproduct: async (req, res) => {
       const product = await Product.findByPk(req.params.id,{
-        include:[{association:"images"},{association:"genre"},{association:"brand"},{association:"category"},{association:"sizes"},{association:"material"}]
+        include:[{association:"images"},{association:"genre"},{association:"brand"},{association:"category"},{association:"sizes"},{association:"material"},{association:"colors"}]
      });
       const usuario=req.session.usuarioLogeado;
 

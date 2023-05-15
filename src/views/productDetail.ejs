@@ -56,6 +56,19 @@
             </div>
           </div>
 
+        <!-- Seleccionar Color -->
+<div class="w-100 flex">
+  <div class="r-50">         
+    <h5>Seleccione el color:</h5>
+    <select name="colors" id="colors">
+      <% for (let i = 0; i < product.colors.length; i++) { %>
+        <option value="<%= product.colors[i].color %>"><%= product.colors[i].color %></option>
+      <% } %>
+    </select>
+  </div>
+</div>
+          
+
         <!-- Seleccionar Talle -->
         <div class="w-100 ">
                     

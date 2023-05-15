@@ -68,7 +68,7 @@ window.addEventListener("load", function () {
       field.classList.add("invalid");
       field.nextElementSibling.classList.add("errorMessages");
       field.nextElementSibling.textContent =
-        "El mail es Obligatorio.Por favor introduce un email válido";
+        "El email es obligatorio.Por favor introduce un email válido";
       return 1;
     } else if (!emailRegex.test(fieldValue)) {
       // Check si el formato es válido
@@ -190,7 +190,7 @@ console.log(totalErrors)
       field.classList.add("invalid");
       field.nextElementSibling.classList.add("emailError");
       field.nextElementSibling.textContent =
-        "El mail es Obligatorio.Por favor introduce un email válido";
+        "El email es obligatorio. Por favor introduce un email válido.";
       return 1;
     } else if (!emailRegexLogin.test(fieldValue)) {
       // Check si el formato es válido
@@ -229,8 +229,5 @@ console.log(totalErrors)
     }
   }
 
-
-
-console.log("me fui")
 
 });

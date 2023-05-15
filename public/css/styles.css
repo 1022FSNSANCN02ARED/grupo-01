@@ -257,6 +257,18 @@ display: block;
 		height: 600px;
 	}
 
+	.comprar-btn {
+		float: right;
+		margin-top: 10px;
+	  }
+	  
+	  .target {
+    float: left;
+    margin-right: 10px;
+    padding: 10%;
+    width: 100%;
+	  }
+
 	@keyframes cambio {
 		0% {
 			margin-left: 0;
@@ -312,13 +324,18 @@ display: block;
 
 	.banners {
 		z-index: 0;
-		margin: 10px 0px;
+		margin: 50px 0px;
 	}
 
 	.publicidad img {
 		width: 100%;
 		height: auto;
+		transition: transform 0.3s;
 	}
+
+	.publicidad img:hover {
+		transform: scale(1.1);
+	  }
 
 	.image-container {
 		display: flex;
@@ -345,7 +362,12 @@ display: block;
 		margin: -290px 0px 0px 20px;
 		padding: 10px;
 		opacity: 0.9;
+		transition: transform 0.3s;
 	}
+
+	.text:hover {
+		transform: scale(1.2);
+	  }
 
 	/*seccion main - productos*/
 
@@ -655,6 +677,7 @@ display: block;
 		justify-content: flex-start;
 		flex-wrap: nowrap;
 		align-content: flex-start;
+		align-items: center;
 	}
 
 	.caja-contador {

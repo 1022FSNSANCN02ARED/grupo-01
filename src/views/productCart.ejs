@@ -30,12 +30,12 @@
         <tr class="cart_item">
     
           <td class="product-remove">
-            <a href="" class="remove">×</a>
+            <a href="" class="remove" style="color: red;">×</a>
           </td>
 
           <td class="product-cart">
             <a href="/productDetail" class="no-lightbox">
-              <img src="/images/Under Armour speed stride OS.jpg" class="cart-img" alt="" >
+              <img src="/images/default.jpeg" class="cart-img" alt="" >
             </a>						
           </td>
 
@@ -81,6 +81,7 @@
         </tbody>
       </table>
       </form>
+    
 
       <section class="total-cart">
         <div class="total">
@@ -88,9 +89,8 @@
           <table cellspacing="0" class="shop_table shop_table_responsive">
 
             <tbody>
-              
               <tr class="cart-subtotal">
-                <th>Subtotal</th>
+                <th style="text-align: left;">Subtotal</th>
                 <td data-title="Subtotal">
                   <span class="woocommerce-Price-amount amount">
                     <span class="woocommerce-Price-currencySymbol">$</span>
@@ -101,35 +101,49 @@
         
             
               <tr class="shipping-totals shipping">
-                <th>Envío</th>
+                <th style="text-align: left;">Envío</th>
                 <td data-title="Envío">
                   <ul id="shipping_method" class="shipping-methods">
                     <li>
                       <input type="radio" name="shipping_method" id="shipping_method_0_local_pickup15" value="local_pickup:15" class="shipping_method" checked="checked">
-                      <label for="shipping_method_0_local_pickup15">Retira por sucursal</label>					
+                      <label for="shipping_method_0_local_pickup15">Retiro en sucursal</label>					
                     </li>
                     <li>
                       <input type="radio" name="shipping_method" id="shipping_method_0_local_pickup15" value="local_pickup:15" class="shipping_method" checked="checked">
-                      <label for="shipping_method_0_local_pickup15">Envio por correo Argentino sucursal</label>					
+                      <label for="shipping_method_0_local_pickup15">Envio a sucursal por Correo Argentino</label>					
                     </li>
                     <li>
                       <input type="radio" name="shipping_method" id="shipping_method_0_local_pickup15" value="local_pickup:15" class="shipping_method" checked="checked">
-                      <label for="shipping_method_0_local_pickup15">Envio por correo Argentino Domicilio</label>					
+                      <label for="shipping_method_0_local_pickup15">Envio a domicilio por Correo Argentino</label>					
                     </li>
                   </ul>
                 </td>
               </tr>
-              
+
+              <tr class="payment-method">
+                <th style="text-align: left;">Forma de pago</th>
+                <td data-title="Forma de pago">
+                  <select id="payment-method" name="payment_method" style="border: none; width: 100%;">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta de crédito</option>
+                    <option value="transferencia">Transferencia bancaria</option>
+                  </select>
+                </td>
+              </tr>
           
-            
+
             <tr class="order-total">
-              <th>Total</th>
+              <th style="text-align: left;">Total</th>
               <td data-title="Total"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>&nbsp;11.900,00</bdi></span></strong> </td>
             </tr>
         
             
           </tbody></table>
+          
+          <button type="submit" class="submit comprar-btn" name="update_cart" value="comprar" disabled="" aria-disabled="true">Comprar</button>
+          <img class="target" src="/images/tarjetas.png" alt="Imagen" style="float: left; margin-right: 10px;">
         </div>
+       
       </section>
 
   </section>

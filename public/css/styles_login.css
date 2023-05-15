@@ -88,14 +88,14 @@
 }
 
 #errorMessages, #errorPassword , #errorLogin, #errorPassLogin {
-  color: orangered;
+  color: red;
   width: 100%;
   padding-bottom: 10px;
 }
 
 .invalid{
-border: solid 1px purple;
-box-shadow:  0 0 10px purple;
+border: solid 1px #A565fb;
+box-shadow:  0 0 5px #A565fb;
 }
 
 .w-40 {
@@ -170,6 +170,9 @@ is-invalid{
   color: red;
   
 
+}
+.img-small{
+  margin: auto;
 }
 
 @media (max-width: 768px) {
